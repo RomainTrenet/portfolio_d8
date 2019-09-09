@@ -42,7 +42,6 @@ dependencies:
   - tour
   - automated_cron
 
-
   - components
   - module_filter
 themes:
@@ -50,4 +49,4 @@ themes:
   - zen
   #- portfolio
   #Admin
-  - seven
+  - adminimal_theme
