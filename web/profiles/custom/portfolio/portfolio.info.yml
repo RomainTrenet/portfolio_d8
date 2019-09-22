@@ -42,11 +42,21 @@ dependencies:
   - tour
   - automated_cron
 
+  - admin_toolbar
+  - admin_toolbar_tools
+  - adminimal_admin_toolbar
   - components
+  - config_split
   - module_filter
+  - advagg
+  - advagg_bundler
+  - advagg_css_minify
+  - advagg_old_ie_compatibility
+  - advagg_validator
+  - minifyhtml
 themes:
   #Front
   - zen
-  #- portfolio
+  - portfolio
   #Admin
   - adminimal_theme
