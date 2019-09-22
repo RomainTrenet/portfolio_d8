@@ -31,7 +31,6 @@
         "drupal/core": "^8.7.0",
         "drupal/minifyhtml": "^1.8",
         "drupal/module_filter": "^3.1",
-        "drupal/showcase_lite": "^1.1",
         "drupal/zen": "^7.0@alpha",
         "drush/drush": "^9.0.0",
         "twig/extensions": "^1.5",
