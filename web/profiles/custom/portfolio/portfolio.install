@@ -12,16 +12,22 @@
  * @see system_install()
  */
 function portfolio_install() {
-  // First, do everything in standard profile.
-  include_once DRUPAL_ROOT . '/core/profiles/standard/standard.install';
-  standard_install();
-
-  // Can add code in here to make nodes, terms, etc.
+    // First, do everything in standard profile.
+    include_once DRUPAL_ROOT . '/core/profiles/standard/standard.install';
+    standard_install();
 }
 
 /**
  * Enable "Module filter" module.
  */
+/*
 function portfolio_update_8101() {
-  \Drupal::service('module_installer')->install(['module_filter']);
+    \Drupal::service('module_installer')->install(['module_filter']);
+}*/
+
+/**
+ * Install adminimal_admin_toolbar, advagg and minifyhtml.
+ */
+function portfolio_update_8102() {
+  \Drupal::service('module_installer')->install(['adminimal_admin_toolbar', 'advagg', 'minifyhtml']);
 }
