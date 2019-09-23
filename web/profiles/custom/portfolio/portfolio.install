@@ -26,8 +26,8 @@ function portfolio_update_8101() {
 }*/
 
 /**
- * Install adminimal_admin_toolbar, advagg and minifyhtml.
+ * Install config_update_ui.
  */
-function portfolio_update_8102() {
-  \Drupal::service('module_installer')->install(['adminimal_admin_toolbar', 'advagg', 'minifyhtml']);
+function portfolio_update_8103() {
+  \Drupal::service('module_installer')->install(['config_update_ui']);
 }

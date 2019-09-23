@@ -1,0 +1,6 @@
+name: Custom Base
+type: module
+description: 'Manage our customs modules dependencies.'
+package: Custom
+version: '8.x-1.0'
+core: '8.x'
