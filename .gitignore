@@ -2,9 +2,9 @@
 /drush/contrib/
 /vendor/
 /web/core/
-/web/modules/contrib/
+/web/modules/
 /web/profiles/custom/portfolio/modules/contrib/
-/web/themes/contrib/
+/web/themes/
 /web/profiles/custom/portfolio/themes/contrib/
 /web/profiles/contrib/
 /web/libraries/

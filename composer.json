@@ -30,6 +30,7 @@
         "drupal/console": "^1.0.2",
         "drupal/core": "^8.7.0",
         "drupal/minifyhtml": "^1.8",
+        "drupal/minifyjs": "^1.8",
         "drupal/module_filter": "^3.1",
         "drupal/zen": "^7.0@alpha",
         "drush/drush": "^9.0.0",

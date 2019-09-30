@@ -1,0 +1,14 @@
+uuid: fb643256-a858-4dbf-a12e-cad236979c72
+name: 'Développeur Drupal'
+mail: romain.trenet@gmail.com
+slogan: ''
+page:
+  403: ''
+  404: ''
+  front: /user/login
+admin_compact_mode: false
+weight_select_max: 100
+langcode: fr
+default_langcode: fr
+_core:
+  default_config_hash: yXadRE77Va-G6dxhd2kPYapAvbnSvTF6hO4oXiOEynI

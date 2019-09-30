@@ -1,0 +1,25 @@
+uuid: 5bb67c63-e5d5-4537-a806-cd95dbae00ed
+langcode: fr
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - portfolio
+_core:
+  default_config_hash: anREHeHWlFEHxoRcWDV1Xtw8f-Sm4bJ6v0SIqo3u6L4
+id: portfolio_branding
+theme: portfolio
+region: header
+weight: 0
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Marque du site'
+  provider: system
+  label_display: '0'
+  use_site_logo: true
+  use_site_name: true
+  use_site_slogan: true
+visibility: {  }

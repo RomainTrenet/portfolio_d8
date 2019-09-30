@@ -26,8 +26,23 @@ function portfolio_update_8101() {
 }*/
 
 /**
- * Install adminimal_admin_toolbar, advagg and minifyhtml.
+ * Install config_update_ui.
+ * @todo : remove for prod, let it only in dev.
  */
-function portfolio_update_8102() {
-  \Drupal::service('module_installer')->install(['adminimal_admin_toolbar', 'advagg', 'minifyhtml']);
+function portfolio_update_8103() {
+  //\Drupal::service('module_installer')->install(['config_update_ui']);
+}
+
+/**
+ * Install minifyjs.
+ */
+function portfolio_update_8104() {
+  \Drupal::service('module_installer')->install(['minifyjs']);
+}
+
+/**
+ * Install config_split.
+ */
+function portfolio_update_8105() {
+  \Drupal::service('module_installer')->install(['config_split']);
 }

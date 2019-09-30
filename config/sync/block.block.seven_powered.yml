@@ -1,0 +1,22 @@
+uuid: baed9083-d966-431b-8f6d-316081daf9f9
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - seven
+_core:
+  default_config_hash: sMURmVhh15bcxo_GrosqyfRe1p8aj5n1MSqVq_etad4
+id: seven_powered
+theme: seven
+region: header
+weight: 10
+provider: null
+plugin: system_powered_by_block
+settings:
+  id: system_powered_by_block
+  label: 'Powered by Drupal'
+  provider: system
+  label_display: '0'
+visibility: {  }

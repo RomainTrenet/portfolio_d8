@@ -1,0 +1,22 @@
+uuid: 93b6620c-e184-4a4c-8634-edcd4cedfdea
+langcode: en
+status: true
+dependencies:
+  module:
+    - help
+  theme:
+    - zen
+_core:
+  default_config_hash: SAFK3zzDtx_4cH5w9ogrNVy6G_3GWtCogdCwmRoXmYo
+id: zen_help
+theme: zen
+region: help
+weight: -30
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: Help
+  provider: help
+  label_display: '0'
+visibility: {  }

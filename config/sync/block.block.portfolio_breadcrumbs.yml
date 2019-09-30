@@ -1,0 +1,22 @@
+uuid: 530a1bef-ea7b-4dc6-aaa6-1bb294bdfc9a
+langcode: fr
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - portfolio
+_core:
+  default_config_hash: QNIvnquU4qo50-Fg-XZjTqX1qbzcZkpMbu_bPB5Gogk
+id: portfolio_breadcrumbs
+theme: portfolio
+region: breadcrumb
+weight: 0
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: 'Fils d''ariane'
+  provider: system
+  label_display: '0'
+visibility: {  }
