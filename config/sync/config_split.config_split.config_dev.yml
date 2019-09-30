@@ -1,0 +1,26 @@
+uuid: fe24cb85-4916-497d-8dd7-703b84e18b4c
+langcode: fr
+status: true
+dependencies: {  }
+id: config_dev
+label: 'Development config'
+description: ''
+folder: ../config/dev
+module:
+  devel: 0
+  kint: 0
+  webprofiler: 0
+theme: {  }
+blacklist: {  }
+graylist:
+  - advagg.settings
+  - advagg_bundler.settings
+  - advagg_css_minify.settings
+  - advagg_old_ie_compatibility.settings
+  - advagg_validator.settings
+  - minifyhtml.config
+  - minifyjs.config
+  - system.performance
+graylist_dependents: true
+graylist_skip_equal: true
+weight: 0

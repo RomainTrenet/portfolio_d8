@@ -1,0 +1,20 @@
+uuid: 9ee2a411-139b-4d58-ba3b-69f6024ead4a
+langcode: fr
+status: true
+dependencies:
+  theme:
+    - adminimal_theme
+_core:
+  default_config_hash: mmnyKapu6AZyQ2X_1TJXKOV8aGDJQ85Cly-xXabgCng
+id: adminimal_theme_page_title
+theme: adminimal_theme
+region: header
+weight: -50
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Titre de page'
+  provider: core
+  label_display: '0'
+visibility: {  }

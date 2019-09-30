@@ -1,0 +1,22 @@
+uuid: 23f6e65f-c6d5-4df0-a8dd-476b97951494
+langcode: en
+status: true
+dependencies:
+  module:
+    - search
+  theme:
+    - adminimal_theme
+_core:
+  default_config_hash: tlMxcBnyrNXP5_b9ETkxD-7MHI6BHC9jCc4TGjOnQn0
+id: adminimal_theme_search
+theme: adminimal_theme
+region: header
+weight: -1
+provider: null
+plugin: search_form_block
+settings:
+  id: search_form_block
+  label: Search
+  provider: search
+  label_display: visible
+visibility: {  }

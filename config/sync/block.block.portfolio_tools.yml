@@ -1,0 +1,27 @@
+uuid: 8175a921-1c85-486e-99a5-a32b703f1fae
+langcode: fr
+status: true
+dependencies:
+  config:
+    - system.menu.tools
+  module:
+    - system
+  theme:
+    - portfolio
+_core:
+  default_config_hash: TXnILxIYDtP1V26-N4tn198pHSvdnsqOyE7MpBIKdW8
+id: portfolio_tools
+theme: portfolio
+region: sidebar_first
+weight: 0
+provider: null
+plugin: 'system_menu_block:tools'
+settings:
+  id: 'system_menu_block:tools'
+  label: Outils
+  provider: system
+  label_display: visible
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility: {  }

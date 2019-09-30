@@ -1,0 +1,22 @@
+uuid: 654f34cc-bf39-4604-91f0-0d043d037b43
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - zen
+_core:
+  default_config_hash: QNIvnquU4qo50-Fg-XZjTqX1qbzcZkpMbu_bPB5Gogk
+id: zen_breadcrumbs
+theme: zen
+region: breadcrumb
+weight: 0
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  provider: system
+  label_display: '0'
+visibility: {  }

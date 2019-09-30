@@ -1,0 +1,27 @@
+uuid: 53838772-1d60-4360-a3a2-80e482d5a004
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.main
+  module:
+    - system
+  theme:
+    - zen
+_core:
+  default_config_hash: k4BbF1yEqFupcaycpZppMNYt6orxo6pm-Oi1YV3CRPo
+id: zen_main_menu
+theme: zen
+region: primary_menu
+weight: 0
+provider: null
+plugin: 'system_menu_block:main'
+settings:
+  id: 'system_menu_block:main'
+  label: 'Main navigation'
+  provider: system
+  label_display: '0'
+  level: 1
+  depth: 1
+  expand_all_items: false
+visibility: {  }

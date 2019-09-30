@@ -1,0 +1,6 @@
+custom-base-script:
+  version: 1.x
+  js:
+    js/custom-base-script.js: {}
+  dependencies:
+    - core/jquery

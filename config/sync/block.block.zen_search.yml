@@ -1,0 +1,22 @@
+uuid: feafedfb-04b8-4dea-aea6-7abdebf55fe3
+langcode: en
+status: true
+dependencies:
+  module:
+    - search
+  theme:
+    - zen
+_core:
+  default_config_hash: tlMxcBnyrNXP5_b9ETkxD-7MHI6BHC9jCc4TGjOnQn0
+id: zen_search
+theme: zen
+region: sidebar_first
+weight: -1
+provider: null
+plugin: search_form_block
+settings:
+  id: search_form_block
+  label: Search
+  provider: search
+  label_display: visible
+visibility: {  }

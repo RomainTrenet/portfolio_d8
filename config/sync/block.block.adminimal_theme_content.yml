@@ -1,0 +1,22 @@
+uuid: f52b9adb-921a-4d0d-9a6e-60fd3fa106f3
+langcode: fr
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - adminimal_theme
+_core:
+  default_config_hash: hemVPpFAcnVcWcdlleRl_G9rHNaH58ziXi-DDL20smI
+id: adminimal_theme_content
+theme: adminimal_theme
+region: content
+weight: 0
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Contenu de la page principale'
+  provider: system
+  label_display: '0'
+visibility: {  }

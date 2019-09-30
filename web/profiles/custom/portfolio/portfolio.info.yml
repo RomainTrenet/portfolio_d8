@@ -38,7 +38,7 @@ dependencies:
   - file
   - rdf
   - views
-  - views_ui
+#  - views_ui
   - tour
   - automated_cron
 # Custom profile.
@@ -52,7 +52,7 @@ dependencies:
   - advagg_validator
   - components
   - config_split
-  - config_update_ui
+#  - config_update_ui
   - module_filter
   - minifyhtml
 themes:

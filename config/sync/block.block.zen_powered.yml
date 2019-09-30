@@ -1,0 +1,22 @@
+uuid: 0d0f5f71-da6f-4169-b535-c851219208c3
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - zen
+_core:
+  default_config_hash: sMURmVhh15bcxo_GrosqyfRe1p8aj5n1MSqVq_etad4
+id: zen_powered
+theme: zen
+region: footer
+weight: 10
+provider: null
+plugin: system_powered_by_block
+settings:
+  id: system_powered_by_block
+  label: 'Powered by Drupal'
+  provider: system
+  label_display: '0'
+visibility: {  }

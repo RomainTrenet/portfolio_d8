@@ -1,0 +1,27 @@
+uuid: 494d45f7-b7ba-4403-bd3c-3d609b730c4b
+langcode: fr
+status: true
+dependencies:
+  config:
+    - system.menu.footer
+  module:
+    - system
+  theme:
+    - portfolio
+_core:
+  default_config_hash: K6dI-UBfx92pgiyfgMsc6iWq2uVwURFaXyaldtOJoMo
+id: portfolio_footer
+theme: portfolio
+region: footer
+weight: 0
+provider: null
+plugin: 'system_menu_block:footer'
+settings:
+  id: 'system_menu_block:footer'
+  label: 'Menu Pied de page'
+  provider: system
+  label_display: '0'
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility: {  }
