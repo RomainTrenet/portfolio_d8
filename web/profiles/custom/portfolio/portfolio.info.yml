@@ -34,7 +34,7 @@ dependencies:
   - search
   - shortcut
   - toolbar
-  - field_ui
+#  - field_ui
   - file
   - rdf
   - views
