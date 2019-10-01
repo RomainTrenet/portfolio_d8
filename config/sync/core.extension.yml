@@ -26,6 +26,7 @@ module:
   dblog: 0
   dynamic_page_cache: 0
   editor: 0
+  entityqueue: 0
   field: 0
   file: 0
   filter: 0

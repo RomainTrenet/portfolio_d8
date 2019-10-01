@@ -24,6 +24,7 @@ graylist:
   - advagg_validator.settings
   - minifyhtml.config
   - minifyjs.config
+  - system.file
   - system.performance
 graylist_dependents: true
 graylist_skip_equal: true
