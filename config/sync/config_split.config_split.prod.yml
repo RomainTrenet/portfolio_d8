@@ -1,6 +1,6 @@
 uuid: 4f5edeb2-e074-4fc7-b82d-253ad437ad4d
 langcode: fr
-status: true
+status: false
 dependencies: {  }
 id: prod
 label: 'Production config'
@@ -8,9 +8,7 @@ description: ''
 folder: ../config/prod
 module: {  }
 theme: {  }
-blacklist:
-  - views.view.watchdog
-  - views.view.who_s_new
+blacklist: {  }
 graylist: {  }
 graylist_dependents: true
 graylist_skip_equal: true

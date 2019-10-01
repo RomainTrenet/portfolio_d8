@@ -7,8 +7,12 @@ label: 'Development config'
 description: ''
 folder: ../config/dev
 module:
+  config_update: 0
+  config_update_ui: 0
   devel: 0
+  field_ui: 0
   kint: 0
+  views_ui: 0
   webprofiler: 0
 theme: {  }
 blacklist: {  }
@@ -18,7 +22,6 @@ graylist:
   - advagg_css_minify.settings
   - advagg_old_ie_compatibility.settings
   - advagg_validator.settings
-  - core.extension
   - minifyhtml.config
   - minifyjs.config
   - system.performance
