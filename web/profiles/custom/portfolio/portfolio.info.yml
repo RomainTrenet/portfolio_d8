@@ -34,11 +34,9 @@ dependencies:
   - search
   - shortcut
   - toolbar
-#  - field_ui
   - file
   - rdf
   - views
-#  - views_ui
   - tour
   - automated_cron
 # Custom profile.
@@ -52,7 +50,6 @@ dependencies:
   - advagg_validator
   - components
   - config_split
-#  - config_update_ui
   - module_filter
   - minifyhtml
 themes:
