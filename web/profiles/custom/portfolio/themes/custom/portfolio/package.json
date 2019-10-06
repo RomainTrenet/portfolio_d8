@@ -34,5 +34,9 @@
   "private": true,
   "scripts": {
     "test": "gulp"
+  },
+  "dependencies": {
+    "eslint-plugin-prettier": "^3.1.1",
+    "gulp-dependency-install": "0.0.8"
   }
 }

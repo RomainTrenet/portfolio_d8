@@ -91,6 +91,11 @@
                 ".editorconfig": "../.editorconfig",
                 ".gitattributes": "../.gitattributes"
             }
+        },
+        "patches": {
+            "drupal/zen": {
+                "Improves Eslint version and fix her errors": "https://www.drupal.org/files/issues/2934512.patch"
+            }
         }
     }
 }
