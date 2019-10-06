@@ -13,7 +13,7 @@
 # page at admin/appearance.
 
 name: Portfolio
-description: Read the <a href="https://drupal.org/node/873778">online docs</a> or the included README.txt on how to create a theme with Zen.<p class="messages color-error">The Zen theme <em><b>requires</b></em> the <a href="https://www.drupal.org/project/components">Components Libraries module</a> in order to function properly.</p>
+description: Read the <a href="https://drupal.org/node/873778">online docs</a> or the included README.txt on how to create a theme with Zen.
 screenshot: screenshot.png
 
 

@@ -2,6 +2,8 @@ uuid: c5c9b960-0858-46cf-a9c8-d5843dd1e9b2
 langcode: fr
 status: true
 dependencies:
+  module:
+    - system
   theme:
     - portfolio
 _core:
@@ -17,4 +19,9 @@ settings:
   label: 'Titre de page'
   provider: core
   label_display: '0'
-visibility: {  }
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: true
+    context_mapping: {  }
