@@ -19,8 +19,6 @@ module:
   config: 0
   config_filter: 0
   config_split: 0
-  config_update: 0
-  config_update_ui: 0
   contact: 0
   contextual: 0
   custom_base: 0
@@ -28,8 +26,8 @@ module:
   dblog: 0
   dynamic_page_cache: 0
   editor: 0
+  entityqueue: 0
   field: 0
-  field_ui: 0
   file: 0
   filter: 0
   help: 0
@@ -57,7 +55,6 @@ module:
   tour: 0
   update: 0
   user: 0
-  views_ui: 0
   menu_link_content: 1
   views: 10
   portfolio: 1000

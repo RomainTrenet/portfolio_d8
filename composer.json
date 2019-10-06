@@ -29,6 +29,7 @@
         "drupal/config_update": "^1.6",
         "drupal/console": "^1.0.2",
         "drupal/core": "^8.7.0",
+        "drupal/entityqueue": "^1.0@beta",
         "drupal/minifyhtml": "^1.8",
         "drupal/minifyjs": "^1.8",
         "drupal/module_filter": "^3.1",
@@ -41,6 +42,7 @@
         "zaporylie/composer-drupal-optimizations": "^1.0"
     },
     "require-dev": {
+        "drupal/config_update_ui": "^1.6",
         "drupal/devel": "^2.1",
         "webflo/drupal-core-require-dev": "^8.7.0"
     },

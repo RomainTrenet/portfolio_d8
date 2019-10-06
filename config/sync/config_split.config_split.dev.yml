@@ -2,13 +2,17 @@ uuid: fe24cb85-4916-497d-8dd7-703b84e18b4c
 langcode: fr
 status: true
 dependencies: {  }
-id: config_dev
+id: dev
 label: 'Development config'
 description: ''
 folder: ../config/dev
 module:
+  config_update: 0
+  config_update_ui: 0
   devel: 0
+  field_ui: 0
   kint: 0
+  views_ui: 0
   webprofiler: 0
 theme: {  }
 blacklist: {  }
@@ -20,6 +24,7 @@ graylist:
   - advagg_validator.settings
   - minifyhtml.config
   - minifyjs.config
+  - system.file
   - system.performance
 graylist_dependents: true
 graylist_skip_equal: true
