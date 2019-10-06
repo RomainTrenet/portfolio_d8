@@ -213,7 +213,9 @@ gulp.task('styleguide:debug', ['clean:styleguide', 'styleguide:kss-example-chrom
 // #########################
 // Lint Sass and JavaScript.
 // #########################
-gulp.task('lint', ['lint:sass', 'lint:js']);
+// @todo : Improve.
+//gulp.task('lint', ['lint:sass', 'lint:js']);
+gulp.task('lint', ['lint:sass']);
 
 // Lint JavaScript.
 gulp.task('lint:js', function () {
