@@ -250,7 +250,9 @@ gulp.task('lint:sass-with-fail', function () {
 // ##############################
 // Watch for changes and rebuild.
 // ##############################
-gulp.task('watch', ['browser-sync', 'watch:lint-and-styleguide', 'watch:js']);
+// @todo : improve.
+//gulp.task('watch', ['browser-sync', 'watch:lint-and-styleguide', 'watch:js']);
+gulp.task('watch', ['browser-sync', 'watch:lint-and-styleguide']);
 
 gulp.task('browser-sync', ['watch:css'], function () {
   if (!options.drupalURL) {
