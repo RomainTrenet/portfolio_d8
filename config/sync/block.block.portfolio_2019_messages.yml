@@ -1,22 +1,22 @@
-uuid: d193dd5e-cc76-4bf8-a208-eee26a442277
+uuid: 3f98671d-412a-4ec2-8511-05224815efba
 langcode: fr
 status: true
 dependencies:
   module:
     - system
   theme:
-    - portfolio
+    - portfolio_2019
 _core:
-  default_config_hash: 4WeKa2XCc5yWqEg4-Yvv9-kpsr5bIJk65N44yD9Eyi8
-id: portfolio_messages
-theme: portfolio
+  default_config_hash: _HqZNEe4KgzjVklui8_8zyg4apq5SgJlMR2PbH4FAZI
+id: portfolio_2019_messages
+theme: portfolio_2019
 region: highlighted
 weight: 0
 provider: null
 plugin: system_messages_block
 settings:
   id: system_messages_block
-  label: 'Messages de statut'
+  label: 'Status messages'
   provider: system
   label_display: '0'
 visibility: {  }

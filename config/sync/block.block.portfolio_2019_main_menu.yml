@@ -1,4 +1,4 @@
-uuid: e231beb2-b899-40c2-92fc-74775aa462d2
+uuid: a3e01b00-a0d2-4148-ba61-08427f1cef3e
 langcode: fr
 status: true
 dependencies:
@@ -7,21 +7,21 @@ dependencies:
   module:
     - system
   theme:
-    - portfolio
+    - portfolio_2019
 _core:
-  default_config_hash: Kse9rRxuf2T5rc3t1RXWRH4zXI2bgH7hFj5ai7pyLzo
-id: portfolio_secondary_navigation
-theme: portfolio
-region: sidebar_first
+  default_config_hash: E9gpAD12HmQyjkC-ctUl27GsL-sA1KE9G6u3aNLh_JU
+id: portfolio_2019_main_menu
+theme: portfolio_2019
+region: primary_menu
 weight: 0
 provider: null
 plugin: 'system_menu_block:main'
 settings:
   id: 'system_menu_block:main'
-  label: 'Secondary navigation'
+  label: 'Main navigation'
   provider: system
   label_display: '0'
-  level: 2
-  depth: 0
+  level: 1
+  depth: 1
   expand_all_items: false
 visibility: {  }

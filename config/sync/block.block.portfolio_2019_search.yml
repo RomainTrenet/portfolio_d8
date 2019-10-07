@@ -1,0 +1,22 @@
+uuid: 2905dac3-7bfe-43b4-a05d-a39936aa9754
+langcode: fr
+status: true
+dependencies:
+  module:
+    - search
+  theme:
+    - portfolio_2019
+_core:
+  default_config_hash: KpMsWliyjfob4WH7L_FBwNeXnCYKA3_cuYY0z_VMnDw
+id: portfolio_2019_search
+theme: portfolio_2019
+region: sidebar_first
+weight: -1
+provider: null
+plugin: search_form_block
+settings:
+  id: search_form_block
+  label: Search
+  provider: search
+  label_display: visible
+visibility: {  }

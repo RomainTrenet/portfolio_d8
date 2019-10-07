@@ -1,22 +1,22 @@
-uuid: 444ecdf4-5a4a-4bac-bb5b-4852ebaae339
+uuid: 5a2769e7-f73b-4a04-889a-dc9bccecd907
 langcode: fr
 status: true
 dependencies:
   module:
     - help
   theme:
-    - portfolio
+    - portfolio_2019
 _core:
-  default_config_hash: SAFK3zzDtx_4cH5w9ogrNVy6G_3GWtCogdCwmRoXmYo
-id: portfolio_help
-theme: portfolio
+  default_config_hash: WByKQX7EKChyH89fLWU61txkgJ_jDZmihv4DL3BNvVI
+id: portfolio_2019_help
+theme: portfolio_2019
 region: help
 weight: -30
 provider: null
 plugin: help_block
 settings:
   id: help_block
-  label: Aide
+  label: Help
   provider: help
   label_display: '0'
 visibility: {  }

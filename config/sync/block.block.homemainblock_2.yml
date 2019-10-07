@@ -1,4 +1,4 @@
-uuid: 8f0f1d8a-71d3-481b-87c3-4e8f8185762c
+uuid: 853d9824-895e-4064-a933-caccdc6934b1
 langcode: fr
 status: true
 dependencies:
@@ -6,11 +6,11 @@ dependencies:
     - custom_home
     - system
   theme:
-    - portfolio
-id: homemainblock
-theme: portfolio
+    - portfolio_2019
+id: homemainblock_2
+theme: portfolio_2019
 region: content
-weight: -2
+weight: 0
 provider: null
 plugin: home_main_block
 settings:

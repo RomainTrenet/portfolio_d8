@@ -1,20 +1,20 @@
-uuid: 75e64018-967e-4e20-a79d-d9bd4517bf75
+uuid: 4347c01a-e5d5-4a43-b5fa-b0e7c567f665
 langcode: fr
 status: true
 dependencies:
   theme:
-    - portfolio
+    - portfolio_2019
 _core:
-  default_config_hash: QH7phSuXdMUIBqPQ2nKceNRrx4IOEhtDMxCfhzpoK-w
-id: portfolio_local_tasks
-theme: portfolio
+  default_config_hash: 13Mo-u_fuSK-rfZIk3ICVFldAfdKiEqF5v6k3LTrxbc
+id: portfolio_2019_local_tasks
+theme: portfolio_2019
 region: content
-weight: -5
+weight: -40
 provider: null
 plugin: local_tasks_block
 settings:
   id: local_tasks_block
-  label: Onglets
+  label: Tabs
   provider: core
   label_display: '0'
   primary: true
