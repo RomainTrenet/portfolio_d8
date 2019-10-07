@@ -38,4 +38,7 @@ body {
   padding: 0;
   color: color(text);
   background-color: color(text-bg);
+  position: absolute;
+  min-height: 100%;
+  min-width: 100%;
 }
