@@ -10,7 +10,7 @@ dependencies:
 id: homemainblock
 theme: portfolio
 region: content
-weight: 0
+weight: -2
 provider: null
 plugin: home_main_block
 settings:

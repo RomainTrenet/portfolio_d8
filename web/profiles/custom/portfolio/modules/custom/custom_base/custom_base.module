@@ -1,4 +1,6 @@
 <?php
+/*
 function custom_base_page_attachments(array &$page) {
   $page['#attached']['library'][] = 'custom_base/custom-base-script';
 }
+*/

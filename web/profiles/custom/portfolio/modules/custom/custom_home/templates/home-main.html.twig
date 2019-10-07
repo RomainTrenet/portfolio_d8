@@ -1,0 +1,18 @@
+<header class="homepage-header">
+  <div class="homepage-header__infos">
+  {% if title %}
+    <h1 class="homepage-header__infos__title">{{ title }}</h1>
+  {% endif %}
+  {% if subtitle %}
+    <h2 class="homepage-header__infos__subtitle">{{ subtitle }}</h2>
+  {% endif %}
+  {% if cta %}
+    <div class="homepage-header__infos__cta">{{ cta }}</div>
+  {% endif %}
+  </div>
+  {% if background_image %}
+    <div class="homepage-header__background">
+      <img src="{{ background_image }}" width="1900" height="688">
+    </div>
+  {% endif %}
+</header>

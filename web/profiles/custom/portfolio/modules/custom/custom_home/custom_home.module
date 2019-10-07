@@ -1,1 +1,14 @@
 <?php
+
+function custom_home_theme($existing, $type, $theme, $path) {
+  return [
+    'home_main' => [
+      'variables' => [
+        'title' => NULL,
+        'subtitle' => NULL,
+        'cta' => NULL,
+        'background_image' => NULL,
+      ],
+    ],
+  ];
+}
