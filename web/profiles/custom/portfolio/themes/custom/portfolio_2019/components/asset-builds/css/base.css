@@ -139,34 +139,43 @@ h3 {
 }
 
 h1 {
-  font-size: 6rem;
+  font-size: 3rem;
   line-height: 1.5;
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
+  /*
+  @include respond-to(s) {
+    @include type-layout(xxxxl, $base-line-height-ratio);
+    //@include margin-top(1, xxxxl);
+    //@include margin-bottom(1, xxxxl);
+  }*/
 }
 
 @media (min-width: 1024px) {
   h1 {
     font-size: 4.5rem;
     line-height: 1.5;
-    margin-top: 1.5rem;
-    margin-bottom: 1.5rem;
   }
 }
 
 h2 {
-  font-size: 2.25rem;
-  line-height: 3;
+  font-size: 1.25rem;
+  line-height: 1.5;
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
+  /*
+  @include respond-to(s) {
+    @include type-layout(xxl, $base-line-height-ratio);
+    //@include margin-top(1, l);
+    //@include margin-bottom(1, l);
+  }
+  */
 }
 
 @media (min-width: 1024px) {
   h2 {
-    font-size: 3rem;
-    line-height: 2;
-    margin-top: 1.5rem;
-    margin-bottom: 1.5rem;
+    font-size: 2.25rem;
+    line-height: 1.5;
   }
 }
 

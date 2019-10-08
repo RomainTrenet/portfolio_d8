@@ -230,13 +230,20 @@
   padding-left: 20px;
   padding-right: 20px;
   margin: 0 auto;
-  max-width: 1200px;
+  max-width: 1180px;
 }
 
 @media (min-width: 1024px) {
   .layout-center {
     padding-left: 20px;
     padding-right: 20px;
+  }
+}
+
+@media (max-width: 1250.8px) {
+  .layout-center {
+    margin-left: 3%;
+    margin-right: 3%;
   }
 }
 

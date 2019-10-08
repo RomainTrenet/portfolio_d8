@@ -90,9 +90,14 @@
 
     &__subtitle {
       color: color(white);
-      //margin-top: 25px;
+      @include respond-to(m) {
+        @include type-layout(24px, $base-line-height-ratio);
+      }
     }
-    // &__cta {}
+
+    &__cta {
+      color: red;
+    }
   }
 
   &__background {

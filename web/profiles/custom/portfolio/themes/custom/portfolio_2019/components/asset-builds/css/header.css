@@ -83,6 +83,17 @@
   color: #fff;
 }
 
+@media (min-width: 1024px) {
+  .homepage-header__infos__subtitle {
+    font-size: 1.5rem;
+    line-height: 1.5;
+  }
+}
+
+.homepage-header__infos__cta {
+  color: red;
+}
+
 .homepage-header__background img {
   position: absolute;
   left: -9999px;

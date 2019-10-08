@@ -20,30 +20,44 @@ h3 {
 h1,
 %h1 {
   // Set the font-size and line-height while keeping a proper vertical rhythm.
-  @include type-layout(xxxxl, $base-line-height-ratio);
+  @include type-layout(xxl, $base-line-height-ratio);
 
   // Set 1 unit of vertical rhythm on the top and bottom margins.
-  @include margin-top(1, xxxxl);
-  @include margin-bottom(1, xxxxl);
+  @include margin-top(1, xxxl);
+  @include margin-bottom(1, xxxl);
+
+  /*
+  @include respond-to(s) {
+    @include type-layout(xxxxl, $base-line-height-ratio);
+    //@include margin-top(1, xxxxl);
+    //@include margin-bottom(1, xxxxl);
+  }*/
 
   @include respond-to(m) {
     @include type-layout(xxxl, $base-line-height-ratio);
-
-    @include margin-top(1, xxxl);
-    @include margin-bottom(1, xxxl);
+    //@include margin-top(1, xxxl);
+    //@include margin-bottom(1, xxxl);
   }
 }
 
 h2,
 %h2 {
-  @include type-layout(xl, 3);
-  @include margin-top(1, l);
-  @include margin-bottom(1, l);
+  @include type-layout(l, $base-line-height-ratio);
+  @include margin-top(1, xl);
+  @include margin-bottom(1, xl);
+
+  /*
+  @include respond-to(s) {
+    @include type-layout(xxl, $base-line-height-ratio);
+    //@include margin-top(1, l);
+    //@include margin-bottom(1, l);
+  }
+  */
 
   @include respond-to(m) {
-    @include type-layout(xxl, 2);
-    @include margin-top(1, xl);
-    @include margin-bottom(1, xl);
+    @include type-layout(xl, $base-line-height-ratio);
+    //@include margin-top(1, xl);
+    //@include margin-bottom(1, xl);
   }
 }
 
