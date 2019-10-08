@@ -1,0 +1,34 @@
+/**
+ * Custom min width media queries.
+ *
+ * @TODO
+ * Same breakoints as in js.
+ */
+/**
+ * Custom max width media queries.
+ */
+/**
+ * Custom range media queries.
+ */
+/**
+ * Custom layout.
+ */
+@media print {
+  .breadcrumb {
+    display: none;
+  }
+}
+
+.breadcrumb__list {
+  margin: 0;
+  padding: 0;
+}
+
+.breadcrumb__item {
+  display: inline;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+/*# sourceMappingURL=breadcrumb.css.map */
