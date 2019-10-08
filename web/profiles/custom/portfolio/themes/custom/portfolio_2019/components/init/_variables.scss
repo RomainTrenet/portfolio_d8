@@ -39,10 +39,18 @@ $base-font-size:    16px;
 // The base line height determines the basic unit of vertical rhythm.
 $base-line-height:  24px;
 
+// The IM8 line height method.
+// Ratio method allows us to specify line-heights as a multiple of our elements font-size.
+// Rhythm method allows us to specify line-heights as a multiple of $base-line-height.
+$line-height-method: ratio;
+$base-line-height-ratio: 1.5;
+
 // The font sizes in our type hierarchy as tee shirt sizes.
 $font-size: (
-  xxl:              32px,
-  xl:               24px,
+  xxxxl:            96px,
+  xxxl:             72px,
+  xxl:              48px,
+  xl:               36px,
   l:                20px,
   m:                $base-font-size,
   s:                14px,
@@ -71,6 +79,7 @@ $times:           Times, 'Times New Roman', Georgia, 'DejaVu Serif', serif;
 $georgia:         Georgia, 'Times New Roman', 'DejaVu Serif', serif;
 
 // Sans-serif font stacks.
+$ssp-reg:         'Source Sans Pro Regular', Helvetica, sans-serif;
 $verdana:         Verdana, Tahoma, 'DejaVu Sans', sans-serif;
 $tahoma:          Tahoma, Verdana, 'DejaVu Sans', sans-serif;
 $helvetica:       Helvetica, Arial, 'Nimbus Sans L', sans-serif;
@@ -86,7 +95,11 @@ $menlo:           Menlo, 'DejaVu Sans Mono', 'Ubuntu Mono', Courier, 'Courier Ne
 // typeface() mixin.
 $typefaces: (
   body: (
-    font-family: $verdana,
+    font-family: $ssp-reg,
+  ),
+  sans-serif: (
+    font-family: $ssp-reg,
+    letter-spacing: -.5px,
   ),
   monospace: (
     font-family: $menlo,
@@ -119,15 +132,39 @@ $rem-fallback:      false;
 //
 // Style guide: sass.variables.breakpoints
 
-@include add-breakpoint(xxxs, (333px, 'no-query' true));
+/**
+ * Custom min width media queries.
+ *
+ * @TODO
+ * Same breakoints as in js.
+ */
+@include add-breakpoint(xxxs, (320px, 'no-query' true));
 @include add-breakpoint(xxs,  (444px, 'no-query' true));
 @include add-breakpoint(xs,   (555px, 'no-query' true));
-@include add-breakpoint(s,    (666px, 'no-query' true));
-@include add-breakpoint(m,    (777px, 'no-query' true));
-@include add-breakpoint(l,    (888px, 'no-query' true));
-@include add-breakpoint(xl,   (999px, 'no-query' true));
-@include add-breakpoint(xxl,  (1111px));
-@include add-breakpoint(xxxl, (1222px));
+@include add-breakpoint(s,    (768px, 'no-query' true));
+@include add-breakpoint(m,    (1024px, 'no-query' true));
+@include add-breakpoint(l,    (1280px, 'no-query' true));
+@include add-breakpoint(xl,   (1424px, 'no-query' true));
+@include add-breakpoint(xxl,  (1624px));
+@include add-breakpoint(xxxl, (1824px));
+
+/**
+ * Custom max width media queries.
+ */
+@include add-breakpoint(before-xxs,  (max-width 443px, 'no-query' true));
+@include add-breakpoint(before-xs,   (max-width 554px, 'no-query' true));
+@include add-breakpoint(before-s,    (max-width 767px, 'no-query' true));
+@include add-breakpoint(before-m,    (max-width 1023px, 'no-query' true));
+@include add-breakpoint(before-l,    (max-width 1179px, 'no-query' true));
+@include add-breakpoint(before-xl,   (max-width 1423px, 'no-query' true));
+@include add-breakpoint(before-xxl,  (max-width 1623px, 'no-query' true));
+@include add-breakpoint(before-xxxl, (max-width 1823px, 'no-query' true));
+
+/**
+ * Custom range media queries.
+ */
+@include add-breakpoint(s-m,    (768px 1223px, 'no-query' true));
+@include add-breakpoint(x-m,    (1024px 1199px, 'no-query' true));
 
 // Output media queries where the above px are converted to ems.
 // @include breakpoint-set('to ems', true);
@@ -152,19 +189,25 @@ $zen-box-sizing: universal-border-box;
 $zen-columns: 1;
 $zen-gutters: 40px;
 
+/**
+ * Custom layout.
+ */
 // Then we set the values we need for each of the layouts at larger media query
 // sizes. Note how the names of the layouts match the names of our breakpoints
 // above. That allows a single zen-respond-to() to both use the proper item
 // from $zen-layouts and from $breakpoints.
 $zen-layouts: (
+  s: (
+    columns: 12,
+    gutters: 40px,
+  ),
   m: (
-    columns: 2,
-    // The gutters in the layouts are larger on mobile.
-    gutters: 25px,
+    columns: 12,
+    gutters: 40px,
   ),
   xl: (
-    columns: 3,
-    gutters: 25px,
+    columns: 12,
+    gutters: 60px,
   ),
 );
 

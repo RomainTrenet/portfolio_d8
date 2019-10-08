@@ -46,7 +46,11 @@
 #}
 
 {{ attach_library('portfolio_2019/layouts') }}
-
+{% if page.primary_menu %}
+  <div class="layout-3col__full">
+    {{ page.primary_menu }}
+  </div>
+{% endif %}
 <header class="header" role="banner">
   {{ page.header }}
   {{ page.secondary_menu }}
@@ -72,10 +76,6 @@
     {% set sidebar_first_class  = '' %}
     {% set sidebar_second_class = '' %}
   {% endif %}
-
-  <div class="layout-3col__full">
-    {{ page.primary_menu }}
-  </div>
 
   <main class="{{ content_class }}" role="main">
 

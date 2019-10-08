@@ -1,9 +1,24 @@
-.clearfix:before {
+/**
+ * Custom min width media queries.
+ *
+ * @TODO
+ * Same breakoints as in js.
+ */
+/**
+ * Custom max width media queries.
+ */
+/**
+ * Custom range media queries.
+ */
+/**
+ * Custom layout.
+ */
+.clearfix::before {
   content: '';
   display: table;
 }
 
-.clearfix:after {
+.clearfix::after {
   content: '';
   display: table;
   clear: both;

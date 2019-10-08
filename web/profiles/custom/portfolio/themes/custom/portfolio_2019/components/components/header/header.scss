@@ -8,6 +8,7 @@
 
 .header,
 %header {
+
   // Wrapping link for logo.
   &__logo {
     float: left;
@@ -67,5 +68,43 @@
   &__region {
     // Clear the logo.
     clear: both;
+  }
+}
+
+// Custom branding.
+.homepage-header {
+  $min-height: 688px;
+  min-height: $min-height;
+
+  &__infos {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    margin: auto;
+    width: 100%;
+    transform: translateY(-50%);
+
+    &__title {
+      color: color(white);
+    }
+
+    &__subtitle {
+      color: color(white);
+      //margin-top: 25px;
+    }
+    // &__cta {}
+  }
+
+  &__background {
+    img {
+      position: absolute;
+      left: -9999px;
+      right: -9999px;
+      margin: auto;
+      height: 100%;
+      min-width: 100%;
+      width: auto;
+      max-width: none;
+    }
   }
 }

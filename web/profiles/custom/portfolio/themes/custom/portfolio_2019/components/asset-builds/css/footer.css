@@ -1,6 +1,21 @@
+/**
+ * Custom min width media queries.
+ *
+ * @TODO
+ * Same breakoints as in js.
+ */
+/**
+ * Custom max width media queries.
+ */
+/**
+ * Custom range media queries.
+ */
+/**
+ * Custom layout.
+ */
 .footer {
   font-size: 0.875rem;
-  line-height: 1.5rem;
+  line-height: 1;
   margin-top: 3rem;
   padding: 1.5rem 0;
   border-top: 1px solid #cccccc;

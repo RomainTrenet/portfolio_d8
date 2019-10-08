@@ -1,3 +1,18 @@
+/**
+ * Custom min width media queries.
+ *
+ * @TODO
+ * Same breakoints as in js.
+ */
+/**
+ * Custom max width media queries.
+ */
+/**
+ * Custom range media queries.
+ */
+/**
+ * Custom layout.
+ */
 .layout-3col {
   margin-left: -20px;
   margin-right: -20px;
@@ -32,10 +47,10 @@
   margin-left: -100%;
 }
 
-@media (min-width: 777px) {
+@media (min-width: 1024px) {
   .layout-3col {
-    margin-left: -12px;
-    margin-right: -13px;
+    margin-left: -20px;
+    margin-right: -20px;
     padding-left: 0;
     padding-right: 0;
   }
@@ -48,68 +63,52 @@
     display: table;
     clear: both;
   }
-  [dir="rtl"] .layout-3col {
-    margin-left: -13px;
-    margin-right: -12px;
-  }
   .layout-3col__full, .layout-3col__left-content, .layout-3col__right-content, .layout-3col__left-sidebar, .layout-3col__right-sidebar {
     float: left;
-    width: 100%;
+    width: 16.66667%;
     margin-left: 0%;
     margin-right: -100%;
-    padding-left: 12px;
-    padding-right: 13px;
+    padding-left: 20px;
+    padding-right: 20px;
   }
   [dir="rtl"] .layout-3col__full, [dir="rtl"] .layout-3col__left-content, [dir="rtl"] .layout-3col__right-content, [dir="rtl"] .layout-3col__left-sidebar, [dir="rtl"] .layout-3col__right-sidebar {
     float: right;
     margin-right: 0%;
     margin-left: -100%;
-  }
-  [dir="rtl"] .layout-3col__full, [dir="rtl"] .layout-3col__left-content, [dir="rtl"] .layout-3col__right-content, [dir="rtl"] .layout-3col__left-sidebar, [dir="rtl"] .layout-3col__right-sidebar {
-    padding-left: 13px;
-    padding-right: 12px;
   }
   .layout-3col__first-left-sidebar, .layout-3col__col-1, .layout-3col__col-3, .layout-3col__col-x:nth-child(2n + 1) {
     float: left;
-    width: 50%;
+    width: 8.33333%;
     margin-left: 0%;
     margin-right: -100%;
-    padding-left: 12px;
-    padding-right: 13px;
+    padding-left: 20px;
+    padding-right: 20px;
   }
   [dir="rtl"] .layout-3col__first-left-sidebar, [dir="rtl"] .layout-3col__col-1, [dir="rtl"] .layout-3col__col-3, [dir="rtl"] .layout-3col__col-x:nth-child(2n + 1) {
     float: right;
     margin-right: 0%;
     margin-left: -100%;
-  }
-  [dir="rtl"] .layout-3col__first-left-sidebar, [dir="rtl"] .layout-3col__col-1, [dir="rtl"] .layout-3col__col-3, [dir="rtl"] .layout-3col__col-x:nth-child(2n + 1) {
-    padding-left: 13px;
-    padding-right: 12px;
   }
   .layout-3col__second-left-sidebar, .layout-3col__col-2, .layout-3col__col-4, .layout-3col__col-x:nth-child(2n) {
     clear: none;
     float: left;
-    width: 50%;
-    margin-left: 50%;
+    width: 8.33333%;
+    margin-left: 8.33333%;
     margin-right: -100%;
-    padding-left: 12px;
-    padding-right: 13px;
+    padding-left: 20px;
+    padding-right: 20px;
   }
   [dir="rtl"] .layout-3col__second-left-sidebar, [dir="rtl"] .layout-3col__col-2, [dir="rtl"] .layout-3col__col-4, [dir="rtl"] .layout-3col__col-x:nth-child(2n) {
     float: right;
-    margin-right: 50%;
+    margin-right: 8.33333%;
     margin-left: -100%;
-  }
-  [dir="rtl"] .layout-3col__second-left-sidebar, [dir="rtl"] .layout-3col__col-2, [dir="rtl"] .layout-3col__col-4, [dir="rtl"] .layout-3col__col-x:nth-child(2n) {
-    padding-left: 13px;
-    padding-right: 12px;
   }
 }
 
-@media (min-width: 999px) {
+@media (min-width: 1424px) {
   .layout-3col__full {
     float: left;
-    width: 100%;
+    width: 25%;
     margin-left: 0%;
     margin-right: -100%;
   }
@@ -120,7 +119,7 @@
   }
   .layout-3col__left-content {
     float: left;
-    width: 66.66667%;
+    width: 16.66667%;
     margin-left: 0%;
     margin-right: -100%;
   }
@@ -131,20 +130,20 @@
   }
   .layout-3col__right-content {
     float: left;
-    width: 66.66667%;
-    margin-left: 33.33333%;
+    width: 16.66667%;
+    margin-left: 8.33333%;
     margin-right: -100%;
   }
   [dir="rtl"] .layout-3col__right-content {
     float: right;
-    margin-right: 33.33333%;
+    margin-right: 8.33333%;
     margin-left: -100%;
   }
   .layout-3col__left-sidebar, .layout-3col__first-left-sidebar, .layout-3col__second-left-sidebar {
     clear: right;
     float: right;
-    width: 33.33333%;
-    margin-right: 66.66667%;
+    width: 8.33333%;
+    margin-right: 16.66667%;
     margin-left: -100%;
   }
   [dir="rtl"] .layout-3col__left-sidebar, [dir="rtl"] .layout-3col__first-left-sidebar, [dir="rtl"] .layout-3col__second-left-sidebar {
@@ -152,13 +151,13 @@
   }
   [dir="rtl"] .layout-3col__left-sidebar, [dir="rtl"] .layout-3col__first-left-sidebar, [dir="rtl"] .layout-3col__second-left-sidebar {
     float: left;
-    margin-left: 66.66667%;
+    margin-left: 16.66667%;
     margin-right: -100%;
   }
   .layout-3col__right-sidebar {
     clear: right;
     float: right;
-    width: 33.33333%;
+    width: 8.33333%;
     margin-right: 0%;
     margin-left: -100%;
   }
@@ -173,7 +172,7 @@
   .layout-3col__col-1, .layout-3col__col-x:nth-child(3n+1) {
     clear: both;
     float: left;
-    width: 33.33333%;
+    width: 8.33333%;
     margin-left: 0%;
     margin-right: -100%;
   }
@@ -185,25 +184,25 @@
   .layout-3col__col-2, .layout-3col__col-x:nth-child(3n+2) {
     clear: none;
     float: left;
-    width: 33.33333%;
-    margin-left: 33.33333%;
+    width: 8.33333%;
+    margin-left: 8.33333%;
     margin-right: -100%;
   }
   [dir="rtl"] .layout-3col__col-2, [dir="rtl"] .layout-3col__col-x:nth-child(3n+2) {
     float: right;
-    margin-right: 33.33333%;
+    margin-right: 8.33333%;
     margin-left: -100%;
   }
   .layout-3col__col-3, .layout-3col__col-x:nth-child(3n) {
     clear: none;
     float: left;
-    width: 33.33333%;
-    margin-left: 66.66667%;
+    width: 8.33333%;
+    margin-left: 16.66667%;
     margin-right: -100%;
   }
   [dir="rtl"] .layout-3col__col-3, [dir="rtl"] .layout-3col__col-x:nth-child(3n) {
     float: right;
-    margin-right: 66.66667%;
+    margin-right: 16.66667%;
     margin-left: -100%;
   }
   .layout-3col__col-4 {
@@ -231,17 +230,13 @@
   padding-left: 20px;
   padding-right: 20px;
   margin: 0 auto;
-  max-width: 1165px;
+  max-width: 1200px;
 }
 
-@media (min-width: 777px) {
+@media (min-width: 1024px) {
   .layout-center {
-    padding-left: 12px;
-    padding-right: 13px;
-  }
-  [dir="rtl"] .layout-center {
-    padding-left: 13px;
-    padding-right: 12px;
+    padding-left: 20px;
+    padding-right: 20px;
   }
 }
 
@@ -268,6 +263,28 @@
     height: 48px;
     width: 100%;
   }
+}
+
+.custom-above-below {
+  position: relative;
+  z-index: 1;
+  min-height: 100%;
+  width: 100%;
+}
+
+.custom-above-below__above {
+  position: relative;
+  z-index: 2;
+}
+
+.custom-above-below__below {
+  display: block;
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
 }
 
 /*# sourceMappingURL=layouts.css.map */

@@ -54,11 +54,18 @@ function portfolio_2019_preprocess_html(&$variables, $hook) {
  * @param string $hook
  *   The name of the template being rendered ("page" in this case.)
  */
-/* -- Delete this line if you want to use this function
 function portfolio_2019_preprocess_page(&$variables, $hook) {
-  $variables['sample_variable'] = t('Lorem ipsum.');
+  //$variables['sample_variable'] = t('Lorem ipsum.');
+  //kint($variables);
+  if($variables['front_page']) {
+    if(isset($variables['page']['sidebar_first'])) {
+      unset($variables['page']['sidebar_first']);
+    }
+    if(isset($variables['page']['sidebar_second'])) {
+      unset($variables['page']['sidebar_second']);
+    }
+  }
 }
-// */
 
 /**
  * Override or insert variables into the region templates.
