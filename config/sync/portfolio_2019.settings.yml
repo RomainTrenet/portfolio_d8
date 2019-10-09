@@ -1,0 +1,13 @@
+zen_rebuild_registry: 0
+_core:
+  default_config_hash: P5V06zRKs-pLgT92nugyuXkhg3tCsItyIcJqjLrjmaM
+langcode: fr
+features:
+  node_user_picture: true
+  comment_user_picture: true
+  comment_user_verification: 1
+  favicon: 1
+logo:
+  use_default: 1
+favicon:
+  use_default: 1

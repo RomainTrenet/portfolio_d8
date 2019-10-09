@@ -1,0 +1,22 @@
+uuid: 4347c01a-e5d5-4a43-b5fa-b0e7c567f665
+langcode: fr
+status: true
+dependencies:
+  theme:
+    - portfolio_2019
+_core:
+  default_config_hash: 13Mo-u_fuSK-rfZIk3ICVFldAfdKiEqF5v6k3LTrxbc
+id: portfolio_2019_local_tasks
+theme: portfolio_2019
+region: content
+weight: -40
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Tabs
+  provider: core
+  label_display: '0'
+  primary: true
+  secondary: true
+visibility: {  }

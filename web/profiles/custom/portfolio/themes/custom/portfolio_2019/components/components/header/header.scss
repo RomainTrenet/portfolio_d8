@@ -1,0 +1,115 @@
+@import 'init';
+
+// Branding header
+//
+// Markup: header.twig
+//
+// Style guide: components.header
+
+.header,
+%header {
+
+  // Wrapping link for logo.
+  &__logo {
+    float: left;
+    margin: 0 10px 0 0;
+    padding: 0;
+
+    @include rtl() {
+      float: right;
+      margin: 0 0 0 10px;
+    }
+  }
+
+  // Logo image.
+  &__logo-image {
+    vertical-align: bottom;
+  }
+
+  // Wrapper for website name and slogan.
+  &__name-and-slogan {
+    float: left;
+  }
+
+  // The name of the website.
+  &__site-name {
+    margin: 0;
+  }
+
+  // The link around the name of the website.
+  &__site-link {
+    &:link,
+    &:visited {
+      color: color(text);
+      text-decoration: none;
+    }
+
+    &:hover,
+    &:focus {
+      text-decoration: underline;
+    }
+  }
+
+  // The slogan (or tagline) of a website.
+  &__site-slogan {
+    margin: 0;
+  }
+
+  // The secondary menu (login, etc.)
+  &__secondary-menu {
+    float: right;
+
+    @include rtl() {
+      float: left;
+    }
+  }
+
+  // Wrapper for any blocks placed in the header region.
+  &__region {
+    // Clear the logo.
+    clear: both;
+  }
+}
+
+// Custom branding.
+.homepage-header {
+  $min-height: 688px;
+  min-height: $min-height;
+
+  &__infos {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    margin: auto;
+    width: 100%;
+    transform: translateY(-50%);
+
+    &__title {
+      color: color(white);
+    }
+
+    &__subtitle {
+      color: color(white);
+      @include respond-to(m) {
+        @include type-layout(24px, $base-line-height-ratio);
+      }
+    }
+
+    &__cta {
+      color: red;
+    }
+  }
+
+  &__background {
+    img {
+      position: absolute;
+      left: -9999px;
+      right: -9999px;
+      margin: auto;
+      height: 100%;
+      min-width: 100%;
+      width: auto;
+      max-width: none;
+    }
+  }
+}

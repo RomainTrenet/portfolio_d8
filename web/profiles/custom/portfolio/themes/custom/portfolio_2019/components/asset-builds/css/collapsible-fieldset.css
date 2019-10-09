@@ -1,0 +1,162 @@
+/**
+ * IM8 typestyles.
+ *
+ * To use it : @include typeset(heading-1);.
+ *
+ * Parameters in order (for shorthand) :
+ * font-size, line-height, weight, style, case, letter-spacing.
+ */
+/**
+ * Custom min width media queries.
+ *
+ * @TODO
+ * Same breakoints as in js.
+ */
+/**
+ * Custom max width media queries.
+ */
+/**
+ * Custom range media queries.
+ */
+/**
+ * Custom layout.
+ */
+/**
+ * Icon absolute mixin and abstract class.
+ */
+/**
+ * Transitions mixin and abstract class.
+ @todo.
+ */
+/**
+ * Special content margin mixin and abstract class.
+ */
+/*
+%custom-fontello {
+  @include custom-fontello();
+}
+*/
+/* Swiper list style. */
+/*
+@mixin swiper-list-btn {
+  position: absolute;
+  bottom: 100%;
+  right: 0;
+  overflow: hidden;
+  @include margin-bottom(13px);
+  @include respond-to(before-m){
+    display: none;
+  }
+  .swiper-link {
+    background: none;
+    position: static;
+    display: inline-block;
+    margin: 0;
+    float: left;
+    color: color(custom-white);
+    background: color(custom-second-blue);
+    width: 29px;
+    height: 26px;
+    text-align: center;
+    line-height: 26px;
+    cursor: pointer;
+    opacity: 1;
+    &.swiper-button-prev {
+      @include margin-right(10px);
+    }
+    &.swiper-button-disabled {
+      color: color(custom-grey-light-1);
+      background: color(custom-grey-dark-1);
+    }
+  }
+}
+
+%swiper-list-btn {
+  @include swiper-list-btn();
+}
+*/
+/*
+// Get the max-height value of a text.
+@mixin custom-max-height($number-lines, $font-size, $line-height-ratio : null, $line-height : null) {
+  @if ($line-height-ratio) {
+    max-height: custom-rem-value($number-lines * $font-size * $line-height-ratio);
+  }
+  @else if ($line-height) {
+    // Not sure.
+    max-height: custom-rem-value($number-lines * $line-height);
+  }
+  @else {
+    @if ($line-height-method == ratio) {
+      max-height: custom-rem-value($number-lines * $font-size * $base-line-height-ratio);
+    } @else {
+      // Not sure.
+      max-height: custom-rem-value($number-lines * $base-line-height);
+    }
+  }
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+*/
+.collapsible-fieldset,
+.collapsible {
+  position: relative;
+}
+
+.collapsible-fieldset__legend,
+.collapsible .fieldset-legend {
+  display: block;
+  padding-left: 15px;
+  background-image: url(../..//forms/collapsible-fieldset/expanded.svg);
+  background-position: 4px 50%;
+  background-repeat: no-repeat;
+}
+
+[dir="rtl"] .collapsible-fieldset__legend,
+[dir="rtl"] .collapsible .fieldset-legend,
+.collapsible [dir="rtl"] .fieldset-legend {
+  padding-left: 0;
+  padding-right: 15px;
+  background-position: right 4px top 50%;
+}
+
+.collapsible-fieldset__summary,
+.collapsible .fieldset-legend .summary {
+  color: #999999;
+  font-size: .9em;
+  margin-left: .5em;
+}
+
+.collapsible-fieldset.is-collapsed, .collapsible-fieldset--is-collapsed,
+.is-collapsed.collapsible,
+.collapsible.collapsed {
+  border-bottom-width: 0;
+  border-left-width: 0;
+  border-right-width: 0;
+  height: 1em;
+}
+
+.collapsible-fieldset.is-collapsed .collapsible-fieldset__wrapper, .collapsible-fieldset--is-collapsed__wrapper, .is-collapsed.collapsible .collapsible-fieldset__wrapper,
+.collapsible.collapsed .fieldset-wrapper {
+  display: none;
+}
+
+.collapsible-fieldset.is-collapsed .collapsible-fieldset__legend, .collapsible-fieldset--is-collapsed__legend, .is-collapsed.collapsible .collapsible-fieldset__legend,
+.collapsible.collapsed .fieldset-legend,
+.collapsible-fieldset.is-collapsed .collapsible .fieldset-legend,
+.collapsible .collapsible-fieldset.is-collapsed .fieldset-legend,
+.is-collapsed.collapsible .fieldset-legend {
+  background-image: url(../..//forms/collapsible-fieldset/collapsed.svg);
+  background-position: 4px 50%;
+}
+
+[dir="rtl"] .collapsible-fieldset.is-collapsed .collapsible-fieldset__legend, [dir="rtl"] .collapsible-fieldset--is-collapsed__legend, [dir="rtl"] .is-collapsed.collapsible .collapsible-fieldset__legend,
+[dir="rtl"] .collapsible.collapsed .fieldset-legend,
+.collapsible.collapsed [dir="rtl"] .fieldset-legend,
+[dir="rtl"] .collapsible-fieldset.is-collapsed .collapsible .fieldset-legend,
+.collapsible [dir="rtl"] .collapsible-fieldset.is-collapsed .fieldset-legend,
+[dir="rtl"] .is-collapsed.collapsible .fieldset-legend {
+  background-image: url(../..//forms/collapsible-fieldset/collapsed-rtl.svg);
+  background-position: right 4px top 50%;
+}
+
+/*# sourceMappingURL=collapsible-fieldset.css.map */

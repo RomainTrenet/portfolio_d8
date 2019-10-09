@@ -1,0 +1,27 @@
+uuid: a3e01b00-a0d2-4148-ba61-08427f1cef3e
+langcode: fr
+status: true
+dependencies:
+  config:
+    - system.menu.main
+  module:
+    - system
+  theme:
+    - portfolio_2019
+_core:
+  default_config_hash: E9gpAD12HmQyjkC-ctUl27GsL-sA1KE9G6u3aNLh_JU
+id: portfolio_2019_main_menu
+theme: portfolio_2019
+region: primary_menu
+weight: 0
+provider: null
+plugin: 'system_menu_block:main'
+settings:
+  id: 'system_menu_block:main'
+  label: 'Main navigation'
+  provider: system
+  label_display: '0'
+  level: 1
+  depth: 1
+  expand_all_items: false
+visibility: {  }

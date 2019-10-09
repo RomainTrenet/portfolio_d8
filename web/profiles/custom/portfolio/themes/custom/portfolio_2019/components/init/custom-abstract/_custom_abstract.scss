@@ -1,0 +1,131 @@
+// Im8 abstract class. Do not use class !
+//
+// Used to extend classes.
+//
+// Style guide: none.
+
+/**
+ * Icon absolute mixin and abstract class.
+ */
+@mixin icon-absolute() {
+  position: relative;
+
+  &::before {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    margin-top: -.5em;
+    text-align: center;
+  }
+}
+
+%icon-absolute {
+  @include icon-absolute();
+}
+
+/**
+ * Transitions mixin and abstract class.
+ @todo.
+ */
+@mixin custom-transition($transition-type: all) {
+  //-webkit-transition: all $custom-transition-time $custom-transition-timing-function;
+  //-moz-transition: all $custom-transition-time $custom-transition-timing-function;
+  transition: $transition-type $custom-transition-time $custom-transition-timing-function;
+}
+
+%custom-transition {
+  @include custom-transition();
+}
+
+/**
+ * Special content margin mixin and abstract class.
+ */
+//@mixin custom-special-content-margin() {
+//  > article.block {
+//    @include respond-to(l) {
+//      @include margin-left($special-content-margin);
+//      @include margin-right($special-content-margin);
+//    }
+//  }
+//}
+//%custom-special-content-margin {
+//  @include custom-special-content-margin();
+//}
+
+// Mixin fontello.
+//@mixin custom-fontello {
+//  font-family: "fontello";
+//  font-style: normal;
+//  font-weight: normal;
+//  speak: none;
+//
+//  display: inline-block;
+//  text-decoration: inherit;
+//  width: 1em;
+//  margin-right: .2em;
+//  text-align: center;
+//  /* opacity: .8; */
+//
+//  /* For safety - reset parent styles, that can break glyph codes*/
+//  font-variant: normal;
+//  text-transform: none;
+//
+//  /* fix buttons height, for twitter bootstrap */
+//  line-height: 1em;
+//
+//  /* Animation center compensation - margins should be symmetric */
+//  /* remove if not needed */
+//  margin-left: .2em;
+//
+//  /* you can be more comfortable with increased icons size */
+//  /* font-size: 120%; */
+//
+//  /* Uncomment for 3D effect */
+//  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+//}
+
+/*
+%custom-fontello {
+  @include custom-fontello();
+}
+*/
+
+/* Swiper list style. */
+/*
+@mixin swiper-list-btn {
+  position: absolute;
+  bottom: 100%;
+  right: 0;
+  overflow: hidden;
+  @include margin-bottom(13px);
+  @include respond-to(before-m){
+    display: none;
+  }
+  .swiper-link {
+    background: none;
+    position: static;
+    display: inline-block;
+    margin: 0;
+    float: left;
+    color: color(custom-white);
+    background: color(custom-second-blue);
+    width: 29px;
+    height: 26px;
+    text-align: center;
+    line-height: 26px;
+    cursor: pointer;
+    opacity: 1;
+    &.swiper-button-prev {
+      @include margin-right(10px);
+    }
+    &.swiper-button-disabled {
+      color: color(custom-grey-light-1);
+      background: color(custom-grey-dark-1);
+    }
+  }
+}
+
+%swiper-list-btn {
+  @include swiper-list-btn();
+}
+*/

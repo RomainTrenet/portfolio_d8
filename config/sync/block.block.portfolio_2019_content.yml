@@ -1,0 +1,22 @@
+uuid: 68a71d9b-65b4-4bcf-98c7-85006a5530a5
+langcode: fr
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - portfolio_2019
+_core:
+  default_config_hash: obr8LWG6Dq4ihKigrM0BWSe4WDzQnQ-e8aXPNPIizts
+id: portfolio_2019_content
+theme: portfolio_2019
+region: content
+weight: 0
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  provider: system
+  label_display: '0'
+visibility: {  }

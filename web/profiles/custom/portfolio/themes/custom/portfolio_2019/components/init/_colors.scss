@@ -1,0 +1,164 @@
+// sass-lint:disable indentation, no-color-keywords
+
+// Colors
+//
+// Use the `color()` function to add colors to CSS properties. To learn more,
+// [read the Chroma documentation](http://johnalbin.github.io/chroma/).
+//
+// Markup: chroma.twig
+//
+// Weight: -1
+//
+// Style guide: sass.colors
+
+// Define the default color scheme's color names.
+$chroma: define-default-color-scheme('branding', 'The site\'s main colors. Can be used to define colors in other color schemes.');
+
+$chroma: add-colors((
+  black:                  #000,
+  grey-dark:              ('black' lighten 40%), // #666
+  'grey':                 ('black' lighten 60%), // #999
+  grey-light:             ('black' lighten 80%), // #ccc
+  grey-extra-light:       ('black' lighten 93.33%), // #eee
+  white:                  #fff,
+  white-trans:            rgba(#fff, .25),
+
+  blue:                   #0072b9,
+  red:                    #c00,
+  yellow:                 #fd0,
+
+  // Custom.
+  cstm-grey-dark:          #555,
+
+  // Im8 colors.im8-beige
+
+  im8-white:              #fff,
+        im8-beige:              #f5f5f5,
+  im8-main-blue:          #0a5da9,
+  im8-third-blue:         #257cc0,
+  //im8-fourth-blue:        #1571aa,
+  im8-fifth-blue:         #06d2ed,
+  im8-grey-dark:          #555,
+  im8-grey-light:         #aaa,
+  im8-grey-extra-light:   #ccc,
+  im8-pink: #300,
+));
+
+// Define color names for functional uses.
+$chroma: define-color-scheme('functional', 'Colors used by functional parts of the design.');
+$chroma: add-colors('functional', (
+  // Colors used in the main content area.
+  text:                   'black',
+  text-bg:                'white',
+
+  link:                   'blue',
+  link-visited:           ('blue' darken 20%),
+  link-active:            'red',
+
+  border-disabled:        im8-pink,
+  border-empty:           im8-pink,
+  border:                 'cstm-grey-dark',
+
+  autocomplete:           'text',
+  autocomplete-bg:        'text-bg',
+  autocomplete-select:    'white',
+  autocomplete-select-bg: 'blue',
+
+  body-bg:                'text-bg',
+
+  fieldset-summary:       'grey',
+  form-error:             'red',
+
+  mark-highlight:         'red',
+  mark-bg:                'yellow',
+
+  menu-active:            'text',
+
+  preview-bg:             ('yellow' lighten 43%),
+
+  progress-bar:           'blue',
+  progress-bar-bg:        'grey-light',
+  progress-bar-border:    'grey-dark',
+
+  resizable-grippie:      'grey-extra-light',
+
+  row-stripe:             'grey-extra-light',
+  row-disabled:           'grey-light',
+
+  skip-link:              'white',
+  skip-link-bg:           'grey-dark',
+
+  status:                 'blue',
+  status-bg:              (status lighten 62%),
+  status-highlight:       text,
+  warning:                text,
+  warning-bg:             ('yellow' lighten 45%),
+  warning-border:         'yellow',
+  error:                  'red',
+  error-bg:               (error lighten 57%),
+
+  tabs-border:            'border',
+  tabs-bg:                'text-bg',
+  tab:                    'text',
+  tab-text-shadow:        'white',
+  tab-bg:                 ('grey-light' lighten 6.66%),
+  tab-secondary:          'grey-dark',
+
+  table-drag:             ('yellow' lighten 43%),
+  table-select:           ('yellow' lighten 47%),
+
+  watermark:              'grey-extra-light',
+
+  btn-main-white:               'white',
+  btn-main-white-bdr:           'white',
+  btn-main-white-bg:            transparent,
+  btn-main-white-hv:            'white-trans',
+  btn-main-white-bdr-hv:        'white-trans',
+  btn-main-white-bg-hv:         transparent,
+
+  btn-second-white:               'black',
+  btn-second-white-bdr:           'white',
+  btn-second-white-bg:            'white',
+  btn-second-white-hv:            ('black' darken 20%),
+  btn-second-white-bdr-hv:        'white-trans',
+  btn-second-white-bg-hv:         'white-trans',
+
+  btn-second:             'im8-main-blue',
+  btn-second-bdr:         'im8-main-blue',
+  btn-second-bg:          'im8-white',
+  btn-second-hv:          'im8-white',
+  btn-second-bdr-hv:      'im8-main-blue',
+  btn-second-bg-hv:       'im8-main-blue',
+
+  btn-third:              'im8-grey-extra-light',
+  btn-third-bdr:          rgba(color('im8-grey-dark'), .25),
+  btn-third-bg:           'im8-white',
+  btn-third-hv:           'im8-white',
+  btn-third-bdr-hv:       'im8-main-blue',
+  btn-third-bg-hv:        'im8-main-blue',
+
+  btn-fourth:           'im8-grey-extra-light',
+  btn-fourth-bdr:       transparent,
+  btn-fourth-bg:        'im8-white',
+  btn-fourth-hv:        'im8-white',
+  btn-fourth-bdr-hv:    'im8-main-blue',
+  btn-fourth-bg-hv:     'im8-main-blue',
+
+  button:                 'text',
+  //button-disabled:        'grey',
+  button-empty:           'im8-grey-dark',
+  button-disabled:        'im8-third-blue',
+  button-disabled-bg:     'im8-fifth-blue',
+
+  input:                  'im8-grey-dark',
+  input-bdr:              'border',
+  input-bg:               'im8-white',
+
+  input-error:            red,
+  input-disabled:         'im8-grey-light',
+  input-disabled-bdr:     border-disabled,
+  input-disabled-bg:      'im8-beige',
+  input-placeholder:      'im8-grey-dark',
+));
+
+$chroma-active-scheme: 'functional';

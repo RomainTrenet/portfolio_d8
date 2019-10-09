@@ -1,0 +1,166 @@
+/**
+ * IM8 typestyles.
+ *
+ * To use it : @include typeset(heading-1);.
+ *
+ * Parameters in order (for shorthand) :
+ * font-size, line-height, weight, style, case, letter-spacing.
+ */
+/**
+ * Custom min width media queries.
+ *
+ * @TODO
+ * Same breakoints as in js.
+ */
+/**
+ * Custom max width media queries.
+ */
+/**
+ * Custom range media queries.
+ */
+/**
+ * Custom layout.
+ */
+/**
+ * Icon absolute mixin and abstract class.
+ */
+/**
+ * Transitions mixin and abstract class.
+ @todo.
+ */
+/**
+ * Special content margin mixin and abstract class.
+ */
+/*
+%custom-fontello {
+  @include custom-fontello();
+}
+*/
+/* Swiper list style. */
+/*
+@mixin swiper-list-btn {
+  position: absolute;
+  bottom: 100%;
+  right: 0;
+  overflow: hidden;
+  @include margin-bottom(13px);
+  @include respond-to(before-m){
+    display: none;
+  }
+  .swiper-link {
+    background: none;
+    position: static;
+    display: inline-block;
+    margin: 0;
+    float: left;
+    color: color(custom-white);
+    background: color(custom-second-blue);
+    width: 29px;
+    height: 26px;
+    text-align: center;
+    line-height: 26px;
+    cursor: pointer;
+    opacity: 1;
+    &.swiper-button-prev {
+      @include margin-right(10px);
+    }
+    &.swiper-button-disabled {
+      color: color(custom-grey-light-1);
+      background: color(custom-grey-dark-1);
+    }
+  }
+}
+
+%swiper-list-btn {
+  @include swiper-list-btn();
+}
+*/
+/*
+// Get the max-height value of a text.
+@mixin custom-max-height($number-lines, $font-size, $line-height-ratio : null, $line-height : null) {
+  @if ($line-height-ratio) {
+    max-height: custom-rem-value($number-lines * $font-size * $line-height-ratio);
+  }
+  @else if ($line-height) {
+    // Not sure.
+    max-height: custom-rem-value($number-lines * $line-height);
+  }
+  @else {
+    @if ($line-height-method == ratio) {
+      max-height: custom-rem-value($number-lines * $font-size * $base-line-height-ratio);
+    } @else {
+      // Not sure.
+      max-height: custom-rem-value($number-lines * $base-line-height);
+    }
+  }
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+*/
+.messages,
+.messages--status {
+  margin: 1.5rem 0;
+  position: relative;
+  padding: 10px 10px 10px 44px;
+  border: 1px solid #0072b9;
+  background-color: #f6fcff;
+  color: #0072b9;
+}
+
+[dir="rtl"] .messages,
+[dir="rtl"] .messages--status {
+  padding: 10px 44px 10px 10px;
+}
+
+.messages__icon {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  height: 24px;
+  width: 24px;
+  margin-top: -12px;
+  line-height: 1;
+}
+
+[dir="rtl"] .messages__icon {
+  left: auto;
+  right: 10px;
+}
+
+.messages__icon path {
+  fill: #0072b9;
+}
+
+.messages__highlight {
+  color: #000;
+}
+
+.messages__list {
+  margin: 0;
+}
+
+.messages__item {
+  list-style-image: none;
+}
+
+.messages--warning {
+  border-color: #fd0;
+  background-color: #fffce6;
+  color: #000;
+}
+
+.messages--warning path {
+  fill: #fd0;
+}
+
+.messages--error {
+  border-color: #c00;
+  background-color: #fff0f0;
+  color: #c00;
+}
+
+.messages--error path {
+  fill: #c00;
+}
+
+/*# sourceMappingURL=messages.css.map */

@@ -1,0 +1,22 @@
+
+.custom-above-below {
+  position: relative;
+  z-index: 1;
+  min-height: 100%;
+  width: 100%;
+
+  &__above {
+    position: relative;
+    z-index: 2;
+  }
+
+  &__below {
+    display: block;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+  }
+}

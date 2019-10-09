@@ -1,0 +1,26 @@
+uuid: 853d9824-895e-4064-a933-caccdc6934b1
+langcode: fr
+status: true
+dependencies:
+  module:
+    - custom_home
+    - system
+  theme:
+    - portfolio_2019
+id: homemainblock_2
+theme: portfolio_2019
+region: header
+weight: -4
+provider: null
+plugin: home_main_block
+settings:
+  id: home_main_block
+  label: 'Home main branding'
+  provider: custom_home
+  label_display: '0'
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: false
+    context_mapping: {  }

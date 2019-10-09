@@ -1,0 +1,1045 @@
+/**
+ * IM8 typestyles.
+ *
+ * To use it : @include typeset(heading-1);.
+ *
+ * Parameters in order (for shorthand) :
+ * font-size, line-height, weight, style, case, letter-spacing.
+ */
+/**
+ * Custom min width media queries.
+ *
+ * @TODO
+ * Same breakoints as in js.
+ */
+/**
+ * Custom max width media queries.
+ */
+/**
+ * Custom range media queries.
+ */
+/**
+ * Custom layout.
+ */
+/**
+ * Icon absolute mixin and abstract class.
+ */
+/**
+ * Transitions mixin and abstract class.
+ @todo.
+ */
+/**
+ * Special content margin mixin and abstract class.
+ */
+/*
+%custom-fontello {
+  @include custom-fontello();
+}
+*/
+/* Swiper list style. */
+/*
+@mixin swiper-list-btn {
+  position: absolute;
+  bottom: 100%;
+  right: 0;
+  overflow: hidden;
+  @include margin-bottom(13px);
+  @include respond-to(before-m){
+    display: none;
+  }
+  .swiper-link {
+    background: none;
+    position: static;
+    display: inline-block;
+    margin: 0;
+    float: left;
+    color: color(custom-white);
+    background: color(custom-second-blue);
+    width: 29px;
+    height: 26px;
+    text-align: center;
+    line-height: 26px;
+    cursor: pointer;
+    opacity: 1;
+    &.swiper-button-prev {
+      @include margin-right(10px);
+    }
+    &.swiper-button-disabled {
+      color: color(custom-grey-light-1);
+      background: color(custom-grey-dark-1);
+    }
+  }
+}
+
+%swiper-list-btn {
+  @include swiper-list-btn();
+}
+*/
+/*
+// Get the max-height value of a text.
+@mixin custom-max-height($number-lines, $font-size, $line-height-ratio : null, $line-height : null) {
+  @if ($line-height-ratio) {
+    max-height: custom-rem-value($number-lines * $font-size * $line-height-ratio);
+  }
+  @else if ($line-height) {
+    // Not sure.
+    max-height: custom-rem-value($number-lines * $line-height);
+  }
+  @else {
+    @if ($line-height-method == ratio) {
+      max-height: custom-rem-value($number-lines * $font-size * $base-line-height-ratio);
+    } @else {
+      // Not sure.
+      max-height: custom-rem-value($number-lines * $base-line-height);
+    }
+  }
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+*/
+@font-face {
+  font-family: 'Source Sans Pro Regular';
+  src: url("../../base/fonts/source-sans-pro-v13-latin-regular.eot");
+  src: url("../../base/fonts/source-sans-pro-v13-latin-regular.eot?iefix") format("eot"), url("../../base/fonts/source-sans-pro-v13-latin-regular.woff") format("woff"), url("../../base/fonts/source-sans-pro-v13-latin-regular.ttf") format("truetype"), url("../../base/fonts/source-sans-pro-v13-latin-regular.svg#webfontOkOndcij") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 100%;
+  line-height: 1.5;
+  font-family: "Source Sans Pro Regular", Helvetica, sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  min-height: 100%;
+}
+
+@media print {
+  html {
+    font-size: 12pt;
+  }
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  color: #000;
+  background-color: #fff;
+  position: absolute;
+  min-height: 100%;
+  min-width: 100%;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+main,
+menu,
+nav,
+section,
+summary {
+  display: block;
+}
+
+audio,
+canvas,
+progress,
+video {
+  display: inline-block;
+}
+
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+progress {
+  vertical-align: baseline;
+}
+
+template,
+[hidden] {
+  display: none;
+}
+
+a {
+  color: #0072b9;
+  -webkit-text-decoration-skip: objects;
+}
+
+:visited {
+  color: #003353;
+}
+
+/*
+a:hover,
+a:focus {
+  // Add your styles.
+}
+*/
+a:active {
+  color: #c00;
+}
+
+a:active:not(.button) {
+  background-color: transparent;
+}
+
+a:active,
+a:hover {
+  outline-width: 0;
+}
+
+@media print {
+  :link,
+  :visited {
+    text-decoration: underline;
+  }
+  a[href]::after {
+    content: " (" attr(href) ")";
+    font-weight: normal;
+    font-size: 16px;
+    text-decoration: none;
+  }
+  a[href^='javascript:']::after,
+  a[href^='#']::after {
+    content: '';
+  }
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Source Sans Pro Regular", Helvetica, sans-serif;
+  letter-spacing: -0.03125em;
+}
+
+h1 {
+  font-size: 3rem;
+  line-height: 1.5;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  /*
+  @include respond-to(s) {
+    @include type-layout(xxxxl, $base-line-height-ratio);
+    //@include margin-top(1, xxxxl);
+    //@include margin-bottom(1, xxxxl);
+  }*/
+}
+
+@media (min-width: 1024px) {
+  h1 {
+    font-size: 4.5rem;
+    line-height: 1.5;
+  }
+}
+
+h2 {
+  font-size: 1.25rem;
+  line-height: 1.5;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  /*
+  @include respond-to(s) {
+    @include type-layout(xxl, $base-line-height-ratio);
+    //@include margin-top(1, l);
+    //@include margin-bottom(1, l);
+  }
+  */
+}
+
+@media (min-width: 1024px) {
+  h2 {
+    font-size: 2.25rem;
+    line-height: 1.5;
+  }
+}
+
+h3 {
+  font-size: 1.25rem;
+  line-height: 1.5;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+h4 {
+  font-size: 1rem;
+  line-height: 1;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+h5 {
+  font-size: 0.875rem;
+  line-height: 1;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+h6 {
+  font-size: 0.625rem;
+  line-height: 1;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+abbr[title] {
+  border-bottom: 0;
+  text-decoration: underline;
+  text-decoration: underline dotted;
+}
+
+@media print {
+  abbr[title]::after {
+    content: " (" attr(title) ")";
+  }
+}
+
+b,
+strong {
+  font-weight: inherit;
+}
+
+strong,
+b {
+  font-weight: bolder;
+}
+
+/*
+cite {
+  // Add your styles.
+}
+*/
+pre,
+code,
+kbd,
+samp,
+var {
+  font-family: Menlo, "DejaVu Sans Mono", "Ubuntu Mono", Courier, "Courier New", monospace, sans-serif;
+  font-size: 1em;
+}
+
+/*
+del {
+  // Add your styles.
+}
+*/
+dfn {
+  font-style: italic;
+}
+
+/*
+i,
+em {
+  // Add your styles.
+}
+*/
+/*
+ins {
+  // Add your styles.
+}
+*/
+mark {
+  background-color: #fd0;
+  color: #000;
+}
+
+/*
+q {
+  // Add your styles.
+}
+*/
+/*
+s {
+  // Add your styles.
+}
+*/
+small {
+  font-size: 0.875rem;
+}
+
+sub,
+sup {
+  font-size: 0.625rem;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -.25em;
+}
+
+sup {
+  top: -.5em;
+}
+
+/*
+u {
+  // Add your styles.
+}
+*/
+.divider,
+hr {
+  margin: 1.5rem 0;
+  border: 0;
+  border-top: 1px solid #555;
+}
+
+.divider > :first-child, hr > :first-child {
+  margin-top: 1.5rem;
+}
+
+blockquote {
+  margin: 1.5rem 2rem;
+}
+
+dl,
+menu,
+ol,
+ul {
+  margin: 1.5rem 0;
+}
+
+ol ol,
+ol ul,
+ul ol,
+ul ul {
+  margin: 0;
+}
+
+/*
+dt {
+  // Add your styles.
+}
+*/
+dd {
+  margin: 0 0 0 32px;
+}
+
+[dir="rtl"] dd {
+  margin: 0 32px 0 0;
+}
+
+menu,
+ol,
+ul {
+  padding: 0 0 0 32px;
+}
+
+[dir="rtl"] menu, [dir="rtl"]
+ol, [dir="rtl"]
+ul {
+  padding: 0 32px 0 0;
+}
+
+figure {
+  margin: 1.5rem 0;
+}
+
+/*
+figcaption {
+  // Add your styles.
+}
+*/
+hr {
+  box-sizing: content-box;
+  height: 0;
+  overflow: visible;
+}
+
+p,
+pre {
+  margin: 1.5rem 0;
+}
+
+img {
+  border-style: none;
+}
+
+img,
+svg {
+  max-width: 100%;
+  height: auto;
+}
+
+svg:not(:root) {
+  overflow: hidden;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  box-sizing: border-box;
+  max-width: 100%;
+  font: inherit;
+  margin: 0;
+}
+
+button {
+  overflow: visible;
+}
+
+button,
+select {
+  text-transform: none;
+}
+
+input {
+  overflow: visible;
+}
+
+[type='number']::-webkit-inner-spin-button,
+[type='number']::-webkit-outer-spin-button {
+  height: auto;
+}
+
+[type='search'] {
+  -webkit-appearance: textfield;
+  outline-offset: -2px;
+}
+
+[type='search']::-webkit-search-cancel-button, [type='search']::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+::-webkit-input-placeholder {
+  color: inherit;
+  opacity: .54;
+}
+
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  font: inherit;
+}
+
+.button,
+button,
+html [type='button'],
+[type='reset'],
+[type='submit'] {
+  -moz-appearance: button;
+  -webkit-appearance: button;
+}
+
+/**
+ * Base button type.
+ */
+.btn-main, .custom-apply-btn, .button,
+button,
+[type='button'],
+[type='reset'],
+[type='submit'],
+.btn-second, [type='submit']#edit-draft {
+  transition: color, background-color, border-color 0.3s ease;
+  font-size: 0.875rem;
+  line-height: 1.125rem;
+  font-style: normal;
+  text-transform: uppercase;
+  display: inline-block;
+  position: relative;
+  border-radius: 2px;
+  line-height: inherit;
+  cursor: pointer;
+  padding: calc(0.2rem + 2px) calc(1rem + 2px);
+  text-decoration: none;
+  border: 2px solid #555;
+}
+
+.btn-main::-moz-focus-inner, .custom-apply-btn::-moz-focus-inner, .button::-moz-focus-inner,
+button::-moz-focus-inner,
+[type='button']::-moz-focus-inner,
+[type='reset']::-moz-focus-inner,
+[type='submit']::-moz-focus-inner,
+.btn-second::-moz-focus-inner, [type='submit']#edit-draft::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+.btn-main:-moz-focusring, .custom-apply-btn:-moz-focusring, .button:-moz-focusring,
+button:-moz-focusring,
+[type='button']:-moz-focusring,
+[type='reset']:-moz-focusring,
+[type='submit']:-moz-focusring,
+.btn-second:-moz-focusring, [type='submit']#edit-draft:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+.btn-main span, .custom-apply-btn span, .button span,
+button span,
+[type='button'] span,
+[type='reset'] span,
+[type='submit'] span,
+.btn-second span, [type='submit']#edit-draft span {
+  display: inline-block;
+  vertical-align: baseline;
+}
+
+.btn-main span.text, .custom-apply-btn span.text, .button span.text,
+button span.text,
+[type='button'] span.text,
+[type='reset'] span.text,
+[type='submit'] span.text,
+.btn-second span.text, [type='submit']#edit-draft span.text {
+  font-size: 0.875rem;
+  line-height: 1.125rem;
+  vertical-align: middle;
+}
+
+.btn-main span.text + span[class^='icon-'], .custom-apply-btn span.text + span[class^='icon-'], .button span.text + span[class^='icon-'],
+button span.text + span[class^='icon-'],
+[type='button'] span.text + span[class^='icon-'],
+[type='reset'] span.text + span[class^='icon-'],
+[type='submit'] span.text + span[class^='icon-'],
+.btn-second span.text + span[class^='icon-'], [type='submit']#edit-draft span.text + span[class^='icon-'], .btn-main span.text span[class*=' icon-'], .custom-apply-btn span.text span[class*=' icon-'], .button span.text span[class*=' icon-'],
+button span.text span[class*=' icon-'],
+[type='button'] span.text span[class*=' icon-'],
+[type='reset'] span.text span[class*=' icon-'],
+[type='submit'] span.text span[class*=' icon-'],
+.btn-second span.text span[class*=' icon-'], [type='submit']#edit-draft span.text span[class*=' icon-'] {
+  margin-left: 0.625rem;
+  vertical-align: middle;
+}
+
+.btn-main span[class^='icon-'], .custom-apply-btn span[class^='icon-'], .button span[class^='icon-'],
+button span[class^='icon-'],
+[type='button'] span[class^='icon-'],
+[type='reset'] span[class^='icon-'],
+[type='submit'] span[class^='icon-'],
+.btn-second span[class^='icon-'], [type='submit']#edit-draft span[class^='icon-'], .btn-main span[class*=' icon-'], .custom-apply-btn span[class*=' icon-'], .button span[class*=' icon-'],
+button span[class*=' icon-'],
+[type='button'] span[class*=' icon-'],
+[type='reset'] span[class*=' icon-'],
+[type='submit'] span[class*=' icon-'],
+.btn-second span[class*=' icon-'], [type='submit']#edit-draft span[class*=' icon-'] {
+  font-size: 0.75rem;
+  width: auto;
+  padding: 0;
+}
+
+.btn-main span[class^='icon-']::before, .custom-apply-btn span[class^='icon-']::before, .button span[class^='icon-']::before,
+button span[class^='icon-']::before,
+[type='button'] span[class^='icon-']::before,
+[type='reset'] span[class^='icon-']::before,
+[type='submit'] span[class^='icon-']::before,
+.btn-second span[class^='icon-']::before, [type='submit']#edit-draft span[class^='icon-']::before, .btn-main span[class^='icon-']::after, .custom-apply-btn span[class^='icon-']::after, .button span[class^='icon-']::after,
+button span[class^='icon-']::after,
+[type='button'] span[class^='icon-']::after,
+[type='reset'] span[class^='icon-']::after,
+[type='submit'] span[class^='icon-']::after,
+.btn-second span[class^='icon-']::after, [type='submit']#edit-draft span[class^='icon-']::after, .btn-main span[class*=' icon-']::before, .custom-apply-btn span[class*=' icon-']::before, .button span[class*=' icon-']::before,
+button span[class*=' icon-']::before,
+[type='button'] span[class*=' icon-']::before,
+[type='reset'] span[class*=' icon-']::before,
+[type='submit'] span[class*=' icon-']::before,
+.btn-second span[class*=' icon-']::before, [type='submit']#edit-draft span[class*=' icon-']::before, .btn-main span[class*=' icon-']::after, .custom-apply-btn span[class*=' icon-']::after, .button span[class*=' icon-']::after,
+button span[class*=' icon-']::after,
+[type='button'] span[class*=' icon-']::after,
+[type='reset'] span[class*=' icon-']::after,
+[type='submit'] span[class*=' icon-']::after,
+.btn-second span[class*=' icon-']::after, [type='submit']#edit-draft span[class*=' icon-']::after {
+  width: auto;
+  vertical-align: baseline;
+}
+
+/**
+ * Main & second common custom input style.
+ */
+.btn-main,
+.custom-apply-btn,
+.button,
+button,
+[type='button'],
+[type='reset'],
+[type='submit'],
+.btn-second,
+[type='submit']#edit-draft {
+  text-align: center;
+}
+
+.btn-main span[class^='icon-'], .btn-main span[class*=' icon-'], .custom-apply-btn span[class^='icon-'], .button span[class^='icon-'],
+button span[class^='icon-'],
+[type='button'] span[class^='icon-'],
+[type='reset'] span[class^='icon-'],
+[type='submit'] span[class^='icon-'], .custom-apply-btn span[class*=' icon-'], .button span[class*=' icon-'],
+button span[class*=' icon-'],
+[type='button'] span[class*=' icon-'],
+[type='reset'] span[class*=' icon-'],
+[type='submit'] span[class*=' icon-'],
+.btn-second span[class^='icon-'],
+.btn-second span[class*=' icon-'], [type='submit']#edit-draft span[class^='icon-'], [type='submit']#edit-draft span[class*=' icon-'] {
+  font-size: 1rem;
+}
+
+/**
+ * Main custom input style including colors variant.
+ */
+.btn-main.btn-white,
+.btn-white.custom-apply-btn,
+.btn-white.button,
+button.btn-white,
+.btn-white[type='button'],
+.btn-white[type='reset'],
+.btn-white[type='submit'] {
+  border-color: #fff;
+  color: #fff;
+  background: transparent;
+}
+
+.btn-main.btn-white span[class^='icon-'], .btn-main.btn-white span[class*=' icon-'], .btn-white.custom-apply-btn span[class^='icon-'], .btn-white.button span[class^='icon-'],
+button.btn-white span[class^='icon-'],
+.btn-white[type='button'] span[class^='icon-'],
+.btn-white[type='reset'] span[class^='icon-'],
+.btn-white[type='submit'] span[class^='icon-'], .btn-white.custom-apply-btn span[class*=' icon-'], .btn-white.button span[class*=' icon-'],
+button.btn-white span[class*=' icon-'],
+.btn-white[type='button'] span[class*=' icon-'],
+.btn-white[type='reset'] span[class*=' icon-'],
+.btn-white[type='submit'] span[class*=' icon-'] {
+  color: #fff;
+}
+
+.btn-main.btn-white:hover, .btn-main.btn-white:focus, .btn-main.btn-white:active,
+.btn-white.custom-apply-btn:hover,
+.btn-white.button:hover,
+button.btn-white:hover,
+.btn-white[type='button']:hover,
+.btn-white[type='reset']:hover,
+.btn-white[type='submit']:hover,
+.btn-white.custom-apply-btn:focus,
+.btn-white.button:focus,
+button.btn-white:focus,
+.btn-white[type='button']:focus,
+.btn-white[type='reset']:focus,
+.btn-white[type='submit']:focus,
+.btn-white.custom-apply-btn:active,
+.btn-white.button:active,
+button.btn-white:active,
+.btn-white[type='button']:active,
+.btn-white[type='reset']:active,
+.btn-white[type='submit']:active {
+  border-color: rgba(255, 255, 255, 0.25);
+  color: rgba(255, 255, 255, 0.25);
+  background: transparent;
+}
+
+.btn-main.btn-white:hover span[class^='icon-'], .btn-main.btn-white:hover span[class*=' icon-'], .btn-main.btn-white:focus span[class^='icon-'], .btn-main.btn-white:focus span[class*=' icon-'], .btn-main.btn-white:active span[class^='icon-'], .btn-main.btn-white:active span[class*=' icon-'], .btn-white.custom-apply-btn:hover span[class^='icon-'], .btn-white.button:hover span[class^='icon-'],
+button.btn-white:hover span[class^='icon-'],
+.btn-white[type='button']:hover span[class^='icon-'],
+.btn-white[type='reset']:hover span[class^='icon-'],
+.btn-white[type='submit']:hover span[class^='icon-'], .btn-white.custom-apply-btn:hover span[class*=' icon-'], .btn-white.button:hover span[class*=' icon-'],
+button.btn-white:hover span[class*=' icon-'],
+.btn-white[type='button']:hover span[class*=' icon-'],
+.btn-white[type='reset']:hover span[class*=' icon-'],
+.btn-white[type='submit']:hover span[class*=' icon-'], .btn-white.custom-apply-btn:focus span[class^='icon-'], .btn-white.button:focus span[class^='icon-'],
+button.btn-white:focus span[class^='icon-'],
+.btn-white[type='button']:focus span[class^='icon-'],
+.btn-white[type='reset']:focus span[class^='icon-'],
+.btn-white[type='submit']:focus span[class^='icon-'], .btn-white.custom-apply-btn:focus span[class*=' icon-'], .btn-white.button:focus span[class*=' icon-'],
+button.btn-white:focus span[class*=' icon-'],
+.btn-white[type='button']:focus span[class*=' icon-'],
+.btn-white[type='reset']:focus span[class*=' icon-'],
+.btn-white[type='submit']:focus span[class*=' icon-'], .btn-white.custom-apply-btn:active span[class^='icon-'], .btn-white.button:active span[class^='icon-'],
+button.btn-white:active span[class^='icon-'],
+.btn-white[type='button']:active span[class^='icon-'],
+.btn-white[type='reset']:active span[class^='icon-'],
+.btn-white[type='submit']:active span[class^='icon-'], .btn-white.custom-apply-btn:active span[class*=' icon-'], .btn-white.button:active span[class*=' icon-'],
+button.btn-white:active span[class*=' icon-'],
+.btn-white[type='button']:active span[class*=' icon-'],
+.btn-white[type='reset']:active span[class*=' icon-'],
+.btn-white[type='submit']:active span[class*=' icon-'] {
+  color: rgba(255, 255, 255, 0.25);
+}
+
+/**
+ * Second custom input style including colors variant.
+ */
+.btn-second.btn-white,
+.btn-white[type='submit']#edit-draft {
+  border-color: #fff;
+  color: #000;
+  background: #fff;
+}
+
+.btn-second.btn-white span[class^='icon-'], .btn-second.btn-white span[class*=' icon-'], .btn-white[type='submit']#edit-draft span[class^='icon-'], .btn-white[type='submit']#edit-draft span[class*=' icon-'] {
+  color: #000;
+}
+
+.btn-second.btn-white:hover, .btn-second.btn-white:focus, .btn-second.btn-white:active,
+.btn-white[type='submit']#edit-draft:hover,
+.btn-white[type='submit']#edit-draft:focus,
+.btn-white[type='submit']#edit-draft:active {
+  border-color: rgba(255, 255, 255, 0.25);
+  color: black;
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.btn-second.btn-white:hover span[class^='icon-'], .btn-second.btn-white:hover span[class*=' icon-'], .btn-second.btn-white:focus span[class^='icon-'], .btn-second.btn-white:focus span[class*=' icon-'], .btn-second.btn-white:active span[class^='icon-'], .btn-second.btn-white:active span[class*=' icon-'], .btn-white[type='submit']#edit-draft:hover span[class^='icon-'], .btn-white[type='submit']#edit-draft:hover span[class*=' icon-'], .btn-white[type='submit']#edit-draft:focus span[class^='icon-'], .btn-white[type='submit']#edit-draft:focus span[class*=' icon-'], .btn-white[type='submit']#edit-draft:active span[class^='icon-'], .btn-white[type='submit']#edit-draft:active span[class*=' icon-'] {
+  color: black;
+}
+
+/**
+ * Customize submit buttons.
+ */
+/**
+ * Apply button.
+ */
+.custom-apply-btn {
+  display: block;
+}
+
+/**
+ * Main button.
+ */
+/**
+ * Disabled button.
+ */
+/**
+ * Square button.
+ */
+.custom-button-square {
+  border-radius: 0;
+}
+
+[type='text'],
+[type='search'],
+[type='tel'],
+[type='url'],
+[type='email'],
+[type='password'],
+[type='date'],
+[type='time'],
+[type='number'], textarea {
+  padding: calc(0.2rem + 2px) calc(1rem + 2px);
+  border: 2px solid #555;
+  color: #555;
+  background-color: #fff;
+  width: 100%;
+  /*
+   @todo.
+  &:focus {
+
+  }*/
+}
+
+[type='text']:-ms-input-placeholder,
+[type='search']:-ms-input-placeholder,
+[type='tel']:-ms-input-placeholder,
+[type='url']:-ms-input-placeholder,
+[type='email']:-ms-input-placeholder,
+[type='password']:-ms-input-placeholder,
+[type='date']:-ms-input-placeholder,
+[type='time']:-ms-input-placeholder,
+[type='number']:-ms-input-placeholder, textarea:-ms-input-placeholder {
+  color: #555;
+}
+
+[type='text']::placeholder,
+[type='search']::placeholder,
+[type='tel']::placeholder,
+[type='url']::placeholder,
+[type='email']::placeholder,
+[type='password']::placeholder,
+[type='date']::placeholder,
+[type='time']::placeholder,
+[type='number']::placeholder, textarea::placeholder {
+  color: #555;
+}
+
+[type='text']:placeholder-shown,
+[type='search']:placeholder-shown,
+[type='tel']:placeholder-shown,
+[type='url']:placeholder-shown,
+[type='email']:placeholder-shown,
+[type='password']:placeholder-shown,
+[type='date']:placeholder-shown,
+[type='time']:placeholder-shown,
+[type='number']:placeholder-shown, textarea:placeholder-shown {
+  border-color: #300;
+}
+
+[type='text']:placeholder-shown.error,
+[type='search']:placeholder-shown.error,
+[type='tel']:placeholder-shown.error,
+[type='url']:placeholder-shown.error,
+[type='email']:placeholder-shown.error,
+[type='password']:placeholder-shown.error,
+[type='date']:placeholder-shown.error,
+[type='time']:placeholder-shown.error,
+[type='number']:placeholder-shown.error, textarea:placeholder-shown.error {
+  border-color: red;
+}
+
+.error[type='text'],
+.error[type='search'],
+.error[type='tel'],
+.error[type='url'],
+.error[type='email'],
+.error[type='password'],
+.error[type='date'],
+.error[type='time'],
+.error[type='number'], textarea.error {
+  border-color: red;
+}
+
+[type='text']:disabled,
+[type='search']:disabled,
+[type='tel']:disabled,
+[type='url']:disabled,
+[type='email']:disabled,
+[type='password']:disabled,
+[type='date']:disabled,
+[type='time']:disabled,
+[type='number']:disabled, textarea:disabled {
+  background-color: #f5f5f5;
+  border: 1px solid #300;
+  padding: 0.2rem 1rem;
+}
+
+[type='text']:disabled,
+[type='search']:disabled,
+[type='tel']:disabled,
+[type='url']:disabled,
+[type='email']:disabled,
+[type='password']:disabled,
+[type='date']:disabled,
+[type='time']:disabled,
+[type='number']:disabled, textarea:disabled, [type='text']:disabled:-ms-input-placeholder,
+[type='search']:disabled:-ms-input-placeholder,
+[type='tel']:disabled:-ms-input-placeholder,
+[type='url']:disabled:-ms-input-placeholder,
+[type='email']:disabled:-ms-input-placeholder,
+[type='password']:disabled:-ms-input-placeholder,
+[type='date']:disabled:-ms-input-placeholder,
+[type='time']:disabled:-ms-input-placeholder,
+[type='number']:disabled:-ms-input-placeholder, textarea:disabled:-ms-input-placeholder, [type='text']:disabled:placeholder-shown,
+[type='search']:disabled:placeholder-shown,
+[type='tel']:disabled:placeholder-shown,
+[type='url']:disabled:placeholder-shown,
+[type='email']:disabled:placeholder-shown,
+[type='password']:disabled:placeholder-shown,
+[type='date']:disabled:placeholder-shown,
+[type='time']:disabled:placeholder-shown,
+[type='number']:disabled:placeholder-shown, textarea:disabled:placeholder-shown {
+  color: #aaa;
+}
+
+[type='text']:disabled,
+[type='search']:disabled,
+[type='tel']:disabled,
+[type='url']:disabled,
+[type='email']:disabled,
+[type='password']:disabled,
+[type='date']:disabled,
+[type='time']:disabled,
+[type='number']:disabled, textarea:disabled, [type='text']:disabled::placeholder,
+[type='search']:disabled::placeholder,
+[type='tel']:disabled::placeholder,
+[type='url']:disabled::placeholder,
+[type='email']:disabled::placeholder,
+[type='password']:disabled::placeholder,
+[type='date']:disabled::placeholder,
+[type='time']:disabled::placeholder,
+[type='number']:disabled::placeholder, textarea:disabled::placeholder, [type='text']:disabled:placeholder-shown,
+[type='search']:disabled:placeholder-shown,
+[type='tel']:disabled:placeholder-shown,
+[type='url']:disabled:placeholder-shown,
+[type='email']:disabled:placeholder-shown,
+[type='password']:disabled:placeholder-shown,
+[type='date']:disabled:placeholder-shown,
+[type='time']:disabled:placeholder-shown,
+[type='number']:disabled:placeholder-shown, textarea:disabled:placeholder-shown {
+  color: #aaa;
+}
+
+/*
+@todo;
+[type='range'] {
+  // Add your styles.
+}
+
+[type='color'] {
+  // Add your styles.
+}
+
+[type='file'] {
+  // Add your styles.
+}
+*/
+[type='checkbox'],
+[type='radio'] {
+  box-sizing: border-box;
+  padding: 0;
+  /*@if support-for(ie, 7) {
+    // Remove excess padding in IE 7.
+    // Known issue: excess padding remains in IE 6.
+
+    @todo
+    *height: 13px;
+    *width: 13px;
+  }
+  */
+}
+
+fieldset {
+  padding: 0.525rem 0.9375rem 0.975rem;
+  border: 1px solid #555;
+  margin: 0 2px;
+}
+
+legend {
+  box-sizing: border-box;
+  display: table;
+  max-width: 100%;
+  white-space: normal;
+  color: inherit;
+  margin-left: -5px;
+  padding: 0 5px;
+  /*
+  @if support-for(ie, 7) {
+    // Correct alignment displayed oddly in IE 6/7.
+    *margin-left: -7px;
+  }*/
+}
+
+label {
+  display: block;
+  font-weight: bold;
+}
+
+/*
+@todo;
+select {
+  // Add your styles.
+}
+*/
+optgroup {
+  font-weight: bold;
+}
+
+textarea {
+  overflow: auto;
+}
+
+table {
+  margin: 1.5rem 0;
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+}
+
+td,
+th {
+  padding: 0;
+}
+
+/*# sourceMappingURL=base.css.map */

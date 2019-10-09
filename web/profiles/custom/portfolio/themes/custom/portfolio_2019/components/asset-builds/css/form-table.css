@@ -1,0 +1,187 @@
+/**
+ * IM8 typestyles.
+ *
+ * To use it : @include typeset(heading-1);.
+ *
+ * Parameters in order (for shorthand) :
+ * font-size, line-height, weight, style, case, letter-spacing.
+ */
+/**
+ * Custom min width media queries.
+ *
+ * @TODO
+ * Same breakoints as in js.
+ */
+/**
+ * Custom max width media queries.
+ */
+/**
+ * Custom range media queries.
+ */
+/**
+ * Custom layout.
+ */
+/**
+ * Icon absolute mixin and abstract class.
+ */
+/**
+ * Transitions mixin and abstract class.
+ @todo.
+ */
+/**
+ * Special content margin mixin and abstract class.
+ */
+/*
+%custom-fontello {
+  @include custom-fontello();
+}
+*/
+/* Swiper list style. */
+/*
+@mixin swiper-list-btn {
+  position: absolute;
+  bottom: 100%;
+  right: 0;
+  overflow: hidden;
+  @include margin-bottom(13px);
+  @include respond-to(before-m){
+    display: none;
+  }
+  .swiper-link {
+    background: none;
+    position: static;
+    display: inline-block;
+    margin: 0;
+    float: left;
+    color: color(custom-white);
+    background: color(custom-second-blue);
+    width: 29px;
+    height: 26px;
+    text-align: center;
+    line-height: 26px;
+    cursor: pointer;
+    opacity: 1;
+    &.swiper-button-prev {
+      @include margin-right(10px);
+    }
+    &.swiper-button-disabled {
+      color: color(custom-grey-light-1);
+      background: color(custom-grey-dark-1);
+    }
+  }
+}
+
+%swiper-list-btn {
+  @include swiper-list-btn();
+}
+*/
+/*
+// Get the max-height value of a text.
+@mixin custom-max-height($number-lines, $font-size, $line-height-ratio : null, $line-height : null) {
+  @if ($line-height-ratio) {
+    max-height: custom-rem-value($number-lines * $font-size * $line-height-ratio);
+  }
+  @else if ($line-height) {
+    // Not sure.
+    max-height: custom-rem-value($number-lines * $line-height);
+  }
+  @else {
+    @if ($line-height-method == ratio) {
+      max-height: custom-rem-value($number-lines * $font-size * $base-line-height-ratio);
+    } @else {
+      // Not sure.
+      max-height: custom-rem-value($number-lines * $base-line-height);
+    }
+  }
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+*/
+.form-table__sticky-header,
+.sticky-header {
+  position: fixed;
+  visibility: hidden;
+  margin-top: 0;
+  background-color: #fff;
+}
+
+.form-table__sticky-header.is-sticky, .form-table__sticky-header--is-sticky,
+.is-sticky.sticky-header {
+  visibility: visible;
+}
+
+.form-table__header,
+.form-table th,
+form table th {
+  border-bottom: 3px solid #555;
+  padding-right: 1em;
+  text-align: left;
+}
+
+[dir="rtl"] .form-table__header,
+[dir="rtl"] .form-table th,
+.form-table [dir="rtl"] th,
+[dir="rtl"] form table th,
+form table [dir="rtl"] th {
+  text-align: right;
+  padding-left: 1em;
+  padding-right: 0;
+}
+
+.form-table__body,
+.form-table tbody,
+form table tbody {
+  border-top: 1px solid #555;
+}
+
+.form-table__row,
+.form-table tbody tr,
+form table tbody tr {
+  padding: .1em .6em;
+  border-bottom: 1px solid #555;
+  background-color: #eeeeee;
+}
+
+.form-table__row:nth-child(even),
+.form-table tbody tr:nth-child(even),
+form table tbody tr:nth-child(even) {
+  background-color: #fff;
+}
+
+.form-table__row.is-active, .form-table__row--is-active,
+.form-table tbody tr.is-active,
+form table tbody tr.is-active,
+td.active {
+  background-color: #dddddd;
+}
+
+.form-table__row.is-disabled, .form-table__row--is-disabled,
+.form-table tbody tr.is-disabled,
+form table tbody tr.is-disabled,
+td.menu-disabled {
+  background: #cccccc;
+}
+
+.form-table__row.is-selected, .form-table__row--is-selected,
+.form-table tbody tr.is-selected,
+form table tbody tr.is-selected,
+tr.selected td {
+  background: #fffdf0;
+}
+
+.form-table__list,
+.form-table ul,
+form table ul {
+  margin: 0;
+}
+
+.form-table__narrow-column,
+.form-table th.form-table__narrow-column,
+form table th.form-table__narrow-column,
+td .checkbox,
+th .checkbox {
+  width: -webkit-min-content;
+  text-align: center;
+}
+
+/*# sourceMappingURL=form-table.css.map */

@@ -1,0 +1,30 @@
+uuid: ac09fa85-23e7-4f46-be70-8cad656d8e48
+langcode: fr
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - portfolio_2019
+_core:
+  default_config_hash: yzXxAfN-ADnF8dzSY4vOc4DH5O75yE9KYzJAF1tWUbk
+id: portfolio_2019_branding
+theme: portfolio_2019
+region: header
+weight: -5
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Site branding'
+  provider: system
+  label_display: '0'
+  use_site_logo: true
+  use_site_name: true
+  use_site_slogan: true
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: true
+    context_mapping: {  }
