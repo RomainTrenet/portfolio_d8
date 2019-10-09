@@ -9,13 +9,13 @@ dependencies:
     - portfolio_2019
 id: homemainblock_2
 theme: portfolio_2019
-region: content
-weight: 0
+region: header
+weight: -4
 provider: null
 plugin: home_main_block
 settings:
   id: home_main_block
-  label: 'Home main block'
+  label: 'Home main branding'
   provider: custom_home
   label_display: '0'
 visibility:

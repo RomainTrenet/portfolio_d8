@@ -227,7 +227,7 @@ button,
 [type='button'],
 [type='reset'],
 [type='submit'] {
-  //@extend %button--disabled;
+  @extend %button--disabled;
   // Blue style.
   @extend %btn-main;
 }
@@ -237,7 +237,6 @@ button,
 /**
  * Disabled button.
  */
-/*
 %button--disabled[disabled] {
   // Re-set default cursor for disabled elements.
   cursor: default;
@@ -252,7 +251,6 @@ button,
     background-color: color(button-disabled-bg);
   }
 }
-*/
 
 /**
  * Square button.

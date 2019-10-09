@@ -24,8 +24,10 @@ graylist:
   - advagg_validator.settings
   - minifyhtml.config
   - minifyjs.config
+  - portfolio_2019.settings
   - system.file
   - system.performance
+  - zen.settings
 graylist_dependents: true
 graylist_skip_equal: true
 weight: 0

@@ -34,6 +34,9 @@ $chroma: add-colors((
   im8-white:              #fff,
         im8-beige:              #f5f5f5,
   im8-main-blue:          #0a5da9,
+  im8-third-blue:         #257cc0,
+  //im8-fourth-blue:        #1571aa,
+  im8-fifth-blue:         #06d2ed,
   im8-grey-dark:          #555,
   im8-grey-light:         #aaa,
   im8-grey-extra-light:   #ccc,
@@ -61,9 +64,6 @@ $chroma: add-colors('functional', (
   autocomplete-select-bg: 'blue',
 
   body-bg:                'text-bg',
-
-  button:                 'text',
-  button-disabled:        'grey',
 
   fieldset-summary:       'grey',
   form-error:             'red',
@@ -136,15 +136,21 @@ $chroma: add-colors('functional', (
   btn-fourth-bdr-hv:    'im8-main-blue',
   btn-fourth-bg-hv:     'im8-main-blue',
 
+  button:                 'text',
+  //button-disabled:        'grey',
+  button-empty:           'im8-grey-dark',
+  button-disabled:        'im8-third-blue',
+  button-disabled-bg:     'im8-fifth-blue',
+
   input:                  'im8-grey-dark',
   input-bdr:              'border',
   input-bg:               'im8-white',
 
-        input-error:            red,
-        input-disabled:         'im8-grey-light',
-        input-disabled-bdr:     border-disabled,
-        input-disabled-bg:      'im8-beige',
-input-placeholder:      'im8-grey-dark',
+  input-error:            red,
+  input-disabled:         'im8-grey-light',
+  input-disabled-bdr:     border-disabled,
+  input-disabled-bg:      'im8-beige',
+  input-placeholder:      'im8-grey-dark',
 ));
 
 $chroma-active-scheme: 'functional';
