@@ -1,4 +1,12 @@
 /**
+ * IM8 typestyles.
+ *
+ * To use it : @include typeset(heading-1);.
+ *
+ * Parameters in order (for shorthand) :
+ * font-size, line-height, weight, style, case, letter-spacing.
+ */
+/**
  * Custom min width media queries.
  *
  * @TODO
@@ -13,6 +21,82 @@
 /**
  * Custom layout.
  */
+/**
+ * Icon absolute mixin and abstract class.
+ */
+/**
+ * Transitions mixin and abstract class.
+ @todo.
+ */
+/**
+ * Special content margin mixin and abstract class.
+ */
+/*
+%custom-fontello {
+  @include custom-fontello();
+}
+*/
+/* Swiper list style. */
+/*
+@mixin swiper-list-btn {
+  position: absolute;
+  bottom: 100%;
+  right: 0;
+  overflow: hidden;
+  @include margin-bottom(13px);
+  @include respond-to(before-m){
+    display: none;
+  }
+  .swiper-link {
+    background: none;
+    position: static;
+    display: inline-block;
+    margin: 0;
+    float: left;
+    color: color(custom-white);
+    background: color(custom-second-blue);
+    width: 29px;
+    height: 26px;
+    text-align: center;
+    line-height: 26px;
+    cursor: pointer;
+    opacity: 1;
+    &.swiper-button-prev {
+      @include margin-right(10px);
+    }
+    &.swiper-button-disabled {
+      color: color(custom-grey-light-1);
+      background: color(custom-grey-dark-1);
+    }
+  }
+}
+
+%swiper-list-btn {
+  @include swiper-list-btn();
+}
+*/
+/*
+// Get the max-height value of a text.
+@mixin custom-max-height($number-lines, $font-size, $line-height-ratio : null, $line-height : null) {
+  @if ($line-height-ratio) {
+    max-height: custom-rem-value($number-lines * $font-size * $line-height-ratio);
+  }
+  @else if ($line-height) {
+    // Not sure.
+    max-height: custom-rem-value($number-lines * $line-height);
+  }
+  @else {
+    @if ($line-height-method == ratio) {
+      max-height: custom-rem-value($number-lines * $font-size * $base-line-height-ratio);
+    } @else {
+      // Not sure.
+      max-height: custom-rem-value($number-lines * $base-line-height);
+    }
+  }
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+*/
 [id^='kssref-layouts-'] [class^='layout-'][class*='__'] {
   outline: 1px dotted #999999;
 }

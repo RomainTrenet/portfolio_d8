@@ -23,6 +23,36 @@ $support-for: (
   '*': -4,
 );
 
+// Custom variables
+//
+//
+
+// Transitions.
+$custom-transition-time: .3s;
+$custom-transition-timing-function: ease;
+$custom-transistion: all $custom-transition-time $custom-transition-timing-function;
+
+//$custom-main-border: 1px;
+$custom-main-input-border: 2px;
+
+// Input variables.
+// Main input has a 1px border, some hover (like select) have a 2px border.
+// So, the padding is taking the difference into consideration, to avoid input to twinkle.
+//$custom-main-input-border: $custom-main-border;
+$custom-main-input-padding-v: .2rem;
+$custom-main-input-padding-h: 1rem;
+$custom-main-input-padding: calc(#{$custom-main-input-padding-v} + #{$custom-main-input-border}) calc(#{$custom-main-input-padding-h} + #{$custom-main-input-border});
+
+// Second variant.
+$custom-second-input-border: 2px;
+$custom-second-input-padding: $custom-main-input-padding-v $custom-main-input-padding-h;
+
+// Select.
+$custom-select-radius: 0;
+$custom-select-vertical-padding: 5px;
+$select-base-lineh: 18px; // The same as 'custom-base-
+$select-pad-h: 1rem;
+$select-fs: 12px;
 
 // Font faces, stacks and sizes.
 //
@@ -111,6 +141,47 @@ $typefaces: (
     // We could also specify the following property:
     // letter-spacing: .5px,
   ),
+);
+
+/**
+ * IM8 typestyles.
+ *
+ * To use it : @include typeset(heading-1);.
+ *
+ * Parameters in order (for shorthand) :
+ * font-size, line-height, weight, style, case, letter-spacing.
+ */
+$typestyles: (
+  custom-base-input: (
+    font-size: s,
+    // The same line-height than $select-base-lineh !
+    line-height: $select-base-lineh,
+    style: normal,
+    case: uppercase
+  ),
+
+  /*
+  @todo : remove examples at the end of the project.
+  heading-1: (
+    font-size: xl,
+    line-height: 1.25,
+    weight: bold,
+    style: italic,
+    case: uppercase,
+    letter-spacing: -2px
+  ),
+  heading-2: (
+    font-size: l,
+    line-height: 1.25,
+    weight: normal
+  )
+
+  OR :
+
+  heading-1: xl 1.25 bold uppercase,
+  heading-2: l 1.25 normal
+
+  */
 );
 
 // Output a horizontal grid to help with debugging typography.

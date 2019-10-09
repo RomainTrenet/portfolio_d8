@@ -1,0 +1,90 @@
+.button,
+button,
+html [type='button'],
+[type='reset'],
+[type='submit'] {
+  -moz-appearance: button;
+  -webkit-appearance: button;
+}
+
+.button,
+button,
+[type='button'],
+[type='reset'],
+[type='submit'] {
+  display: inline-block;
+  padding: 2px 6px;
+  line-height: inherit;
+  text-decoration: none;
+  cursor: pointer;
+  color: color(button);
+}
+
+.button::-moz-focus-inner,
+button::-moz-focus-inner,
+[type='button']::-moz-focus-inner,
+[type='reset']::-moz-focus-inner,
+[type='submit']::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+.button:-moz-focusring,
+button:-moz-focusring,
+[type='button']:-moz-focusring,
+[type='reset']:-moz-focusring,
+[type='submit']:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+.button:hover, .button:focus, .button:active,
+button:hover,
+button:focus,
+button:active,
+[type='button']:hover,
+[type='button']:focus,
+[type='button']:active,
+[type='reset']:hover,
+[type='reset']:focus,
+[type='reset']:active,
+[type='submit']:hover,
+[type='submit']:focus,
+[type='submit']:active {
+  text-decoration: none;
+  color: color(button);
+}
+
+/*
+.button,
+%button {
+  &--variant-name {
+    // Add styles here.
+  }
+}
+*/
+[disabled].button,
+button[disabled],
+[disabled][type='button'],
+[disabled][type='reset'],
+[disabled][type='submit'] {
+  cursor: default;
+  color: color(button-disabled);
+}
+
+[disabled].button:hover,
+button[disabled]:hover,
+[disabled][type='button']:hover,
+[disabled][type='reset']:hover,
+[disabled][type='submit']:hover, [disabled].button:focus,
+button[disabled]:focus,
+[disabled][type='button']:focus,
+[disabled][type='reset']:focus,
+[disabled][type='submit']:focus, [disabled].button:active,
+button[disabled]:active,
+[disabled][type='button']:active,
+[disabled][type='reset']:active,
+[disabled][type='submit']:active {
+  color: color(button-disabled);
+}
+
+/*# sourceMappingURL=OLD_button.css.map */

@@ -25,6 +25,19 @@ $chroma: add-colors((
   blue:                   #0072b9,
   red:                    #c00,
   yellow:                 #fd0,
+
+  // Custom.
+  cstm-grey-dark:          #555,
+
+  // Im8 colors.im8-beige
+
+  im8-white:              #fff,
+        im8-beige:              #f5f5f5,
+  im8-main-blue:          #0a5da9,
+  im8-grey-dark:          #555,
+  im8-grey-light:         #aaa,
+  im8-grey-extra-light:   #ccc,
+  im8-pink: #300,
 ));
 
 // Define color names for functional uses.
@@ -38,7 +51,9 @@ $chroma: add-colors('functional', (
   link-visited:           ('blue' darken 20%),
   link-active:            'red',
 
-  border:                 'grey-light',
+  border-disabled:        im8-pink,
+  border-empty:           im8-pink,
+  border:                 'cstm-grey-dark',
 
   autocomplete:           'text',
   autocomplete-bg:        'text-bg',
@@ -92,6 +107,44 @@ $chroma: add-colors('functional', (
   table-select:           ('yellow' lighten 47%),
 
   watermark:              'grey-extra-light',
+
+  btn-main:               'im8-white',
+  btn-main-bdr:           'im8-main-blue',
+  btn-main-bg:            'im8-main-blue',
+  btn-main-hv:            'im8-white',
+  btn-main-bdr-hv:        'im8-main-blue',
+  btn-main-bg-hv:         ('im8-main-blue' darken 10%),
+
+  btn-second:             'im8-main-blue',
+  btn-second-bdr:         'im8-main-blue',
+  btn-second-bg:          'im8-white',
+  btn-second-hv:          'im8-white',
+  btn-second-bdr-hv:      'im8-main-blue',
+  btn-second-bg-hv:       'im8-main-blue',
+
+  btn-third:              'im8-grey-extra-light',
+  btn-third-bdr:          rgba(color('im8-grey-dark'), .25),
+  btn-third-bg:           'im8-white',
+  btn-third-hv:           'im8-white',
+  btn-third-bdr-hv:       'im8-main-blue',
+  btn-third-bg-hv:        'im8-main-blue',
+
+  btn-fourth:           'im8-grey-extra-light',
+  btn-fourth-bdr:       transparent,
+  btn-fourth-bg:        'im8-white',
+  btn-fourth-hv:        'im8-white',
+  btn-fourth-bdr-hv:    'im8-main-blue',
+  btn-fourth-bg-hv:     'im8-main-blue',
+
+  input:                  'im8-grey-dark',
+  input-bdr:              'border',
+  input-bg:               'im8-white',
+
+        input-error:            red,
+        input-disabled:         'im8-grey-light',
+        input-disabled-bdr:     border-disabled,
+        input-disabled-bg:      'im8-beige',
+input-placeholder:      'im8-grey-dark',
 ));
 
 $chroma-active-scheme: 'functional';

@@ -1,0 +1,48 @@
+// Im8 mixins.
+//
+// Style guide: none.
+
+// Get rem value.
+@function custom-rem-value($value) {
+  @return(($value/$base-font-size) + rem);
+}
+
+// Get font-size value from typestyle.
+@function custom-get-font-size-from-typestyle($typestyle) {
+  $typestyle: map-get($typestyles, $typestyle);
+  $font-size-shirt: map-get($typestyle, 'font-size');
+  @return map-get($font-size, $font-size-shirt);
+}
+
+// Rem width.
+@mixin custom-width($width) {
+  width: ($width/$base-font-size) + rem;
+}
+
+// Rem height.
+@mixin custom-height($height) {
+  height: ($height/$base-font-size) + rem;
+}
+
+/*
+// Get the max-height value of a text.
+@mixin custom-max-height($number-lines, $font-size, $line-height-ratio : null, $line-height : null) {
+  @if ($line-height-ratio) {
+    max-height: custom-rem-value($number-lines * $font-size * $line-height-ratio);
+  }
+  @else if ($line-height) {
+    // Not sure.
+    max-height: custom-rem-value($number-lines * $line-height);
+  }
+  @else {
+    @if ($line-height-method == ratio) {
+      max-height: custom-rem-value($number-lines * $font-size * $base-line-height-ratio);
+    } @else {
+      // Not sure.
+      max-height: custom-rem-value($number-lines * $base-line-height);
+    }
+  }
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+*/

@@ -21,7 +21,7 @@
 .button,
 %button,
 button,
-// 1
+  // 1
 html [type='button'],
 [type='reset'],
 [type='submit'] {
@@ -29,24 +29,27 @@ html [type='button'],
   -webkit-appearance: button; // 2
 }
 
-.button,
-%button,
-button,
-[type='button'],
-[type='reset'],
-[type='submit'] {
-  @extend %button--disabled;
-  // Some styles don't apply to <a> links since they are inline elements by default.
+/**
+ * Base button type.
+ */
+%custom-btn-type-base {
+  @extend %custom-transition;
+  $ico-size: 12px;
   display: inline-block;
-  padding: 2px 6px;
+  position: relative;
+
   // Address Firefox 4+ setting `line-height` on `input` using `!important` in
   // the UA stylesheet. And prevent its "line-height: normal" rule below from
   // breaking the "appearance: button" styling on the input elements.
   line-height: inherit;
-  text-decoration: none;
   // Improve usability and consistency of cursor style between image-type `input` and others.
   cursor: pointer;
-  color: color(button);
+
+  padding: $custom-main-input-padding;
+//  @include typeset(custom-base-input);
+  text-decoration: none;
+  border-radius: $custom-select-radius;
+  border: $custom-main-input-border solid color(border);
 
   // Remove the inner border and padding in Firefox.
   &::-moz-focus-inner {
@@ -59,36 +62,202 @@ button,
     outline: 1px dotted ButtonText;
   }
 
+  span {
+    display: inline-block;
+    vertical-align: baseline;
+
+    &.text {
+      line-height: custom-rem-value($select-base-lineh);
+      vertical-align: middle;
+//      @include font-size(s);
+
+      & + span[class^='icon-'],
+      span[class*=' icon-'] {
+        @include margin-left(10px);
+        vertical-align: middle;
+      }
+    }
+
+    &[class^='icon-'],
+    &[class*=' icon-'] {
+      @include font-size($ico-size);
+      width: auto;
+      padding: 0;
+
+      &::before,
+      &::after {
+        width: auto;
+        vertical-align: baseline;
+      }
+    }
+  }
+}
+
+/**
+ * Main custom input style.
+ *
+ * Visible in agenda filters : apply button, for example, or in message popup.
+ */
+.btn-main,
+%btn-main {
+  @extend %custom-btn-type-base;
+  $type2-ico-size: 16px;
+  border-color: color(btn-main-bdr);
+  color: color(btn-main);
+  background: color(btn-main-bg);
+  border-radius: 14px;
+  text-align: center;
+
   &:hover,
   &:focus,
   &:active {
-    // Override any link underlines and color changes.
-    text-decoration: none;
-    color: color(button);
+    border-color: color(btn-main-bdr-hv);
+    color: color(btn-main-hv);
+    background: color(btn-main-bg-hv);
+  }
+
+  span {
+    &[class^='icon-'],
+    &[class*=' icon-'] {
+      @include font-size($type2-ico-size);
+    }
   }
 }
 
-// Add button variations here.
-/*
-.button,
-%button {
-  &--variant-name {
-    // Add styles here.
+/**
+ * Second button style (blue by default).
+ */
+.btn-second,
+%btn-second {
+  @extend %custom-btn-type-base;
+  $type2-ico-size: 16px;
+  border-color: color(btn-second-bdr);
+  color: color(btn-second);
+  background: color(btn-second-bg);
+  border-radius: 14px;
+  text-align: center;
+
+  &:hover,
+  &:focus,
+  &:active {
+    border-color: color(btn-second-bdr-hv);
+    color: color(btn-second-hv);
+    background: color(btn-second-bg-hv);
   }
+
+  span {
+    &[class^='icon-'],
+    &[class*=' icon-'] {
+      @include font-size($type2-ico-size);
+    }
+  }
+}
+
+/**
+ * Third button style.
+ *
+ * Visible in agenda filters, for example.
+ */
+.btn-third,
+%btn-third {
+  @extend %custom-btn-type-base;
+  border-color: color(btn-third-bdr);
+  color: color(btn-third);
+  background: color(btn-third-bg);
+
+  &.current,
+  &:hover,
+  &:active {
+    border-color: color(btn-third-bdr-hv);
+    color: color(btn-third-hv);
+    background: color(btn-third-bg-hv);
+  }
+}
+
+/**
+ * Fourth button style.
+ *
+ * Visible in agenda filters : print button, for example.
+ */
+.btn-fourth,
+%btn-fourth {
+  @extend %custom-btn-type-base;
+  $type2-ico-size: 16px;
+  border-color: color(btn-fourth-bdr);
+  color: color(btn-fourth);
+  background: color(btn-fourth-bg);
+
+  &:hover,
+  &:active {
+    border-color: color(btn-fourth-bdr-hv);
+    color: color(btn-fourth-hv);
+    background: color(btn-fourth-bg-hv);
+  }
+
+  span {
+    &[class^='icon-'],
+    &[class*=' icon-'] {
+      @include font-size($type2-ico-size);
+    }
+  }
+}
+
+/**
+ * Customize submit buttons.
+ */
+/*
+[type='submit']#edit-draft {
+  @extend %btn-second;
 }
 */
 
+/**
+ * Apply button.
+ */
+.custom-apply-btn {
+  @extend %btn-main;
+  display: block;
+}
+
+/**
+ * Main button (blue by default).
+ */
+.button,
+button,
+[type='button'],
+[type='reset'],
+[type='submit'] {
+  //@extend %button--disabled;
+  // Blue style.
+  @extend %btn-main;
+}
+
 // The disabled variation should always go last, so that it overrides any
 // other variations.
+/**
+ * Disabled button.
+ */
+/*
 %button--disabled[disabled] {
   // Re-set default cursor for disabled elements.
   cursor: default;
   color: color(button-disabled);
+  background-color: color(button-disabled-bg);
 
   &:hover,
   &:focus,
   &:active {
     // Override any link underlines and color changes.
     color: color(button-disabled);
+    background-color: color(button-disabled-bg);
   }
+}
+*/
+
+/**
+ * Square button.
+ */
+.custom-button-square,
+%custom-button--square {
+  border-radius: 0;
 }
