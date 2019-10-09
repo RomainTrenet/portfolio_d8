@@ -21,6 +21,7 @@ $chroma: add-colors((
   grey-light:             ('black' lighten 80%), // #ccc
   grey-extra-light:       ('black' lighten 93.33%), // #eee
   white:                  #fff,
+  white-trans:            rgba(#fff, .25),
 
   blue:                   #0072b9,
   red:                    #c00,
@@ -108,12 +109,19 @@ $chroma: add-colors('functional', (
 
   watermark:              'grey-extra-light',
 
-  btn-main:               'im8-white',
-  btn-main-bdr:           'im8-main-blue',
-  btn-main-bg:            'im8-main-blue',
-  btn-main-hv:            'im8-white',
-  btn-main-bdr-hv:        'im8-main-blue',
-  btn-main-bg-hv:         ('im8-main-blue' darken 10%),
+  btn-main-white:               'white',
+  btn-main-white-bdr:           'white',
+  btn-main-white-bg:            transparent,
+  btn-main-white-hv:            'white-trans',
+  btn-main-white-bdr-hv:        'white-trans',
+  btn-main-white-bg-hv:         transparent,
+
+  btn-second-white:               'black',
+  btn-second-white-bdr:           'white',
+  btn-second-white-bg:            'white',
+  btn-second-white-hv:            ('black' darken 20%),
+  btn-second-white-bdr-hv:        'white-trans',
+  btn-second-white-bg-hv:         'white-trans',
 
   btn-second:             'im8-main-blue',
   btn-second-bdr:         'im8-main-blue',

@@ -27,7 +27,7 @@
  * Transitions mixin and abstract class.
  @todo.
  */
-@mixin custom-transition($transition-type: 'all') {
+@mixin custom-transition($transition-type: all) {
   //-webkit-transition: all $custom-transition-time $custom-transition-timing-function;
   //-moz-transition: all $custom-transition-time $custom-transition-timing-function;
   transition: $transition-type $custom-transition-time $custom-transition-timing-function;

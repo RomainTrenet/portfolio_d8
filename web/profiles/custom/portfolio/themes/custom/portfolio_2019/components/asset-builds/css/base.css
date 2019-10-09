@@ -28,14 +28,6 @@
  * Transitions mixin and abstract class.
  @todo.
  */
-.btn-main, .custom-apply-btn, .button,
-button,
-[type='button'],
-[type='reset'],
-[type='submit'], .btn-second, .btn-third, .btn-fourth {
-  transition: "all" 0.3s ease;
-}
-
 /**
  * Special content margin mixin and abstract class.
  */
@@ -547,14 +539,20 @@ html [type='button'],
 button,
 [type='button'],
 [type='reset'],
-[type='submit'], .btn-second, .btn-third, .btn-fourth {
+[type='submit'],
+.btn-second, [type='submit']#edit-draft {
+  transition: color, background-color, border-color 0.3s ease;
+  font-size: 0.875rem;
+  line-height: 1.125rem;
+  font-style: normal;
+  text-transform: uppercase;
   display: inline-block;
   position: relative;
+  border-radius: 2px;
   line-height: inherit;
   cursor: pointer;
   padding: calc(0.2rem + 2px) calc(1rem + 2px);
   text-decoration: none;
-  border-radius: 0;
   border: 2px solid #555;
 }
 
@@ -562,7 +560,8 @@ button,
 button::-moz-focus-inner,
 [type='button']::-moz-focus-inner,
 [type='reset']::-moz-focus-inner,
-[type='submit']::-moz-focus-inner, .btn-second::-moz-focus-inner, .btn-third::-moz-focus-inner, .btn-fourth::-moz-focus-inner {
+[type='submit']::-moz-focus-inner,
+.btn-second::-moz-focus-inner, [type='submit']#edit-draft::-moz-focus-inner {
   border-style: none;
   padding: 0;
 }
@@ -571,7 +570,8 @@ button::-moz-focus-inner,
 button:-moz-focusring,
 [type='button']:-moz-focusring,
 [type='reset']:-moz-focusring,
-[type='submit']:-moz-focusring, .btn-second:-moz-focusring, .btn-third:-moz-focusring, .btn-fourth:-moz-focusring {
+[type='submit']:-moz-focusring,
+.btn-second:-moz-focusring, [type='submit']#edit-draft:-moz-focusring {
   outline: 1px dotted ButtonText;
 }
 
@@ -579,7 +579,8 @@ button:-moz-focusring,
 button span,
 [type='button'] span,
 [type='reset'] span,
-[type='submit'] span, .btn-second span, .btn-third span, .btn-fourth span {
+[type='submit'] span,
+.btn-second span, [type='submit']#edit-draft span {
   display: inline-block;
   vertical-align: baseline;
 }
@@ -588,7 +589,9 @@ button span,
 button span.text,
 [type='button'] span.text,
 [type='reset'] span.text,
-[type='submit'] span.text, .btn-second span.text, .btn-third span.text, .btn-fourth span.text {
+[type='submit'] span.text,
+.btn-second span.text, [type='submit']#edit-draft span.text {
+  font-size: 0.875rem;
   line-height: 1.125rem;
   vertical-align: middle;
 }
@@ -597,11 +600,13 @@ button span.text,
 button span.text + span[class^='icon-'],
 [type='button'] span.text + span[class^='icon-'],
 [type='reset'] span.text + span[class^='icon-'],
-[type='submit'] span.text + span[class^='icon-'], .btn-second span.text + span[class^='icon-'], .btn-third span.text + span[class^='icon-'], .btn-fourth span.text + span[class^='icon-'], .btn-main span.text span[class*=' icon-'], .custom-apply-btn span.text span[class*=' icon-'], .button span.text span[class*=' icon-'],
+[type='submit'] span.text + span[class^='icon-'],
+.btn-second span.text + span[class^='icon-'], [type='submit']#edit-draft span.text + span[class^='icon-'], .btn-main span.text span[class*=' icon-'], .custom-apply-btn span.text span[class*=' icon-'], .button span.text span[class*=' icon-'],
 button span.text span[class*=' icon-'],
 [type='button'] span.text span[class*=' icon-'],
 [type='reset'] span.text span[class*=' icon-'],
-[type='submit'] span.text span[class*=' icon-'], .btn-second span.text span[class*=' icon-'], .btn-third span.text span[class*=' icon-'], .btn-fourth span.text span[class*=' icon-'] {
+[type='submit'] span.text span[class*=' icon-'],
+.btn-second span.text span[class*=' icon-'], [type='submit']#edit-draft span.text span[class*=' icon-'] {
   margin-left: 0.625rem;
   vertical-align: middle;
 }
@@ -610,11 +615,13 @@ button span.text span[class*=' icon-'],
 button span[class^='icon-'],
 [type='button'] span[class^='icon-'],
 [type='reset'] span[class^='icon-'],
-[type='submit'] span[class^='icon-'], .btn-second span[class^='icon-'], .btn-third span[class^='icon-'], .btn-fourth span[class^='icon-'], .btn-main span[class*=' icon-'], .custom-apply-btn span[class*=' icon-'], .button span[class*=' icon-'],
+[type='submit'] span[class^='icon-'],
+.btn-second span[class^='icon-'], [type='submit']#edit-draft span[class^='icon-'], .btn-main span[class*=' icon-'], .custom-apply-btn span[class*=' icon-'], .button span[class*=' icon-'],
 button span[class*=' icon-'],
 [type='button'] span[class*=' icon-'],
 [type='reset'] span[class*=' icon-'],
-[type='submit'] span[class*=' icon-'], .btn-second span[class*=' icon-'], .btn-third span[class*=' icon-'], .btn-fourth span[class*=' icon-'] {
+[type='submit'] span[class*=' icon-'],
+.btn-second span[class*=' icon-'], [type='submit']#edit-draft span[class*=' icon-'] {
   font-size: 0.75rem;
   width: auto;
   padding: 0;
@@ -624,27 +631,29 @@ button span[class*=' icon-'],
 button span[class^='icon-']::before,
 [type='button'] span[class^='icon-']::before,
 [type='reset'] span[class^='icon-']::before,
-[type='submit'] span[class^='icon-']::before, .btn-second span[class^='icon-']::before, .btn-third span[class^='icon-']::before, .btn-fourth span[class^='icon-']::before, .btn-main span[class^='icon-']::after, .custom-apply-btn span[class^='icon-']::after, .button span[class^='icon-']::after,
+[type='submit'] span[class^='icon-']::before,
+.btn-second span[class^='icon-']::before, [type='submit']#edit-draft span[class^='icon-']::before, .btn-main span[class^='icon-']::after, .custom-apply-btn span[class^='icon-']::after, .button span[class^='icon-']::after,
 button span[class^='icon-']::after,
 [type='button'] span[class^='icon-']::after,
 [type='reset'] span[class^='icon-']::after,
-[type='submit'] span[class^='icon-']::after, .btn-second span[class^='icon-']::after, .btn-third span[class^='icon-']::after, .btn-fourth span[class^='icon-']::after, .btn-main span[class*=' icon-']::before, .custom-apply-btn span[class*=' icon-']::before, .button span[class*=' icon-']::before,
+[type='submit'] span[class^='icon-']::after,
+.btn-second span[class^='icon-']::after, [type='submit']#edit-draft span[class^='icon-']::after, .btn-main span[class*=' icon-']::before, .custom-apply-btn span[class*=' icon-']::before, .button span[class*=' icon-']::before,
 button span[class*=' icon-']::before,
 [type='button'] span[class*=' icon-']::before,
 [type='reset'] span[class*=' icon-']::before,
-[type='submit'] span[class*=' icon-']::before, .btn-second span[class*=' icon-']::before, .btn-third span[class*=' icon-']::before, .btn-fourth span[class*=' icon-']::before, .btn-main span[class*=' icon-']::after, .custom-apply-btn span[class*=' icon-']::after, .button span[class*=' icon-']::after,
+[type='submit'] span[class*=' icon-']::before,
+.btn-second span[class*=' icon-']::before, [type='submit']#edit-draft span[class*=' icon-']::before, .btn-main span[class*=' icon-']::after, .custom-apply-btn span[class*=' icon-']::after, .button span[class*=' icon-']::after,
 button span[class*=' icon-']::after,
 [type='button'] span[class*=' icon-']::after,
 [type='reset'] span[class*=' icon-']::after,
-[type='submit'] span[class*=' icon-']::after, .btn-second span[class*=' icon-']::after, .btn-third span[class*=' icon-']::after, .btn-fourth span[class*=' icon-']::after {
+[type='submit'] span[class*=' icon-']::after,
+.btn-second span[class*=' icon-']::after, [type='submit']#edit-draft span[class*=' icon-']::after {
   width: auto;
   vertical-align: baseline;
 }
 
 /**
- * Main custom input style.
- *
- * Visible in agenda filters : apply button, for example, or in message popup.
+ * Main & second common custom input style.
  */
 .btn-main,
 .custom-apply-btn,
@@ -652,36 +661,10 @@ button span[class*=' icon-']::after,
 button,
 [type='button'],
 [type='reset'],
-[type='submit'] {
-  border-color: #0a5da9;
-  color: #fff;
-  background: #0a5da9;
-  border-radius: 14px;
+[type='submit'],
+.btn-second,
+[type='submit']#edit-draft {
   text-align: center;
-}
-
-.btn-main:hover, .btn-main:focus, .btn-main:active,
-.custom-apply-btn:hover,
-.button:hover,
-button:hover,
-[type='button']:hover,
-[type='reset']:hover,
-[type='submit']:hover,
-.custom-apply-btn:focus,
-.button:focus,
-button:focus,
-[type='button']:focus,
-[type='reset']:focus,
-[type='submit']:focus,
-.custom-apply-btn:active,
-.button:active,
-button:active,
-[type='button']:active,
-[type='reset']:active,
-[type='submit']:active {
-  border-color: #0a5da9;
-  color: #fff;
-  background: #074379;
 }
 
 .btn-main span[class^='icon-'], .btn-main span[class*=' icon-'], .custom-apply-btn span[class^='icon-'], .button span[class^='icon-'],
@@ -692,77 +675,121 @@ button span[class^='icon-'],
 button span[class*=' icon-'],
 [type='button'] span[class*=' icon-'],
 [type='reset'] span[class*=' icon-'],
-[type='submit'] span[class*=' icon-'] {
+[type='submit'] span[class*=' icon-'],
+.btn-second span[class^='icon-'],
+.btn-second span[class*=' icon-'], [type='submit']#edit-draft span[class^='icon-'], [type='submit']#edit-draft span[class*=' icon-'] {
   font-size: 1rem;
 }
 
 /**
- * Second button style (blue by default).
+ * Main custom input style including colors variant.
  */
-.btn-second {
-  border-color: #0a5da9;
-  color: #0a5da9;
-  background: #fff;
-  border-radius: 14px;
-  text-align: center;
-}
-
-.btn-second:hover, .btn-second:focus, .btn-second:active {
-  border-color: #0a5da9;
+.btn-main.btn-white,
+.btn-white.custom-apply-btn,
+.btn-white.button,
+button.btn-white,
+.btn-white[type='button'],
+.btn-white[type='reset'],
+.btn-white[type='submit'] {
+  border-color: #fff;
   color: #fff;
-  background: #0a5da9;
+  background: transparent;
 }
 
-.btn-second span[class^='icon-'], .btn-second span[class*=' icon-'] {
-  font-size: 1rem;
+.btn-main.btn-white span[class^='icon-'], .btn-main.btn-white span[class*=' icon-'], .btn-white.custom-apply-btn span[class^='icon-'], .btn-white.button span[class^='icon-'],
+button.btn-white span[class^='icon-'],
+.btn-white[type='button'] span[class^='icon-'],
+.btn-white[type='reset'] span[class^='icon-'],
+.btn-white[type='submit'] span[class^='icon-'], .btn-white.custom-apply-btn span[class*=' icon-'], .btn-white.button span[class*=' icon-'],
+button.btn-white span[class*=' icon-'],
+.btn-white[type='button'] span[class*=' icon-'],
+.btn-white[type='reset'] span[class*=' icon-'],
+.btn-white[type='submit'] span[class*=' icon-'] {
+  color: #fff;
+}
+
+.btn-main.btn-white:hover, .btn-main.btn-white:focus, .btn-main.btn-white:active,
+.btn-white.custom-apply-btn:hover,
+.btn-white.button:hover,
+button.btn-white:hover,
+.btn-white[type='button']:hover,
+.btn-white[type='reset']:hover,
+.btn-white[type='submit']:hover,
+.btn-white.custom-apply-btn:focus,
+.btn-white.button:focus,
+button.btn-white:focus,
+.btn-white[type='button']:focus,
+.btn-white[type='reset']:focus,
+.btn-white[type='submit']:focus,
+.btn-white.custom-apply-btn:active,
+.btn-white.button:active,
+button.btn-white:active,
+.btn-white[type='button']:active,
+.btn-white[type='reset']:active,
+.btn-white[type='submit']:active {
+  border-color: rgba(255, 255, 255, 0.25);
+  color: rgba(255, 255, 255, 0.25);
+  background: transparent;
+}
+
+.btn-main.btn-white:hover span[class^='icon-'], .btn-main.btn-white:hover span[class*=' icon-'], .btn-main.btn-white:focus span[class^='icon-'], .btn-main.btn-white:focus span[class*=' icon-'], .btn-main.btn-white:active span[class^='icon-'], .btn-main.btn-white:active span[class*=' icon-'], .btn-white.custom-apply-btn:hover span[class^='icon-'], .btn-white.button:hover span[class^='icon-'],
+button.btn-white:hover span[class^='icon-'],
+.btn-white[type='button']:hover span[class^='icon-'],
+.btn-white[type='reset']:hover span[class^='icon-'],
+.btn-white[type='submit']:hover span[class^='icon-'], .btn-white.custom-apply-btn:hover span[class*=' icon-'], .btn-white.button:hover span[class*=' icon-'],
+button.btn-white:hover span[class*=' icon-'],
+.btn-white[type='button']:hover span[class*=' icon-'],
+.btn-white[type='reset']:hover span[class*=' icon-'],
+.btn-white[type='submit']:hover span[class*=' icon-'], .btn-white.custom-apply-btn:focus span[class^='icon-'], .btn-white.button:focus span[class^='icon-'],
+button.btn-white:focus span[class^='icon-'],
+.btn-white[type='button']:focus span[class^='icon-'],
+.btn-white[type='reset']:focus span[class^='icon-'],
+.btn-white[type='submit']:focus span[class^='icon-'], .btn-white.custom-apply-btn:focus span[class*=' icon-'], .btn-white.button:focus span[class*=' icon-'],
+button.btn-white:focus span[class*=' icon-'],
+.btn-white[type='button']:focus span[class*=' icon-'],
+.btn-white[type='reset']:focus span[class*=' icon-'],
+.btn-white[type='submit']:focus span[class*=' icon-'], .btn-white.custom-apply-btn:active span[class^='icon-'], .btn-white.button:active span[class^='icon-'],
+button.btn-white:active span[class^='icon-'],
+.btn-white[type='button']:active span[class^='icon-'],
+.btn-white[type='reset']:active span[class^='icon-'],
+.btn-white[type='submit']:active span[class^='icon-'], .btn-white.custom-apply-btn:active span[class*=' icon-'], .btn-white.button:active span[class*=' icon-'],
+button.btn-white:active span[class*=' icon-'],
+.btn-white[type='button']:active span[class*=' icon-'],
+.btn-white[type='reset']:active span[class*=' icon-'],
+.btn-white[type='submit']:active span[class*=' icon-'] {
+  color: rgba(255, 255, 255, 0.25);
 }
 
 /**
- * Third button style.
- *
- * Visible in agenda filters, for example.
+ * Second custom input style including colors variant.
  */
-.btn-third {
-  border-color: rgba(85, 85, 85, 0.25);
-  color: #ccc;
+.btn-second.btn-white,
+.btn-white[type='submit']#edit-draft {
+  border-color: #fff;
+  color: #000;
   background: #fff;
 }
 
-.btn-third.current, .btn-third:hover, .btn-third:active {
-  border-color: #0a5da9;
-  color: #fff;
-  background: #0a5da9;
+.btn-second.btn-white span[class^='icon-'], .btn-second.btn-white span[class*=' icon-'], .btn-white[type='submit']#edit-draft span[class^='icon-'], .btn-white[type='submit']#edit-draft span[class*=' icon-'] {
+  color: #000;
 }
 
-/**
- * Fourth button style.
- *
- * Visible in agenda filters : print button, for example.
- */
-.btn-fourth {
-  border-color: transparent;
-  color: #ccc;
-  background: #fff;
+.btn-second.btn-white:hover, .btn-second.btn-white:focus, .btn-second.btn-white:active,
+.btn-white[type='submit']#edit-draft:hover,
+.btn-white[type='submit']#edit-draft:focus,
+.btn-white[type='submit']#edit-draft:active {
+  border-color: rgba(255, 255, 255, 0.25);
+  color: black;
+  background: rgba(255, 255, 255, 0.25);
 }
 
-.btn-fourth:hover, .btn-fourth:active {
-  border-color: #0a5da9;
-  color: #fff;
-  background: #0a5da9;
-}
-
-.btn-fourth span[class^='icon-'], .btn-fourth span[class*=' icon-'] {
-  font-size: 1rem;
+.btn-second.btn-white:hover span[class^='icon-'], .btn-second.btn-white:hover span[class*=' icon-'], .btn-second.btn-white:focus span[class^='icon-'], .btn-second.btn-white:focus span[class*=' icon-'], .btn-second.btn-white:active span[class^='icon-'], .btn-second.btn-white:active span[class*=' icon-'], .btn-white[type='submit']#edit-draft:hover span[class^='icon-'], .btn-white[type='submit']#edit-draft:hover span[class*=' icon-'], .btn-white[type='submit']#edit-draft:focus span[class^='icon-'], .btn-white[type='submit']#edit-draft:focus span[class*=' icon-'], .btn-white[type='submit']#edit-draft:active span[class^='icon-'], .btn-white[type='submit']#edit-draft:active span[class*=' icon-'] {
+  color: black;
 }
 
 /**
  * Customize submit buttons.
  */
-/*
-[type='submit']#edit-draft {
-  @extend %btn-second;
-}
-*/
 /**
  * Apply button.
  */
@@ -771,38 +798,11 @@ button span[class*=' icon-'],
 }
 
 /**
- * Main button (blue by default).
+ * Main button.
  */
 /**
  * Disabled button.
  */
-[disabled].button,
-button[disabled],
-[disabled][type='button'],
-[disabled][type='reset'],
-[disabled][type='submit'] {
-  cursor: default;
-  color: #257cc0;
-  background-color: #06d2ed;
-}
-
-[disabled].button:hover,
-button[disabled]:hover,
-[disabled][type='button']:hover,
-[disabled][type='reset']:hover,
-[disabled][type='submit']:hover, [disabled].button:focus,
-button[disabled]:focus,
-[disabled][type='button']:focus,
-[disabled][type='reset']:focus,
-[disabled][type='submit']:focus, [disabled].button:active,
-button[disabled]:active,
-[disabled][type='button']:active,
-[disabled][type='reset']:active,
-[disabled][type='submit']:active {
-  color: #257cc0;
-  background-color: #06d2ed;
-}
-
 /**
  * Square button.
  */

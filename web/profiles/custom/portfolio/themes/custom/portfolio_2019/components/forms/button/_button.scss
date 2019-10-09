@@ -33,10 +33,12 @@ html [type='button'],
  * Base button type.
  */
 %custom-btn-type-base {
-  @extend %custom-transition;
+  @include custom-transition((color, background-color, border-color));
+  @include typeset(custom-base-input);
   $ico-size: 12px;
   display: inline-block;
   position: relative;
+  border-radius: $custom-select-radius;
 
   // Address Firefox 4+ setting `line-height` on `input` using `!important` in
   // the UA stylesheet. And prevent its "line-height: normal" rule below from
@@ -46,9 +48,7 @@ html [type='button'],
   cursor: pointer;
 
   padding: $custom-main-input-padding;
-//  @include typeset(custom-base-input);
   text-decoration: none;
-  border-radius: $custom-select-radius;
   border: $custom-main-input-border solid color(border);
 
   // Remove the inner border and padding in Firefox.
@@ -67,9 +67,9 @@ html [type='button'],
     vertical-align: baseline;
 
     &.text {
+      @include font-size(s);
       line-height: custom-rem-value($select-base-lineh);
       vertical-align: middle;
-//      @include font-size(s);
 
       & + span[class^='icon-'],
       span[class*=' icon-'] {
@@ -94,56 +94,15 @@ html [type='button'],
 }
 
 /**
- * Main custom input style.
- *
- * Visible in agenda filters : apply button, for example, or in message popup.
+ * Main & second common custom input style.
  */
 .btn-main,
-%btn-main {
-  @extend %custom-btn-type-base;
-  $type2-ico-size: 16px;
-  border-color: color(btn-main-bdr);
-  color: color(btn-main);
-  background: color(btn-main-bg);
-  border-radius: 14px;
-  text-align: center;
-
-  &:hover,
-  &:focus,
-  &:active {
-    border-color: color(btn-main-bdr-hv);
-    color: color(btn-main-hv);
-    background: color(btn-main-bg-hv);
-  }
-
-  span {
-    &[class^='icon-'],
-    &[class*=' icon-'] {
-      @include font-size($type2-ico-size);
-    }
-  }
-}
-
-/**
- * Second button style (blue by default).
- */
+%btn-main,
 .btn-second,
 %btn-second {
   @extend %custom-btn-type-base;
   $type2-ico-size: 16px;
-  border-color: color(btn-second-bdr);
-  color: color(btn-second);
-  background: color(btn-second-bg);
-  border-radius: 14px;
   text-align: center;
-
-  &:hover,
-  &:focus,
-  &:active {
-    border-color: color(btn-second-bdr-hv);
-    color: color(btn-second-hv);
-    background: color(btn-second-bg-hv);
-  }
 
   span {
     &[class^='icon-'],
@@ -154,50 +113,73 @@ html [type='button'],
 }
 
 /**
- * Third button style.
- *
- * Visible in agenda filters, for example.
+ * Main custom input style including colors variant.
  */
-.btn-third,
-%btn-third {
-  @extend %custom-btn-type-base;
-  border-color: color(btn-third-bdr);
-  color: color(btn-third);
-  background: color(btn-third-bg);
+.btn-main,
+%btn-main {
 
-  &.current,
-  &:hover,
-  &:active {
-    border-color: color(btn-third-bdr-hv);
-    color: color(btn-third-hv);
-    background: color(btn-third-bg-hv);
+  // White variant.
+  &.btn-white {
+    border-color: color(btn-main-white-bdr);
+    color: color(btn-main-white);
+    background: color(btn-main-white-bg);
+
+    span {
+      &[class^='icon-'],
+      &[class*=' icon-'] {
+        color: color(btn-main-white);
+      }
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+      border-color: color(btn-main-white-bdr-hv);
+      color: color(btn-main-white-hv);
+      background: color(btn-main-white-bg-hv);
+
+      span {
+        &[class^='icon-'],
+        &[class*=' icon-'] {
+          color: color(btn-main-white-hv);
+        }
+      }
+    }
   }
 }
 
 /**
- * Fourth button style.
- *
- * Visible in agenda filters : print button, for example.
+ * Second custom input style including colors variant.
  */
-.btn-fourth,
-%btn-fourth {
-  @extend %custom-btn-type-base;
-  $type2-ico-size: 16px;
-  border-color: color(btn-fourth-bdr);
-  color: color(btn-fourth);
-  background: color(btn-fourth-bg);
+.btn-second,
+%btn-second {
 
-  &:hover,
-  &:active {
-    border-color: color(btn-fourth-bdr-hv);
-    color: color(btn-fourth-hv);
-    background: color(btn-fourth-bg-hv);
-  }
+  // White variant.
+  &.btn-white {
+    border-color: color(btn-second-white-bdr);
+    color: color(btn-second-white);
+    background: color(btn-second-white-bg);
 
-  span {
-    &[class^='icon-'],
-    &[class*=' icon-'] {
-      @include font-size($type2-ico-size);
+    span {
+      &[class^='icon-'],
+      &[class*=' icon-'] {
+        color: color(btn-second-white);
+      }
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+      border-color: color(btn-second-white-bdr-hv);
+      color: color(btn-second-white-hv);
+      background: color(btn-second-white-bg-hv);
+
+      span {
+        &[class^='icon-'],
+        &[class*=' icon-'] {
+          color: color(btn-second-white-hv);
+        }
+      }
     }
   }
 }
@@ -205,30 +187,29 @@ html [type='button'],
 /**
  * Customize submit buttons.
  */
-/*
 [type='submit']#edit-draft {
   @extend %btn-second;
 }
-*/
 
 /**
  * Apply button.
  */
+// @todo.
 .custom-apply-btn {
   @extend %btn-main;
   display: block;
 }
 
 /**
- * Main button (blue by default).
+ * Main button.
  */
+// @todo.
 .button,
 button,
 [type='button'],
 [type='reset'],
 [type='submit'] {
-  @extend %button--disabled;
-  // Blue style.
+  //@extend %button--disabled;
   @extend %btn-main;
 }
 
@@ -237,6 +218,7 @@ button,
 /**
  * Disabled button.
  */
+// @todo.
 %button--disabled[disabled] {
   // Re-set default cursor for disabled elements.
   cursor: default;
@@ -255,6 +237,7 @@ button,
 /**
  * Square button.
  */
+// @todo.
 .custom-button-square,
 %custom-button--square {
   border-radius: 0;
