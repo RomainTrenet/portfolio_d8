@@ -9,14 +9,13 @@
             "role": ""
         }
     ],
-    "repositories": [
-        {
+    "repositories": {
+        "0": {
             "type": "composer",
             "url": "https://packages.drupal.org/8"
         }
-    ],
+    },
     "require": {
-        "php": ">=5.6",
         "composer/installers": "^1.2",
         "cweagans/composer-patches": "^1.6.5",
         "drupal-composer/drupal-scaffold": "^2.5",
@@ -33,12 +32,20 @@
         "drupal/minifyhtml": "^1.8",
         "drupal/minifyjs": "^1.8",
         "drupal/module_filter": "^3.1",
+        "drupal/webform": "^5.4",
+        "drupal/webform_layout_container": "^1.1",
         "drupal/zen": "^7.0@alpha",
         "drush/drush": "^9.0.0",
+        "jquery/inputmask": "*",
+        "jquery/intl-tel-input": "*",
+        "jquery/select2": "*",
+        "php": ">=5.6",
+        "signature_pad/signature_pad": "*",
         "twig/extensions": "^1.5",
         "vlucas/phpdotenv": "^2.4",
         "webflo/drupal-finder": "^1.0.0",
         "webmozart/path-util": "^2.3",
+        "wikimedia/composer-merge-plugin": "^1.4",
         "zaporylie/composer-drupal-optimizations": "^1.0"
     },
     "require-dev": {
@@ -58,7 +65,9 @@
         "classmap": [
             "scripts/composer/ScriptHandler.php"
         ],
-        "files": ["load.environment.php"]
+        "files": [
+            "load.environment.php"
+        ]
     },
     "scripts": {
         "pre-install-cmd": [
@@ -80,19 +89,38 @@
             "drupal/core": "-p2"
         },
         "installer-paths": {
-            "web/core": ["type:drupal-core"],
-            "web/profiles/contrib/{$name}": ["type:drupal-profile"],
-            "web/profiles/custom/portfolio/libraries/custom/{$name}": ["type:drupal-library"],
-            "web/profiles/custom/portfolio/modules/contrib/{$name}": ["type:drupal-module"],
-            "web/profiles/custom/portfolio/modules/custom/{$name}": ["type:drupal-custom-module"],
-            "web/profiles/custom/portfolio/themes/contrib/{$name}": ["type:drupal-theme"],
-            "drush/Commands/{$name}": ["type:drupal-drush"]
+            "web/core": [
+                "type:drupal-core"
+            ],
+            "web/profiles/contrib/{$name}": [
+                "type:drupal-profile"
+            ],
+            "web/profiles/custom/portfolio/libraries/{$name}": [
+                "type:drupal-library"
+            ],
+            "web/profiles/custom/portfolio/modules/contrib/{$name}": [
+                "type:drupal-module"
+            ],
+            "web/profiles/custom/portfolio/modules/custom/{$name}": [
+                "type:drupal-custom-module"
+            ],
+            "web/profiles/custom/portfolio/themes/contrib/{$name}": [
+                "type:drupal-theme"
+            ],
+            "drush/Commands/{$name}": [
+                "type:drupal-drush"
+            ]
         },
         "drupal-scaffold": {
             "initial": {
                 ".editorconfig": "../.editorconfig",
                 ".gitattributes": "../.gitattributes"
             }
+        },
+        "merge-plugin": {
+            "include": [
+                "composer.libraries.json"
+            ]
         },
         "patches": {
             "drupal/zen": {

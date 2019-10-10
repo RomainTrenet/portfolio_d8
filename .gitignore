@@ -14,6 +14,7 @@
 /web/profiles/custom/portfolio/themes/contrib/
 /web/profiles/contrib/
 /web/libraries/
+/web/profiles/custom/portfolio/libraries/
 
 # Mac OS generated files
 .DS_Store

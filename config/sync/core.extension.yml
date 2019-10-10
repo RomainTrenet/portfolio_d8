@@ -56,6 +56,8 @@ module:
   tour: 0
   update: 0
   user: 0
+  webform: 0
+  webform_layout_container: 0
   menu_link_content: 1
   views: 10
   portfolio: 1000
