@@ -282,10 +282,31 @@ legend {
 // Style guide: forms.base.label
 
 label {
+  @include custom-transition((top, left));
+
   // Drupal-style form labels.
   display: block;
   font-weight: bold;
+
+  // @ todo : remove
+  //position: absolute;
+  //top: 7px;
+  //left: 14px;
 }
+
+// @ todo : remove
+/*
+.form-item {
+  //position: relative;
+
+  input:focus,
+  textarea:focus {
+    ~ label {
+      //top: -7px;
+      //left: 0;
+    }
+  }
+}*/
 
 // Select list
 //

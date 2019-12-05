@@ -12,6 +12,15 @@
  * @TODO
  * Same breakoints as in js.
  */
+/*@include add-breakpoint(xxxs, (320px, 'no-query' true));
+@include add-breakpoint(xxs,  (444px, 'no-query' true));
+@include add-breakpoint(xs,   (555px, 'no-query' true));
+@include add-breakpoint(s,    (768px, 'no-query' true));
+@include add-breakpoint(m,    (1024px, 'no-query' true));
+@include add-breakpoint(l,    (1280px, 'no-query' true));
+@include add-breakpoint(xl,   (1424px, 'no-query' true));
+@include add-breakpoint(xxl,  (1624px));
+@include add-breakpoint(xxxl, (1824px));*/
 /**
  * Custom max width media queries.
  */
@@ -235,7 +244,7 @@ h1 {
   }*/
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 777px) {
   h1 {
     font-size: 4.5rem;
     line-height: 1.5;
@@ -256,7 +265,7 @@ h2 {
   */
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 777px) {
   h2 {
     font-size: 2.25rem;
     line-height: 1.5;
@@ -1012,10 +1021,23 @@ legend {
 }
 
 label {
+  transition: top, left 0.3s ease;
   display: block;
   font-weight: bold;
 }
 
+/*
+.form-item {
+  //position: relative;
+
+  input:focus,
+  textarea:focus {
+    ~ label {
+      //top: -7px;
+      //left: 0;
+    }
+  }
+}*/
 /*
 @todo;
 select {
@@ -1041,5 +1063,3 @@ td,
 th {
   padding: 0;
 }
-
-/*# sourceMappingURL=base.css.map */

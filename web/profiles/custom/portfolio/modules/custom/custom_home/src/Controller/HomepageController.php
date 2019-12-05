@@ -19,7 +19,7 @@ class HomepageController extends ControllerBase {
    */
   public function content() {
     return [
-      '#markup' => $this->t('Hello !'),
+      //'#markup' => $this->t('Hello !'),
     ];
   }
 

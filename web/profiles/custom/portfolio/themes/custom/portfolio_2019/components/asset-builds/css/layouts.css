@@ -12,6 +12,15 @@
  * @TODO
  * Same breakoints as in js.
  */
+/*@include add-breakpoint(xxxs, (320px, 'no-query' true));
+@include add-breakpoint(xxs,  (444px, 'no-query' true));
+@include add-breakpoint(xs,   (555px, 'no-query' true));
+@include add-breakpoint(s,    (768px, 'no-query' true));
+@include add-breakpoint(m,    (1024px, 'no-query' true));
+@include add-breakpoint(l,    (1280px, 'no-query' true));
+@include add-breakpoint(xl,   (1424px, 'no-query' true));
+@include add-breakpoint(xxl,  (1624px));
+@include add-breakpoint(xxxl, (1824px));*/
 /**
  * Custom max width media queries.
  */
@@ -131,7 +140,7 @@
   margin-left: -100%;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 777px) {
   .layout-3col {
     margin-left: -20px;
     margin-right: -20px;
@@ -149,7 +158,7 @@
   }
   .layout-3col__full, .layout-3col__left-content, .layout-3col__right-content, .layout-3col__left-sidebar, .layout-3col__right-sidebar {
     float: left;
-    width: 16.66667%;
+    width: 66.66667%;
     margin-left: 0%;
     margin-right: -100%;
     padding-left: 20px;
@@ -162,7 +171,7 @@
   }
   .layout-3col__first-left-sidebar, .layout-3col__col-1, .layout-3col__col-3, .layout-3col__col-x:nth-child(2n + 1) {
     float: left;
-    width: 8.33333%;
+    width: 33.33333%;
     margin-left: 0%;
     margin-right: -100%;
     padding-left: 20px;
@@ -176,23 +185,23 @@
   .layout-3col__second-left-sidebar, .layout-3col__col-2, .layout-3col__col-4, .layout-3col__col-x:nth-child(2n) {
     clear: none;
     float: left;
-    width: 8.33333%;
-    margin-left: 8.33333%;
+    width: 33.33333%;
+    margin-left: 33.33333%;
     margin-right: -100%;
     padding-left: 20px;
     padding-right: 20px;
   }
   [dir="rtl"] .layout-3col__second-left-sidebar, [dir="rtl"] .layout-3col__col-2, [dir="rtl"] .layout-3col__col-4, [dir="rtl"] .layout-3col__col-x:nth-child(2n) {
     float: right;
-    margin-right: 8.33333%;
+    margin-right: 33.33333%;
     margin-left: -100%;
   }
 }
 
-@media (min-width: 1424px) {
+@media (min-width: 999px) {
   .layout-3col__full {
     float: left;
-    width: 25%;
+    width: 100%;
     margin-left: 0%;
     margin-right: -100%;
   }
@@ -203,7 +212,7 @@
   }
   .layout-3col__left-content {
     float: left;
-    width: 16.66667%;
+    width: 66.66667%;
     margin-left: 0%;
     margin-right: -100%;
   }
@@ -214,20 +223,20 @@
   }
   .layout-3col__right-content {
     float: left;
-    width: 16.66667%;
-    margin-left: 8.33333%;
+    width: 66.66667%;
+    margin-left: 33.33333%;
     margin-right: -100%;
   }
   [dir="rtl"] .layout-3col__right-content {
     float: right;
-    margin-right: 8.33333%;
+    margin-right: 33.33333%;
     margin-left: -100%;
   }
   .layout-3col__left-sidebar, .layout-3col__first-left-sidebar, .layout-3col__second-left-sidebar {
     clear: right;
     float: right;
-    width: 8.33333%;
-    margin-right: 16.66667%;
+    width: 33.33333%;
+    margin-right: 66.66667%;
     margin-left: -100%;
   }
   [dir="rtl"] .layout-3col__left-sidebar, [dir="rtl"] .layout-3col__first-left-sidebar, [dir="rtl"] .layout-3col__second-left-sidebar {
@@ -235,13 +244,13 @@
   }
   [dir="rtl"] .layout-3col__left-sidebar, [dir="rtl"] .layout-3col__first-left-sidebar, [dir="rtl"] .layout-3col__second-left-sidebar {
     float: left;
-    margin-left: 16.66667%;
+    margin-left: 66.66667%;
     margin-right: -100%;
   }
   .layout-3col__right-sidebar {
     clear: right;
     float: right;
-    width: 8.33333%;
+    width: 33.33333%;
     margin-right: 0%;
     margin-left: -100%;
   }
@@ -256,7 +265,7 @@
   .layout-3col__col-1, .layout-3col__col-x:nth-child(3n+1) {
     clear: both;
     float: left;
-    width: 8.33333%;
+    width: 33.33333%;
     margin-left: 0%;
     margin-right: -100%;
   }
@@ -268,25 +277,25 @@
   .layout-3col__col-2, .layout-3col__col-x:nth-child(3n+2) {
     clear: none;
     float: left;
-    width: 8.33333%;
-    margin-left: 8.33333%;
+    width: 33.33333%;
+    margin-left: 33.33333%;
     margin-right: -100%;
   }
   [dir="rtl"] .layout-3col__col-2, [dir="rtl"] .layout-3col__col-x:nth-child(3n+2) {
     float: right;
-    margin-right: 8.33333%;
+    margin-right: 33.33333%;
     margin-left: -100%;
   }
   .layout-3col__col-3, .layout-3col__col-x:nth-child(3n) {
     clear: none;
     float: left;
-    width: 8.33333%;
-    margin-left: 16.66667%;
+    width: 33.33333%;
+    margin-left: 66.66667%;
     margin-right: -100%;
   }
   [dir="rtl"] .layout-3col__col-3, [dir="rtl"] .layout-3col__col-x:nth-child(3n) {
     float: right;
-    margin-right: 16.66667%;
+    margin-right: 66.66667%;
     margin-left: -100%;
   }
   .layout-3col__col-4 {
@@ -317,7 +326,7 @@
   max-width: 1180px;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 777px) {
   .layout-center {
     padding-left: 20px;
     padding-right: 20px;
@@ -335,25 +344,6 @@
 .layout-center.layout-3col {
   padding-left: 0;
   padding-right: 0;
-}
-
-.layout-swap {
-  position: relative;
-}
-
-@media (min-width: 555px) {
-  .layout-swap {
-    padding-top: 48px;
-  }
-}
-
-@media (min-width: 555px) {
-  .layout-swap__top {
-    position: absolute;
-    top: 0;
-    height: 48px;
-    width: 100%;
-  }
 }
 
 .custom-above-below {
@@ -377,5 +367,3 @@
   height: 100%;
   width: 100%;
 }
-
-/*# sourceMappingURL=layouts.css.map */

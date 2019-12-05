@@ -86,5 +86,3 @@ button[disabled]:active,
 [disabled][type='submit']:active {
   color: color(button-disabled);
 }
-
-/*# sourceMappingURL=OLD_button.css.map */

@@ -16,6 +16,7 @@
         }
     },
     "require": {
+        "php": ">=5.6",
         "composer/installers": "^1.2",
         "cweagans/composer-patches": "^1.6.5",
         "drupal-composer/drupal-scaffold": "^2.5",
@@ -32,6 +33,7 @@
         "drupal/minifyhtml": "^1.8",
         "drupal/minifyjs": "^1.8",
         "drupal/module_filter": "^3.1",
+        "drupal/telephone_validation": "^2.2",
         "drupal/webform": "^5.4",
         "drupal/webform_layout_container": "^1.1",
         "drupal/zen": "^7.0@alpha",
@@ -39,7 +41,6 @@
         "jquery/inputmask": "*",
         "jquery/intl-tel-input": "*",
         "jquery/select2": "*",
-        "php": ">=5.6",
         "signature_pad/signature_pad": "*",
         "twig/extensions": "^1.5",
         "vlucas/phpdotenv": "^2.4",

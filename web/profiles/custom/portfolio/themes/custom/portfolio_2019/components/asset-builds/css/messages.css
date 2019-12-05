@@ -12,6 +12,15 @@
  * @TODO
  * Same breakoints as in js.
  */
+/*@include add-breakpoint(xxxs, (320px, 'no-query' true));
+@include add-breakpoint(xxs,  (444px, 'no-query' true));
+@include add-breakpoint(xs,   (555px, 'no-query' true));
+@include add-breakpoint(s,    (768px, 'no-query' true));
+@include add-breakpoint(m,    (1024px, 'no-query' true));
+@include add-breakpoint(l,    (1280px, 'no-query' true));
+@include add-breakpoint(xl,   (1424px, 'no-query' true));
+@include add-breakpoint(xxl,  (1624px));
+@include add-breakpoint(xxxl, (1824px));*/
 /**
  * Custom max width media queries.
  */
@@ -162,5 +171,3 @@
 .messages--error path {
   fill: #c00;
 }
-
-/*# sourceMappingURL=messages.css.map */
