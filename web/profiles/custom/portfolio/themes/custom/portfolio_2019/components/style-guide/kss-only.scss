@@ -7,7 +7,8 @@
 // options.styleGuide.css object in gulpfile.js.
 
 // Add an outline to every grid item in the style guide.
-[id^='kssref-layouts-'] [class^='layout-'][class*='__'] {
+[id^='kssref-layouts-'] [class^='layout-'][class*='__'],
+[id^='kssref-layouts-'] [class^='col-'] {
   outline: 1px dotted color('grey');
 }
 

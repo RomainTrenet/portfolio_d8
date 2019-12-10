@@ -1,17 +1,13 @@
-// Framework grid generation
+// Custom framework grid generation.
 //
-// Used only by Bootstrap to generate the correct number of grid classes given
-// any value of `$grid-columns`.
+// Used only by Bootstrap to generate the correct number of grid classes given in $grid-settings.
 
-// @TODO : remove gutter from parameters : we get it for each breakpoint. The same for columns.
-//@mixin make-grid-columns($columns: $grid-columns, $gutter: $grid-gutter-width, $breakpoints: $grid-breakpoints) {
 @mixin make-grid-columns($breakpoints: $grid-settings) {
   // Common properties for all breakpoints, excluding gutters.
   // @todo : check.
   %grid-column {
     position: relative;
     width: 100%;
-    // @todo DONE : remove common padding for gutters.
   }
   [class^='col'] {
     @extend %grid-column;
