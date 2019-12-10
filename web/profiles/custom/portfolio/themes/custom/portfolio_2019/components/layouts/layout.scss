@@ -1,0 +1,15 @@
+@import 'init';
+
+// Layouts
+//
+// The layout styling for major parts of the page that are included with the
+// theme.
+//
+
+// Custom layout helpers.
+@import 'custom-helper/custom-helper';
+
+// Style guide: Custom bootstrap layouts.
+//@import 'custom-layout/functions';
+@import 'custom-layout/mixins';
+@import 'custom-layout/layout-12col-bootstrap';

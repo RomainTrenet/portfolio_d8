@@ -1,0 +1,122 @@
+// Responsive 12-column bootstrap grid TODO
+//
+// The `.layout-12col` layout is a responsive grid layout that is:
+// - 6 column at mobile sizes
+// - 12 columns at tablet sizes
+//
+// TODO The `.layout-12col` class is used on the container div for the layout. A *grid
+// item* in the container can be created using one of the following classes:
+//
+// - `.layout-12col__full` : 3-column wide grid item; starts a new row
+// - `.layout-12col__left-content` : 2-column wide grid item, spanning columns 1
+//   and 2; starts a new row
+// - `.layout-12col__right-content` : 2-column wide grid item, spanning columns 2
+//   and 3; starts a new row
+// - `.layout-12col__left-sidebar` : 1-column wide grid item spanning column 1;
+//   starts a new row on tablet screens
+// - `.layout-12col__first-left-sidebar` : 1-column wide grid item spanning column 1;
+//   spans column 1 and starts a new row on tablet screens only
+// - `.layout-12col__second-left-sidebar` : 1-column wide grid item spanning column 1;
+//   spans column 2 on tablet screens only
+// - `.layout-12col__right-sidebar` : 1-column wide grid item spanning column 3;
+//   starts a new row on tablet screens
+// - `.layout-12col__col-1` : 1-column wide grid item spanning column 1; starts a
+//   new row
+// - `.layout-12col__col-2` : 1-column wide grid item spanning column 2
+// - `.layout-12col__col-3` : 1-column wide grid item spanning column 3; starts a
+//   new row on tablet screens
+// - `.layout-12col__col-4` : At tablet sizes, the `__col-x` grid items will form
+//   an irregular layout of 2 items in the first row and 1 item in the second
+//   row. The `__col-4` is a "hidden" item that does not appear on the
+//   large-screen 3-column grid, but is a 1-column wide grid item spanning
+//   column 2 on tablet screens.
+// - `.layout-12col__col-x` : 1-column wide grid item spanning column 1; when
+//   several of these are used inside a `.layout-12col__grid-item-container` or
+//   `.layout-12col`, the first one is positioned like `__col-1`, the
+//   second like `__col-2`, etc.
+//
+// There are 2 ways to do a nested grid:
+// 1. Place a grid container div inside a grid item. Just apply the normal
+//    classes to the nested grid container and its grid items.
+// 2. The grid item's div is also the grid container for the nested grid. In
+//    this case, the `.layout12-col__grid-item-container` class should be added
+//    to the div to ensure its nested grid items align with the parent grid.
+//
+// Markup: layout-12col-bootstrap.twig
+//
+// Style guide: layouts.layout-12col-bootstrap
+
+// @todo : remove.
+[class^='col-'] {
+  outline: 1px dotted #999;
+}
+
+// Container widths
+//
+// Set the container width, and override it for fixed navbars in media queries.
+
+// Single container class with breakpoint max-widths
+.container {
+  // @ todo : loop to have a container padding and width for each breakpoint.
+  // Paddings.
+  @include make-container();
+  // Max widths.
+  @include make-container-max-widths();
+}
+
+// 100% wide container at all breakpoints
+.container-fluid,
+%container-fluid {
+  @include make-container();
+}
+
+
+// Responsive containers that are 100% wide until a breakpoint
+// @todo : read 'container-max-width' value in $grid-settings;
+//@each $breakpoint, $container-max-width in $container-max-widths {
+//  .container-#{$breakpoint} {
+//    @extend %container-fluid;
+//  }
+//
+//  @include media-breakpoint-up($breakpoint, $grid-breakpoints) {
+//    %responsive-container-#{$breakpoint} {
+//      max-width: $container-max-width;
+//    }
+//
+//    @each $name, $width in $grid-breakpoints {
+//      @if ($container-max-width > $width or $breakpoint == $name) {
+//        .container#{breakpoint-infix($name, $grid-breakpoints)} {
+//          @extend %responsive-container-#{$breakpoint};
+//        }
+//      }
+//    }
+//  }
+//}
+
+
+// Row
+//
+// Rows contain your columns.
+
+.row {
+  @include make-row();
+}
+
+// Remove the negative margin from default .row, then the horizontal padding
+// from all immediate children columns (to prevent runaway style inheritance).
+.no-gutters {
+  margin-right: 0;
+  margin-left: 0;
+
+  > .col,
+  > [class*='col-'] {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+
+// Columns
+//
+// Common styles for small and large grid columns
+
+@include make-grid-columns();
