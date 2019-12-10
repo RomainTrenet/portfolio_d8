@@ -1,0 +1,46 @@
+// Breakpoints
+//
+// Use the `respond-to()` mixin to use named breakpoints. Documentation is
+// available in the [Breakpoint wiki
+// pages](https://github.com/at-import/breakpoint/wiki/Respond-To).
+//
+// Style guide: sass.variables.breakpoints
+
+/**
+ * Custom min width media queries.
+ *
+ * @TODO DONE loop on $grid-settings.
+ * @TODO check if we have to do before-s, and range media queries.
+ * Same breakoints as in js.
+ */
+@mixin custom-make-breakpoint($grid-settings) {
+  /**
+   * Custom max width media queries.
+   */
+
+  /*
+  @include add-breakpoint(before-xxs,  (max-width 443px, 'no-query' true));
+  @include add-breakpoint(before-xs,   (max-width 554px, 'no-query' true));
+  @include add-breakpoint(before-s,    (max-width 767px, 'no-query' true));
+  @include add-breakpoint(before-m,    (max-width 1023px, 'no-query' true));
+  @include add-breakpoint(before-l,    (max-width 1179px, 'no-query' true));
+  @include add-breakpoint(before-xl,   (max-width 1423px, 'no-query' true));
+  @include add-breakpoint(before-xxl,  (max-width 1623px, 'no-query' true));
+  @include add-breakpoint(before-xxxl, (max-width 1823px, 'no-query' true));
+  */
+  /**
+   * Custom range media queries.
+   */
+  /*
+  @include add-breakpoint(s-m,    (768px 1223px, 'no-query' true));
+  @include add-breakpoint(x-m,    (1024px 1199px, 'no-query' true));
+  */
+  // TODO check if not null.
+  @each $bkpt-name, $breakpoint in $grid-settings {
+    $size: breakpoint-get-value($bkpt-name, 'size');
+    //@debug size;
+    $bkpt-option: breakpoint-get-value($bkpt-name, 'bkpt-option');
+    //@debug bkpt-option;
+    @include add-breakpoint($bkpt-name,  ($size, $bkpt-option));
+  }
+}

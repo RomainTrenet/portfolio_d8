@@ -195,6 +195,79 @@ $base-unit:         'rem';
 $rem-fallback:      false;
 
 
+// Custom Bootstrap - Grid columns
+//
+// Set the number of columns and specify the width of the gutters.
+
+// @todo : remove or make it default value.
+//$grid-columns:                12 !default;
+$default-grid-gutter-width:   30px !default;
+$grid-row-columns:            6 !default;
+
+// Custom Bootstrap - Grid breakpoints
+// @todo : explain.
+// Define the minimum dimensions at which your layout will change,
+// adapting to different screen sizes, for use in media queries.
+$grid-settings: (
+  xxxs: (
+    size: 0,
+    bkpt-option: 'no-query' true,
+    generate-class: false,
+    columns: 6,
+    gutters: 20px,
+  ),
+  xxs: (
+    size: 320px,
+    bkpt-option: 'no-query' true,
+    generate-class: false,
+    columns: 6,
+    gutters: 20px,
+  ),
+  xs: (
+    size: 576px,
+    container-max-width: 540px,
+    bkpt-option: 'no-query' true,
+    generate-class: true,
+    columns: 6,
+    gutters: 20px,
+  ),
+  s: (
+    size: 768px,
+    container-max-width: 720px,
+    bkpt-option: 'no-query' true,
+    generate-class: true,
+    columns: 12,
+    gutters: 30px,
+  ),
+  m: (
+    size: 992px,
+    container-max-width: 960px,
+    bkpt-option: 'no-query' true,
+    generate-class: true,
+    columns: 12,
+    gutters: 30px,
+  ),
+  l: (
+    size: 1200px,
+    container-max-width: 1140px,
+    bkpt-option: 'no-query' true,
+    generate-class: true,
+    columns: 12,
+    gutters: 40px,
+  ),
+  xl: (
+    size: 1400px,
+    bkpt-option: 'no-query' true,
+    generate-class: false,
+    columns: 12,
+    gutters: 50px,
+  ),
+);
+
+// @todo : test. Removed to delete $grid-breakpoints.
+//@include _assert-ascending($grid-breakpoints, '$grid-breakpoints');
+//@include _assert-starts-at-zero($grid-breakpoints, '$grid-breakpoints');
+
 // Breakpoints
 //
 // Use the `respond-to()` mixin to use named breakpoints. Documentation is
@@ -204,42 +277,15 @@ $rem-fallback:      false;
 // Style guide: sass.variables.breakpoints
 
 /**
- * Custom min width media queries.
+ * Declare custom breakpoints from grid settings variable.
  *
- * @TODO
  * Same breakoints as in js.
  */
-@include add-breakpoint(xxxs, (320px, 'no-query' true));
-@include add-breakpoint(xxs,  (444px, 'no-query' true));
-@include add-breakpoint(xs,   (555px, 'no-query' true));
-@include add-breakpoint(s,    (768px, 'no-query' true));
-@include add-breakpoint(m,    (1024px, 'no-query' true));
-@include add-breakpoint(l,    (1280px, 'no-query' true));
-@include add-breakpoint(xl,   (1424px, 'no-query' true));
-@include add-breakpoint(xxl,  (1624px));
-@include add-breakpoint(xxxl, (1824px));
-
-/**
- * Custom max width media queries.
- */
-@include add-breakpoint(before-xxs,  (max-width 443px, 'no-query' true));
-@include add-breakpoint(before-xs,   (max-width 554px, 'no-query' true));
-@include add-breakpoint(before-s,    (max-width 767px, 'no-query' true));
-@include add-breakpoint(before-m,    (max-width 1023px, 'no-query' true));
-@include add-breakpoint(before-l,    (max-width 1179px, 'no-query' true));
-@include add-breakpoint(before-xl,   (max-width 1423px, 'no-query' true));
-@include add-breakpoint(before-xxl,  (max-width 1623px, 'no-query' true));
-@include add-breakpoint(before-xxxl, (max-width 1823px, 'no-query' true));
-
-/**
- * Custom range media queries.
- */
-@include add-breakpoint(s-m,    (768px 1223px, 'no-query' true));
-@include add-breakpoint(x-m,    (1024px 1199px, 'no-query' true));
+@import '../layouts/custom-breakpoints/breakpoints';
+@include custom-make-breakpoint($grid-settings);
 
 // Output media queries where the above px are converted to ems.
 // @include breakpoint-set('to ems', true);
-
 
 // Zen grids
 //
@@ -257,33 +303,13 @@ $zen-box-sizing: universal-border-box;
 
 // First we set the values we need for the mobile version of our layouts (the
 // version that does _not_ appear inside any @media queries.)
-$zen-columns: 1;
-$zen-gutters: 40px;
-
-/**
- * Custom layout.
- */
-// Then we set the values we need for each of the layouts at larger media query
-// sizes. Note how the names of the layouts match the names of our breakpoints
-// above. That allows a single zen-respond-to() to both use the proper item
-// from $zen-layouts and from $breakpoints.
-$zen-layouts: (
-  s: (
-    columns: 12,
-    gutters: 40px,
-  ),
-  m: (
-    columns: 12,
-    gutters: 40px,
-  ),
-  xl: (
-    columns: 12,
-    gutters: 60px,
-  ),
-);
+//$zen-columns: 6;
+//$zen-gutters: 40px;
 
 // See $include-rtl below.
 $zen-rtl-selector: '[dir="rtl"]';
+
+//@include _assert-ascending($container-max-widths, '$container-max-widths');
 
 
 // Miscellaneous variables

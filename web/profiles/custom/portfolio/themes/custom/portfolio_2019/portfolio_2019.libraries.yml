@@ -17,7 +17,7 @@ base:
     - portfolio_2019/clearfix
     - portfolio_2019/visually-hidden
 
-layouts:
+layout:
   css:
     # The SMACSS category, "layout", is loaded after "base" styles.
     layout:
