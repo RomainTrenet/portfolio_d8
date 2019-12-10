@@ -52,22 +52,28 @@
 }
 
 // Container widths
-//
+// @todo : explain.
 // Set the container width, and override it for fixed navbars in media queries.
 
-// Single container class with breakpoint max-widths
-.container {
-  // @ todo : loop to have a container padding and width for each breakpoint.
-  // Paddings.
-  @include make-container();
-  // Max widths.
-  @include make-container-max-widths();
-}
 
-// 100% wide container at all breakpoints
+// 100% wide container at all breakpoints as default.
+.container,
 .container-fluid,
 %container-fluid {
+  // Base common css for media queries.
   @include make-container();
+
+  // One only loop, to improve css use of media queries.
+  @each $bkpt-name, $breakpoint in $grid-settings {
+    @include make-container-gutters($bkpt-name);
+  }
+}
+
+// Fix max widths for non fluid container.
+.container {
+  @each $bkpt-name, $breakpoint in $grid-settings {
+    @include make-container-max-widths($bkpt-name);
+  }
 }
 
 
@@ -100,6 +106,10 @@
 
 .row {
   @include make-row();
+  // One only loop, to improve css use of media queries.
+  @each $bkpt-name, $breakpoint in $grid-settings {
+    @include make-row-margins($bkpt-name);
+  }
 }
 
 // Remove the negative margin from default .row, then the horizontal padding

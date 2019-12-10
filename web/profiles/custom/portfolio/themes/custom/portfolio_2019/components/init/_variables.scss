@@ -201,16 +201,13 @@ $rem-fallback:      false;
 
 // @todo : remove or make it default value.
 //$grid-columns:                12 !default;
-$grid-gutter-width:           30px !default;
+$default-grid-gutter-width:   30px !default;
 $grid-row-columns:            6 !default;
 
 // Custom Bootstrap - Grid breakpoints
-//
+// @todo : explain.
 // Define the minimum dimensions at which your layout will change,
 // adapting to different screen sizes, for use in media queries.
-
-//@import '../layouts/custom-layout-bootstrap-4.4.1/functions';
-
 $grid-settings: (
   xxxs: (
     size: 0,
@@ -220,7 +217,7 @@ $grid-settings: (
     gutters: 20px,
   ),
   xxs: (
-    size: 320,
+    size: 320px,
     bkpt-option: 'no-query' true,
     generate-class: false,
     columns: 6,
@@ -228,7 +225,7 @@ $grid-settings: (
   ),
   xs: (
     size: 576px,
-    container-max-width: 540,
+    container-max-width: 540px,
     bkpt-option: 'no-query' true,
     generate-class: true,
     columns: 6,
@@ -236,7 +233,7 @@ $grid-settings: (
   ),
   s: (
     size: 768px,
-    container-max-width: 720,
+    container-max-width: 720px,
     bkpt-option: 'no-query' true,
     generate-class: true,
     columns: 12,
@@ -244,7 +241,7 @@ $grid-settings: (
   ),
   m: (
     size: 992px,
-    container-max-width: 960,
+    container-max-width: 960px,
     bkpt-option: 'no-query' true,
     generate-class: true,
     columns: 12,
@@ -252,7 +249,7 @@ $grid-settings: (
   ),
   l: (
     size: 1200px,
-    container-max-width: 1140,
+    container-max-width: 1140px,
     bkpt-option: 'no-query' true,
     generate-class: true,
     columns: 12,
@@ -266,17 +263,6 @@ $grid-settings: (
     gutters: 50px,
   ),
 );
-
-// Custom Bootstrap - Grid containers
-//
-// Define the maximum width of `.container` for different screen sizes.
-// @todo : remove.
-$container-max-widths: (
-  xs: 540px,
-  s: 720px,
-  m: 960px,
-  l: 1140px
-) !default;
 
 // @todo : test. Removed to delete $grid-breakpoints.
 //@include _assert-ascending($grid-breakpoints, '$grid-breakpoints');
@@ -300,38 +286,6 @@ $container-max-widths: (
 
 // Output media queries where the above px are converted to ems.
 // @include breakpoint-set('to ems', true);
-
-/**
- * Custom layout.
- */
-// Then we set the values we need for each of the layouts at larger media query
-// sizes. Note how the names of the layouts match the names of our breakpoints
-// above. That allows a single zen-respond-to() to both use the proper item
-// from $zen-layouts and from $breakpoints.
-// Former $zen-layouts, this is zen model to manage columns and gutters.
-// @todo : remove it.
-/*$grid-layouts: (
-  xs: (
-    columns: 6,
-    gutters: 20px,
-  ),
-  sm: (
-    columns: 12,
-    gutters: 30px,
-  ),
-  md: (
-    columns: 12,
-    gutters: 30px,
-  ),
-  lg: (
-    columns: 12,
-    gutters: 40px,
-  ),
-  xl: (
-    columns: 12,
-    gutters: 80px,
-  ),
-);*/
 
 // Zen grids
 //
