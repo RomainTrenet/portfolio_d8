@@ -21,7 +21,7 @@ layout:
   css:
     # The SMACSS category, "layout", is loaded after "base" styles.
     layout:
-      components/asset-builds/css/layout.css: {}
+      components/asset-builds/css/layouts.css: {}
 
 autocomplete:
   css:

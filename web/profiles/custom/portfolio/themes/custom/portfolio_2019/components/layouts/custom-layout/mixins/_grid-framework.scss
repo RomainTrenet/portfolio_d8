@@ -16,11 +16,12 @@
   [class^='col'] {
     @extend %grid-column;
   }
-  // Or direct css...
+  // Or directly by css...
 
   @each $breakpoint in map-keys($breakpoints) {
     $infix: breakpoint-infix($breakpoint, $breakpoints);
 
+    // @todo : use get value function.
     // @TODO DONE : get current point layout.
     $current-layout: map-get($grid-settings, $breakpoint);
     // @TODO DONE : get gutter from bp
