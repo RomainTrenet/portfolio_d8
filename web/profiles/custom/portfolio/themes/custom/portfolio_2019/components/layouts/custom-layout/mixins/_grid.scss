@@ -10,6 +10,7 @@
 }
 
 // For a specific breakpoint, define the maximum width of the container in a media query.
+// @todo : remove respond-to and place it before calling this function.
 @mixin make-container-max-widths($current-bkpt, $breakpoints: $grid-settings) {
   $max-width: breakpoint-get-value($current-bkpt, 'container-max-width');
   @if ($max-width) {
@@ -20,13 +21,13 @@
 }
 
 // For a specific breakpoint, define gutters in a media query.
-@mixin make-container-gutters($current-bkpt, $breakpoints: $grid-settings) {
+/*@mixin make-container-gutters($current-bkpt, $breakpoints: $grid-settings) {
   $gutters: get-current-breakpoint-gutters($current-bkpt);
   @include respond-to($current-bkpt) {
     padding-right: $gutters / 2;
     padding-left: $gutters / 2;
   }
-}
+}*/
 
 // Base common row CSS.
 @mixin make-row() {
@@ -86,4 +87,28 @@
     flex: 0 0 100% / $count;
     max-width: 100% / $count;
   }
+}
+
+// Custom new mixins and functions..
+
+// Get value of a key in grid settings, for a specific breakpoint.
+@function breakpoint-get-value($bkpt-name, $value, $breakpoints: $grid-settings) {
+  $breakpoint-settings: map-get($breakpoints, $bkpt-name);
+  @return map-get($breakpoint-settings, $value);
+}
+
+// Get gutters for a specific breakpoint.
+@function  get-current-breakpoint-gutters($current-bkpt, $breakpoints: $grid-settings) {
+  $gutters: breakpoint-get-value($current-bkpt, 'gutters');
+
+  // Ensure gutters value.
+  @return if($gutters,$gutters,$default-grid-gutter-width);
+}
+
+// Common gutters.
+@mixin make-gutters($current-bkpt) {
+  // Ensure gutters.
+  $gutters: get-current-breakpoint-gutters($current-bkpt);
+  padding-left: $gutters / 2;
+  padding-right: $gutters / 2;
 }

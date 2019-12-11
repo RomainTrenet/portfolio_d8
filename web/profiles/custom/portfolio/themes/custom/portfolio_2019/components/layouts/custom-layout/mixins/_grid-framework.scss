@@ -3,81 +3,65 @@
 // Used only by Bootstrap to generate the correct number of grid classes given in $grid-settings.
 
 @mixin make-grid-columns($breakpoints: $grid-settings) {
-  // Common properties for all breakpoints, excluding gutters.
-  // @todo : check.
-  %grid-column {
+  // Common properties for all breakpoints.
+  [class^='col'] {
     position: relative;
     width: 100%;
   }
-  [class^='col'] {
-    @extend %grid-column;
-  }
-  // Or directly by css...
 
-  @each $breakpoint in map-keys($breakpoints) {
-    $infix: breakpoint-infix($breakpoint, $breakpoints);
+  // One only loop, to improve css use of media queries.
+  @each $bkpt-name, $breakpoint in $grid-settings {
+    // For a specific breakpoint, get gutters and nb columns values.
+    $gutters: get-current-breakpoint-gutters($bkpt-name);
+    $columns: breakpoint-get-value($bkpt-name, 'columns');
 
-    // @todo : use get value function.
-    // @TODO DONE : get current point layout.
-    $current-layout: map-get($grid-settings, $breakpoint);
-    // @TODO DONE : get gutter from bp
-    $gutter: map-get($current-layout, 'gutters');
-    // @TODO DONE : get columns from bp
-    $columns: map-get($current-layout, 'columns');
-
-    // Allow columns to stretch full width below their breakpoints
-    //@for $i from 1 through $columns {
-    //  .col#{$infix}-#{$i} {
-    //    @extend %grid-column;
-    //  }
-    //}
-    //
-    //.col#{$infix},
-    //.col#{$infix}-auto {
-    //  @extend %grid-column;
-    //}
-
-    @include media-breakpoint-up($breakpoint, $breakpoints) {
+    // Current breakpoint.
+    @include respond-to($bkpt-name) {
+      // Gutters for columns, for current breakpoint.
+      [class^='col'] {
+        @include make-gutters($bkpt-name);
+      }
 
       // Provide basic `.col-{bp}` classes for equal-width flexbox columns
-      .col#{$infix} {
+      [class^='col-#{$bkpt-name}'] {
         flex-basis: 0;
         flex-grow: 1;
         max-width: 100%;
       }
 
-      @for $i from 1 through $grid-row-columns {
-        .row-cols#{$infix}-#{$i} {
-          @include row-cols($i);
-        }
-      }
-
-      .col#{$infix}-auto {
+      // Automatic column for current breakpoint.
+      .col-#{$bkpt-name}-auto {
         @include make-col-auto();
       }
 
+      // Make every columns for current breakpoint.
       @for $i from 1 through $columns {
-        .col#{$infix}-#{$i} {
+        .row-cols-#{$bkpt-name}-#{$i} {
+          @include row-cols($i);
+        }
+
+        .col-#{$bkpt-name}-#{$i} {
           @include make-col($i, $columns);
         }
       }
 
-      .order#{$infix}-first { order: -1; }
-
-      .order#{$infix}-last { order: $columns + 1; }
-
+      // Order classes.
+      .order-#{$bkpt-name}-first { order: -1; }
+      .order-#{$bkpt-name}-last { order: $columns + 1; }
       @for $i from 0 through $columns {
-        .order#{$infix}-#{$i} { order: $i; }
+        .order-#{$bkpt-name}-#{$i} { order: $i; }
       }
 
       // `$columns - 1` because offsetting by the width of an entire row isn't possible
       @for $i from 0 through ($columns - 1) {
-        @if not ($infix == '' and $i == 0) { // Avoid emitting useless .offset-0
-          .offset#{$infix}-#{$i} {
+        @if not ($bkpt-name == '' and $i == 0) { // Avoid emitting useless .offset-0
+          .offset-#{$bkpt-name}-#{$i} {
             @include make-col-offset($i, $columns);
           }
         }
       }
+
     }
   }
+
 }

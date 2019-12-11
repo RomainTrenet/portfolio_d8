@@ -57,7 +57,9 @@
 
   // One only loop, to improve css use of media queries.
   @each $bkpt-name, $breakpoint in $grid-settings {
-    @include make-container-gutters($bkpt-name);
+    @include respond-to($bkpt-name) {
+      @include make-gutters($bkpt-name);
+    }
   }
 }
 

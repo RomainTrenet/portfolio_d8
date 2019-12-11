@@ -151,19 +151,3 @@
     }
   }
 }
-
-// Custom new mixins.
-
-// Get value of a key in grid settings, for a specific breakpoint.
-@function breakpoint-get-value($bkpt-name, $value, $breakpoints: $grid-settings) {
-  $breakpoint-settings: map-get($breakpoints, $bkpt-name);
-  @return map-get($breakpoint-settings, $value);
-}
-
-// Get gutters for a specific breakpoint.
-@function  get-current-breakpoint-gutters($current-bkpt, $breakpoints: $grid-settings) {
-  $gutters: breakpoint-get-value($current-bkpt, 'gutters');
-
-  // Ensure gutters value.
-  @return if($gutters,$gutters,$default-grid-gutter-width);
-}
