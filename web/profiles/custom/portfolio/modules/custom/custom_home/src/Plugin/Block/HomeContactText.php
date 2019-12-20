@@ -3,23 +3,24 @@
 namespace Drupal\custom_home\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
-use Drupal\image\Entity\ImageStyle;
+// use Drupal\image\Entity\ImageStyle;.
 
 /**
  * Provides the main home block.
  *
  * @Block(
- *   id = "home_main_block",
- *   admin_label = @Translation("Home main block"),
+ *   id = "home_branding",
+ *   admin_label = @Translation("Home branding"),
  *   category = @Translation("Custom"),
  * )
  */
-class HomeMainBlock extends BlockBase {
+class HomeBranding extends BlockBase {
 
   /**
    * {@inheritdoc}
    */
   public function build() {
+
     // @todo : admin page for elements.
     $image_path = drupal_get_path('module', 'custom_home') . '/img/fond_degrade.jpg';
     $title = 'Développeur Drupal &<br>Intégrateur.';
@@ -27,8 +28,9 @@ class HomeMainBlock extends BlockBase {
     $ctas .= '<a href="#" class="btn-third">THIRD</a><a href="#" class="btn-fourth">Fourth.</a>';
 
     return [
-      '#theme' => 'home_main',
-      '#title' => [
+      '#theme' => 'home_branding',
+      '#title' => FALSE,
+      '#main_title' => [
         '#markup' => $title,
         '#allowed_tags' => ['br'],
       ],
