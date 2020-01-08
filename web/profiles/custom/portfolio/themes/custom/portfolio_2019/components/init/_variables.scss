@@ -301,15 +301,8 @@ $grid-settings: (
 $zen-auto-include-grid-item-base: false;
 $zen-box-sizing: universal-border-box;
 
-// First we set the values we need for the mobile version of our layouts (the
-// version that does _not_ appear inside any @media queries.)
-//$zen-columns: 6;
-//$zen-gutters: 40px;
-
 // See $include-rtl below.
 $zen-rtl-selector: '[dir="rtl"]';
-
-//@include _assert-ascending($container-max-widths, '$container-max-widths');
 
 
 // Miscellaneous variables

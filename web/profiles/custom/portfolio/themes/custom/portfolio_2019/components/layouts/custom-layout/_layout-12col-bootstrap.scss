@@ -66,7 +66,12 @@
 // Custom. Fix max widths for non fluid container.
 .container {
   @each $bkpt-name, $breakpoint in $grid-settings {
-    @include make-container-max-widths($bkpt-name);
+    $max-width: get-container-max-widths($bkpt-name);
+    @if ($max-width) {
+      @include respond-to($bkpt-name) {
+        max-width: $max-width;
+      }
+    }
   }
 }
 
@@ -101,7 +106,9 @@
   @include make-row();
   // One only loop, to improve css use of media queries.
   @each $bkpt-name, $breakpoint in $grid-settings {
-    @include make-row-margins($bkpt-name);
+    @include respond-to($bkpt-name) {
+      @include make-row-margins($bkpt-name);
+    }
   }
 }
 

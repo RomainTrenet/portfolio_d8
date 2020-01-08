@@ -3,10 +3,9 @@
 namespace Drupal\custom_home\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
-use Drupal\image\Entity\ImageStyle;
 
 /**
- * Provides the main home block.
+ * Provides the home contact form block.
  *
  * @Block(
  *   id = "home_contact_block",
@@ -22,9 +21,7 @@ class HomeContactBlock extends BlockBase {
   public function build() {
 
     return [
-      '#title' => [
-        '#markup' => NULL,
-      ],
+      '#title' => FALSE,
       'webform' => [
         '#type' => 'webform',
         '#webform' => 'contact',

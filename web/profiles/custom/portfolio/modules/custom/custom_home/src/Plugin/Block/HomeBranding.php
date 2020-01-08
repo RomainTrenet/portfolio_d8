@@ -3,7 +3,7 @@
 namespace Drupal\custom_home\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
-use Drupal\image\Entity\ImageStyle;
+// use Drupal\image\Entity\ImageStyle;.
 
 /**
  * Provides the main home block.
@@ -28,8 +28,9 @@ class HomeBranding extends BlockBase {
     $ctas .= '<a href="#" class="btn-third">THIRD</a><a href="#" class="btn-fourth">Fourth.</a>';
 
     return [
-      '#theme' => 'home_main',
-      '#title' => [
+      '#theme' => 'home_branding',
+      '#title' => FALSE,
+      '#main_title' => [
         '#markup' => $title,
         '#allowed_tags' => ['br'],
       ],

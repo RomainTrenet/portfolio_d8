@@ -2,13 +2,22 @@
 
 function custom_home_theme($existing, $type, $theme, $path) {
   return [
-    'home_main' => [
+    'home_page' => [
       'variables' => [
-        'title' => NULL,
+        'contact_text' => NULL,
+        'contact_form' => NULL,
+      ],
+    ],
+
+    // @todo : rename to home_branding.
+    'home_branding' => [
+      'variables' => [
+        'main_title' => NULL,
         'subtitle' => NULL,
         'cta' => NULL,
         'background_image' => NULL,
       ],
     ],
+
   ];
 }

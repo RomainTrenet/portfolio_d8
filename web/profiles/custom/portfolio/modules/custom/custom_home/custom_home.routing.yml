@@ -1,7 +1,7 @@
 custom_home.homepage:
   path: '/homepage'
   defaults:
-    _title: 'Hello'
+    _title: 'Développeur Drupal & Intégrateur.'
     _controller: '\Drupal\custom_home\Controller\HomepageController::content'
   requirements:
     _access: 'TRUE'
