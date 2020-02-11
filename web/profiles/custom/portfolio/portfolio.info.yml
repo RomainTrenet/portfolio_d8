@@ -55,6 +55,6 @@ dependencies:
 themes:
   #Front
   - zen
-  - portfolio
+  - portfolio_2019
   #Admin
   - adminimal_theme
