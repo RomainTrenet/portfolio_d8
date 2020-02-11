@@ -1,0 +1,5 @@
+custom_tests.action:
+  route_name: custom_tests.target
+  title: 'Hello action'
+  appears_on:
+    - custom_tests.hello

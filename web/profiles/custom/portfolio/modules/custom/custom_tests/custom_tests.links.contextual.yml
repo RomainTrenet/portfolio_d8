@@ -1,0 +1,4 @@
+custom_tests.edit_form:
+  route_name: 'custom_tests.target'
+  group: node
+  title: 'My hello contextual link'

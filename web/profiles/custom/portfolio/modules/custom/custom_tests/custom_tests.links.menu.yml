@@ -1,0 +1,11 @@
+custom_tests.hello_page:
+  title: 'Hello link'
+  route_name: 'custom_tests.hello'
+  description: 'Hello page link'
+  menu_name: main
+
+custom_tests.target_page:
+  title: 'Hello target'
+  route_name: 'custom_tests.target'
+  description: 'Hello target page link'
+  menu_name: main

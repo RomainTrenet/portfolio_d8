@@ -1,0 +1,10 @@
+custom_tests.truc:
+  title: 'Edit mode (power users only)'
+  route_name: custom_tests.hello
+  group: hello
+  weight: 0
+custom_tests.bidule:
+  title: 'delete mode (power users only)'
+  route_name: custom_tests.hello
+  group: hello
+  weight: 1

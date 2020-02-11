@@ -1,0 +1,9 @@
+custom_tests.first:
+  route_name: 'custom_tests.hello'
+  title: 'First action'
+  base_route: 'custom_tests.hello'
+custom_tests.second:
+  route_name: 'custom_tests.hello'
+  title: 'Second action'
+  base_route: 'custom_tests.hello'
+  weight: 100

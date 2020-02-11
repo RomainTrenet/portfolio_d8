@@ -1,0 +1,34 @@
+<?php
+
+use Drupal\Core\Url;
+//use Drupal\Core\Routing\UrlGenerator;
+
+/**
+ * Implements hook_help().
+ */
+function custom_tests_help($route_name, \Drupal\Core\Routing\RouteMatchInterface $route_match) {
+  switch ($route_name) {
+
+    // Current module help page.
+    case 'help.page.custom_tests':
+      //$my_url = \Drupal::url('block.admin_display');
+      $my_url = Url::fromRoute('block.admin_display')->getInternalPath();
+      ksm($my_url);
+
+      $path = 'block.admin_display'; //$current_url->getRouteName(); // <current>
+
+      //Drupal syntax.
+      // @todo.
+      $current_path = '/' . $my_url;
+      $path_alias = \Drupal::service('path.alias_manager')->getAliasByPath($current_path);
+      ksm($path_alias);
+
+      //Drupal syntax.
+      $path = \Drupal::request()->attributes->get('_system_path');
+
+      return '<p>' . t('WIIIZZZZ Blocks are boxes of content rendered into an area, or region, of a web page. The default theme Bartik, for example, implements the regions "Sidebar first", "Sidebar second", "Featured", "Content", "Header", "Footer", etc., and a block may appear in any one of these areas. The <a href=":blocks">blocks administration page</a> provides a drag-and-drop interface for assigning a block to a region, and for controlling the order of blocks within regions.', array(
+          ':blocks' => $my_url,
+        )) . '</p>';
+
+  }
+}

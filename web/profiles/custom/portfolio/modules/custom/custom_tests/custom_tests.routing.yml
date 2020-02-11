@@ -1,0 +1,15 @@
+custom_tests.hello:
+  path: '/hello'
+  defaults:
+    _title: 'Hello'
+    _controller: '\Drupal\custom_tests\Controller\HelloController::content'
+  requirements:
+    _access: 'TRUE'
+
+custom_tests.target:
+  path: '/hello-target'
+  defaults:
+    _title: 'Hello TARGET'
+    _controller: '\Drupal\custom_tests\Controller\TargetController::content'
+  requirements:
+    _access: 'TRUE'
