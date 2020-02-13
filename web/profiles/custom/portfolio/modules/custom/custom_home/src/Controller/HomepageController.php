@@ -2,9 +2,10 @@
 
 namespace Drupal\custom_home\Controller;
 
-use Drupal\Core\Cache\CacheBackendInterface;
+use Drupal\block\Entity\Block;
+use Drupal\Core\Block\BlockManagerInterface;
 use Drupal\Core\Controller\ControllerBase;
-use Drupal\Core\Block\BlockManager;
+use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * Class HomepageController.
@@ -24,13 +25,34 @@ class HomepageController extends ControllerBase {
   /**
    * Constructs a new HomeController object.
    * /
-  public function __construct() {
-    $this->cacheBackend = $cache_backend;
-  }*/
-  //public function __construct(CacheBackendInterface $cache_backend) {.
+   * public function __construct() {
+   * $this->cacheBackend = $cache_backend;
+   * }.*/
+  /**
+   * Public function __construct(CacheBackendInterface $cache_backend) {.
+   */
+  protected $blockManager;
 
   /**
+   * {@inheritdoc}
+   */
+  public function __construct(BlockManagerInterface $block_manager) {
+    $this->blockManager = $block_manager;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public static function create(ContainerInterface $container) {
+    return new static(
+      $container->get('plugin.manager.block')
+    );
+  }
+
+  /**
+   * @todo : clean and implement cache.
    * Homepage content function.
+   *
    * @return array
    *   Array of elements composing page.
    */
@@ -38,20 +60,51 @@ class HomepageController extends ControllerBase {
     // Get contact block.
     // @todo : check if it is not better to call plugin by 'use Drupal'.
     // $block_manager = \Drupal::service('plugin.manager.block');
-    //$cache_backend = $this->prophesize(CacheBackendInterface::class);
-    //$module_handler = $this->prophesize(ModuleHandlerInterface::class);
-    //$this->logger = $this->prophesize(LoggerInterface::class);
-    /*
-    $this->blockManager = new BlockManager(new \ArrayObject(), $this->cache_backend);//, $module_handler->reveal(), $this->logger->reveal());
-    $block_manager = new BlockManager();
-    $config = [];
-    $plugin_block = $block_manager->createInstance('home_contact_block', $config);
-    $contact_form = $plugin_block->build();
-    */
+    // $cache_backend = $this->prophesize(CacheBackendInterface::class);
+    // $module_handler = $this->prophesize(ModuleHandlerInterface::class);
+    // $this->logger = $this->prophesize(LoggerInterface::class);
+    // Contact form block.
+    // You can hard code configuration or you load from settings.
+    $config_contact_form = [];
+    $plugin_block_contact_form = $this->blockManager->createInstance('home_contact_block', $config_contact_form);
+    // Some blocks might implement access check.
+    $access_result_contact_form = $plugin_block_contact_form->access(\Drupal::currentUser());
+    // Return empty render array if user doesn't have access.
+    // $access_result can be boolean or an AccessResult class.
+    if (is_object($access_result_contact_form) && $access_result_contact_form->isForbidden() || is_bool($access_result_contact_form) && !$access_result_contact_form) {
+      // You might need to add some cache tags/contexts.
+      // return [];.
+      // @todo remove.
+      $contact_form = '';
+    }
+    // In some cases, you need to add the cache tags/context depending on
+    // the block implemention. As it's possible to add the cache tags and
+    // contexts in the render method and in ::getCacheTags and .
+    // ::getCacheContexts methods.
+    $contact_form = $plugin_block_contact_form->build();
+    // @todo : test it.
+    /*$block = Block::load('home_contact_block');
+    $contact_form = \Drupal::entityTypeManager()
+      ->getViewBuilder('block')
+      ->view($block);*/
 
-    $contact_form = 'truc';
-
-    $contact_text = 'coucou';
+    // Contact form text.
+    // You can hard code configuration or you load from settings.
+    $config_contact_text = [];
+    $plugin_block_contact_text = $this->blockManager->createInstance('home_contact_block', $config_contact_text);
+    // Some blocks might implement access check.
+    $access_result_contact_text = $plugin_block_contact_text->access(\Drupal::currentUser());
+    // Return empty render array if user doesn't have access.
+    // $access_result can be boolean or an AccessResult class.
+    if (is_object($access_result_contact_text) && $access_result_contact_text->isForbidden() || is_bool($access_result_contact_text) && !$access_result_contact_text) {
+      // You might need to add some cache tags/contexts.
+      return [];
+    }
+    // In some cases, you need to add the cache tags/context depending on
+    // the block implemention. As it's possible to add the cache tags and
+    // contexts in the render method and in ::getCacheTags and .
+    // ::getCacheContexts methods.
+    $contact_text = $plugin_block_contact_text->build();
 
     return [
       '#theme' => 'home_page',

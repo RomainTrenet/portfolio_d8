@@ -21,6 +21,8 @@ class HomeContactText extends BlockBase {
   public function build() {
 
     // @todo : admin page for elements.
+    $title = 'Mon title';
+    $ctas = 'Mon CTA';
 
     return [
       '#theme' => 'home_branding',
