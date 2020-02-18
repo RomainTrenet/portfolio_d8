@@ -1,0 +1,23 @@
+uuid: 0ff71ac8-cf69-4895-89e5-311c231b496e
+langcode: fr
+status: true
+dependencies:
+  module:
+    - custom_blocks
+  theme:
+    - portfolio_2019
+id: contact_home_bloc_text
+theme: portfolio_2019
+region: content
+weight: 0
+provider: null
+plugin: home_contact_configurable_block
+settings:
+  id: home_contact_configurable_block
+  label: 'Mon bloc home configurable'
+  provider: custom_blocks
+  label_display: visible
+  name: Truc
+  number: '0685086505'
+  town: '27, rue Constantin'
+visibility: {  }

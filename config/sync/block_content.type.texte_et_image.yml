@@ -1,0 +1,8 @@
+uuid: c432c782-1cbe-482e-a38c-f6b234bf3339
+langcode: fr
+status: true
+dependencies: {  }
+id: texte_et_image
+label: 'Texte et image'
+revision: 0
+description: 'Bloc avec texte puis image, pour test'

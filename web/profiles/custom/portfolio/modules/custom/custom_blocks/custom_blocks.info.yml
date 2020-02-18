@@ -1,0 +1,8 @@
+name: Custom Blocks
+type: module
+description: 'Panel of custom blocks'
+package: Custom
+version: '8.x-1.0'
+core: '8.x'
+dependencies:
+  - block

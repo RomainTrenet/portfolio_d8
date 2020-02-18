@@ -1,0 +1,23 @@
+uuid: dc7d3908-0868-4015-abb1-bc48249b536b
+langcode: fr
+status: true
+dependencies:
+  config:
+    - block_content.type.texte_et_image
+    - field.field.block_content.texte_et_image.body
+  module:
+    - text
+id: block_content.texte_et_image.default
+targetEntityType: block_content
+bundle: texte_et_image
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  langcode: true

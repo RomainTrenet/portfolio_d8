@@ -1,12 +1,9 @@
-uuid: 37b2ffbe-84fe-40ad-8046-f81686eaf504
 langcode: fr
 status: open
 dependencies:
   enforced:
     module:
       - webform
-_core:
-  default_config_hash: CjLyKc08W5pQDmtIk0iDWmit1eCAlCVJtOzxMdHI51Q
 open: null
 close: null
 weight: 0
@@ -17,7 +14,7 @@ id: contact
 title: Contact
 description: 'Basic email contact webform.'
 category: ''
-elements: "name:\n  '#title': 'Your Name'\n  '#type': textfield\n  '#required': true\n  '#default_value': '[current-user:display-name]'\nemail:\n  '#title': 'Your Email'\n  '#type': email\n  '#required': true\n  '#default_value': '[current-user:mail]'\nsubject:\n  '#title': Subject\n  '#type': textfield\n  '#required': true\n  '#test': 'Testing contact webform from [site:name]'\nmessage:\n  '#title': Message\n  '#type': textarea\n  '#required': true\n  '#test': 'Please ignore this email.'\nactions:\n  '#type': webform_actions\n  '#title': 'Submit button(s)'\n  '#submit__label': 'Send message'\n"
+elements: "email:\n  '#type': email\n  '#title': 'Votre adresse mail'\n  '#description_display': invisible\n  '#placeholder': 'Votre adresse mail'\n  '#autocomplete': 'off'\n  '#required': true\n  '#default_value': '[current-user:mail]'\n  '#admin_title': Mail\ntelephone:\n  '#type': tel\n  '#title': Téléphone\n  '#format': value\n  '#access_update_roles':\n    - authenticated\n  '#access_view_roles':\n    - authenticated\n  '#international': true\n  '#international_initial_country': FR\nyou_are:\n  '#type': radios\n  '#title': 'Vous êtes...'\n  '#title_display': invisible\n  '#description_display': invisible\n  '#options':\n    SSII: 'Une société de service -- et vous avez besoin de renfort'\n    individual: 'Particulier -- et vous souhaitez par exemple créer votre blog, portfolior, etc.'\n    professional: 'Professionnel -- et vous souhaitez par exemple créer votre site vitrine'\n  '#required': true\n  '#admin_title': 'Type contact'\nname:\n  '#type': textfield\n  '#title': 'Votre nom'\n  '#title_display': invisible\n  '#description_display': invisible\n  '#placeholder': 'Votre nom ->'\n  '#autocomplete': 'off'\n  '#required': true\n  '#states':\n    visible:\n      ':input[name=\"you_are\"]':\n        value: individual\n  '#default_value': '[current-user:display-name]'\n  '#admin_title': Particulier\nnom_de_la_societe:\n  '#type': textfield\n  '#title': 'Nom de la société'\n  '#title_display': invisible\n  '#description_display': invisible\n  '#placeholder': 'Nom de la société'\n  '#required': true\n  '#states':\n    visible:\n      - ':input[name=\"you_are\"]':\n          value: SSII\n      - xor\n      - ':input[name=\"you_are\"]':\n          value: professional\n  '#states_clear': false\n  '#admin_title': Société\nmessage:\n  '#type': textarea\n  '#title': 'Votre message'\n  '#placeholder': 'Votre message'\n  '#autocomplete': 'off'\n  '#admin_title': Message\n  '#test': 'Please ignore this email.'\nactions:\n  '#type': webform_actions\n  '#title': 'Submit button(s)'\n  '#submit__label': Envoyer"
 css: ''
 javascript: ''
 settings:
@@ -83,6 +80,7 @@ settings:
   wizard_progress_pages: false
   wizard_progress_percentage: false
   wizard_progress_link: false
+  wizard_progress_states: false
   wizard_start_label: ''
   wizard_preview_link: false
   wizard_confirmation: true
@@ -130,6 +128,7 @@ settings:
   purge_days: null
   results_disabled: false
   results_disabled_ignore: false
+  token_view: false
   token_update: false
 access:
   create:
@@ -207,12 +206,13 @@ handlers:
       html: true
       attachments: false
       twig: false
-      theme_name: ''
       debug: false
       reply_to: ''
       return_path: ''
       sender_mail: ''
       sender_name: ''
+      theme_name: ''
+      parameters: {  }
   email_notification:
     id: email
     label: 'Notification par courriel'
@@ -241,9 +241,13 @@ handlers:
       html: true
       attachments: false
       twig: false
-      theme_name: ''
       debug: false
       reply_to: ''
       return_path: ''
       sender_mail: ''
       sender_name: ''
+      theme_name: ''
+      parameters: {  }
+uuid: 37b2ffbe-84fe-40ad-8046-f81686eaf504
+_core:
+  default_config_hash: CjLyKc08W5pQDmtIk0iDWmit1eCAlCVJtOzxMdHI51Q

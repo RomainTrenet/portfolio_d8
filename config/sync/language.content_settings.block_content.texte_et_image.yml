@@ -1,0 +1,11 @@
+uuid: 2ecf76d0-ea71-463a-a6ab-b634267f177f
+langcode: fr
+status: true
+dependencies:
+  config:
+    - block_content.type.texte_et_image
+id: block_content.texte_et_image
+target_entity_type_id: block_content
+target_bundle: texte_et_image
+default_langcode: site_default
+language_alterable: false

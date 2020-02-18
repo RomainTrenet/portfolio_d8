@@ -1,4 +1,4 @@
-uuid: 853d9824-895e-4064-a933-caccdc6934b1
+uuid: 21a01584-4c75-442f-a05c-d64161564fbc
 langcode: fr
 status: true
 dependencies:
@@ -7,17 +7,17 @@ dependencies:
     - system
   theme:
     - portfolio_2019
-id: homemainblock_2
+id: homebranding
 theme: portfolio_2019
 region: header
-weight: -4
+weight: 0
 provider: null
-plugin: home_main_block
+plugin: home_branding
 settings:
-  id: home_main_block
-  label: 'Home main branding'
+  id: home_branding
+  label: 'Home branding'
   provider: custom_home
-  label_display: '0'
+  label_display: visible
 visibility:
   request_path:
     id: request_path

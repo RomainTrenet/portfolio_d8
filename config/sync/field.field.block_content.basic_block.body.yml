@@ -1,16 +1,16 @@
-uuid: d99576ac-1256-493d-895d-52efcf230375
+uuid: 8d18cb08-f203-4f35-8f55-f1f225a2375c
 langcode: fr
 status: true
 dependencies:
   config:
-    - field.storage.node.body
-    - node.type.page
+    - block_content.type.basic_block
+    - field.storage.block_content.body
   module:
     - text
-id: node.page.body
+id: block_content.basic_block.body
 field_name: body
-entity_type: node
-bundle: page
+entity_type: block_content
+bundle: basic_block
 label: Body
 description: ''
 required: false
@@ -18,6 +18,6 @@ translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:
-  display_summary: true
+  display_summary: false
   required_summary: false
 field_type: text_with_summary

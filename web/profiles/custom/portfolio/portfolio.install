@@ -46,3 +46,10 @@ function portfolio_update_8104() {
 function portfolio_update_8105() {
   \Drupal::service('module_installer')->install(['config_split']);
 }
+
+/**
+ * Install config_split.
+ */
+function portfolio_update_8106() {
+  \Drupal::service('module_installer')->install(['custom_blocks']);
+}

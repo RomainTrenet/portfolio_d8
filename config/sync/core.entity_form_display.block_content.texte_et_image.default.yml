@@ -1,0 +1,40 @@
+uuid: f841e5af-0008-41d2-a6cc-fdc05ca5bcea
+langcode: fr
+status: true
+dependencies:
+  config:
+    - block_content.type.texte_et_image
+    - field.field.block_content.texte_et_image.body
+  module:
+    - text
+id: block_content.texte_et_image.default
+targetEntityType: block_content
+bundle: texte_et_image
+mode: default
+content:
+  body:
+    type: text_textarea_with_summary
+    weight: 26
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+      show_summary: false
+    third_party_settings: {  }
+    region: content
+  info:
+    type: string_textfield
+    weight: -5
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+hidden: {  }

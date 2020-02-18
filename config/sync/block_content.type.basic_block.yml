@@ -1,0 +1,8 @@
+uuid: ab3f63c4-a025-40a7-bbcf-2a7bd23c2d61
+langcode: fr
+status: true
+dependencies: {  }
+id: basic_block
+label: 'Basic block'
+revision: 0
+description: 'Bloc basique avec titre et texte'
